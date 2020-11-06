@@ -5,6 +5,8 @@
  */
 package Login;
 
+import Menu.JF_Menu;
+
 /**
  *
  * @author justi
@@ -35,7 +37,8 @@ public class JF_Login extends javax.swing.JFrame {
         txtCedula = new javax.swing.JTextField();
         jpsContraseña = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnRecuperarContraseña = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,8 +113,20 @@ public class JF_Login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setText("Iiniciar Sesión");
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        jButton1.setText("¿Recuperar Contraseña?");
+        btnRecuperarContraseña.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        btnRecuperarContraseña.setText("¿Recuperar Contraseña?");
+        btnRecuperarContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecuperarContraseñaActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Ingresar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,6 +139,10 @@ public class JF_Login extends javax.swing.JFrame {
                         .addGap(71, 71, 71)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addComponent(btnRecuperarContraseña)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,8 +150,8 @@ public class JF_Login extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addGap(209, 209, 209))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(201, 201, 201))))))
+                                .addComponent(jButton2)
+                                .addGap(283, 283, 283))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,13 +163,25 @@ public class JF_Login extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(57, 57, 57)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addGap(66, 66, 66)
+                .addComponent(btnRecuperarContraseña)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         JF_Menu m = new JF_Menu();
+          m.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnRecuperarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarContraseñaActionPerformed
+     JF_RecuperarContraseña    r  = new JF_RecuperarContraseña();
+      r.setVisible(true);
+    }//GEN-LAST:event_btnRecuperarContraseñaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,7 +219,8 @@ public class JF_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRecuperarContraseña;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
