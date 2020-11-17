@@ -5,6 +5,8 @@
  */
 package Producto;
 import Conexion.Conexion_k;
+import Inventario.JF_Inventario;
+import Menu.JF_Menu;
 /**
  *
  * @author justi
@@ -29,6 +31,12 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        Btnproveedor = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        Btninventario = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        Btnmenu = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -69,6 +77,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         btnagregarinventario = new javax.swing.JButton();
         lblRequeridoProvee = new javax.swing.JLabel();
         lblRequeridoCodigoPro = new javax.swing.JLabel();
+        Btnproducto = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,15 +86,80 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
+        Btnproveedor.setBackground(new java.awt.Color(153, 153, 153));
+        Btnproveedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnproveedorMouseClicked(evt);
+            }
+        });
+        Btnproveedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel14.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Proveedor");
+        Btnproveedor.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, 30));
+
+        Btninventario.setBackground(new java.awt.Color(153, 153, 153));
+        Btninventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtninventarioMouseClicked(evt);
+            }
+        });
+        Btninventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel15.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Inventario");
+        Btninventario.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
+
+        Btnmenu.setBackground(new java.awt.Color(153, 153, 153));
+        Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnmenuMouseClicked(evt);
+            }
+        });
+        Btnmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel16.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Menu");
+        Btnmenu.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, 30));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 304, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btnproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(83, Short.MAX_VALUE)
+                    .addComponent(Btninventario, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(84, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(244, Short.MAX_VALUE)
+                .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(172, 172, 172)
+                .addComponent(Btnproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(277, 277, 277))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(361, Short.MAX_VALUE)
+                    .addComponent(Btninventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(362, Short.MAX_VALUE)))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, 753));
@@ -332,14 +407,27 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 110, 210, 570));
 
+        Btnproducto.setBackground(new java.awt.Color(153, 153, 153));
+        Btnproducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnproductoMouseClicked(evt);
+            }
+        });
+        Btnproducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel13.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Producto");
+        Btnproducto.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, 30));
+
+        jPanel1.add(Btnproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,6 +446,32 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         int seleccionar = TbProveedor.rowAtPoint(evt.getPoint());
         txtProveedor.setText(String.valueOf(TbProveedor.getValueAt(seleccionar, 0)));
     }//GEN-LAST:event_TbProveedorMouseClicked
+
+    private void BtnproductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnproductoMouseClicked
+        JF_AgregarProducto p = new JF_AgregarProducto();
+        p.setVisible(true);
+        dispose();
+
+        // p.txtUsuarioProducto.setText(txtUsuarioProveedor.getText());
+    }//GEN-LAST:event_BtnproductoMouseClicked
+
+    private void BtninventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtninventarioMouseClicked
+        JF_Inventario i= new JF_Inventario();
+        i.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtninventarioMouseClicked
+
+    private void BtnproveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnproveedorMouseClicked
+       JF_Provedor p= new JF_Provedor();
+       p.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_BtnproveedorMouseClicked
+
+    private void BtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnmenuMouseClicked
+        JF_Menu m= new JF_Menu();
+        m.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtnmenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -396,6 +510,10 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Btninventario;
+    private javax.swing.JPanel Btnmenu;
+    private javax.swing.JPanel Btnproducto;
+    private javax.swing.JPanel Btnproveedor;
     private javax.swing.JTable TbProducto;
     private javax.swing.JTable TbProveedor;
     private javax.swing.JButton btnagregar;
@@ -407,6 +525,10 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
