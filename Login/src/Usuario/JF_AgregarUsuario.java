@@ -12,7 +12,12 @@ package Usuario;
 import Conexion.Conexion_k;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 public class JF_AgregarUsuario extends javax.swing.JFrame {
 
     /**
@@ -20,6 +25,8 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
      */
     public JF_AgregarUsuario() {
         initComponents();
+        
+        
     }
 
     /**
@@ -256,10 +263,10 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
             pst.setString(5, txtPrimerapellido.getText());
             pst.setString(6, txtSegundoapellido.getText());
             pst.setString(7, txtCorreo.getText());
-            pst.setString(8, (String) cbTipousuario.getSelectedItem());
+            pst.setInt(8, (Integer) cbTipousuario.getSelectedItem());
 
             pst.executeUpdate();
-
+JOptionPane.showMessageDialog(this, "Guardado con éxito");
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -271,12 +278,16 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
         txtPrimerapellido.setText("");
         txtSegundoapellido.setText("");
         txtCorreo.setText("");
-        JOptionPane.showMessageDialog(this, "Guardado con éxito");
+        
 
         
         
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void Mostarcombo(){
+       
+    }
+    
     /**
      * @param args the command line arguments
      */

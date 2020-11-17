@@ -164,7 +164,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
-                              <Component id="btnagregarproducto" min="-2" pref="123" max="-2" attributes="0"/>
+                              <Component id="btnagregarproveedor" min="-2" pref="123" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="396" max="32767" attributes="0"/>
@@ -180,7 +180,7 @@
                           <Component id="txtnombreprovedor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnagregarproducto" min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="btnagregarproveedor" min="-2" pref="42" max="-2" attributes="0"/>
                       <EmptySpace pref="35" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -197,12 +197,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtnombreprovedor">
             </Component>
-            <Component class="javax.swing.JButton" name="btnagregarproducto">
+            <Component class="javax.swing.JButton" name="btnagregarproveedor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar "/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnagregarproductoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnagregarproveedorActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

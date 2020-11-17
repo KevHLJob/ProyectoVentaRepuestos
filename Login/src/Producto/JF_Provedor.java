@@ -6,7 +6,11 @@
 package Producto;
 
 import Inventario.*;
+import Conexion.Conexion_k;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Klope
@@ -37,7 +41,7 @@ public class JF_Provedor extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtnombreprovedor = new javax.swing.JTextField();
-        btnagregarproducto = new javax.swing.JButton();
+        btnagregarproveedor = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,10 +103,10 @@ public class JF_Provedor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel1.setText("Nombre del Proveedor");
 
-        btnagregarproducto.setText("Agregar ");
-        btnagregarproducto.addActionListener(new java.awt.event.ActionListener() {
+        btnagregarproveedor.setText("Agregar ");
+        btnagregarproveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnagregarproductoActionPerformed(evt);
+                btnagregarproveedorActionPerformed(evt);
             }
         });
 
@@ -119,7 +123,7 @@ public class JF_Provedor extends javax.swing.JFrame {
                         .addComponent(txtnombreprovedor, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(328, 328, 328)
-                        .addComponent(btnagregarproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnagregarproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(396, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -130,7 +134,7 @@ public class JF_Provedor extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(txtnombreprovedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addComponent(btnagregarproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnagregarproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -164,9 +168,23 @@ public class JF_Provedor extends javax.swing.JFrame {
        // p.txtUsuarioProducto.setText(txtUsuarioProveedor.getText());
     }//GEN-LAST:event_BtnproductoMouseClicked
 
-    private void btnagregarproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarproductoActionPerformed
+    private void btnagregarproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarproveedorActionPerformed
+        Conexion_k con= new Conexion_k();
+        Connection c=con.conexion();
         
-    }//GEN-LAST:event_btnagregarproductoActionPerformed
+        try{
+            PreparedStatement pst = c.prepareStatement("INSERT INTO proveedor(NombreProveedor)VALUES (?)");
+
+            pst.setString(1, txtnombreprovedor.getText());
+            pst.execute();
+                    JOptionPane.showMessageDialog(null, "Se guardó el nuevo Proveedor. ");
+
+            txtnombreprovedor.setText("");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error al agregar Proveedor: "+e);
+        }
+        
+    }//GEN-LAST:event_btnagregarproveedorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,7 +226,7 @@ public class JF_Provedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Btnproducto;
-    private javax.swing.JButton btnagregarproducto;
+    private javax.swing.JButton btnagregarproveedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
