@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import Menu.JF_Menu;
 
 /**
  *
@@ -44,6 +45,8 @@ TableRowSorter trsfiltro;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        Btnmenu = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -58,15 +61,40 @@ TableRowSorter trsfiltro;
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
+        Btnmenu.setBackground(new java.awt.Color(153, 153, 153));
+        Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnmenuMouseClicked(evt);
+            }
+        });
+        Btnmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel16.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Menu");
+        Btnmenu.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 290, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(76, 76, 76)
+                    .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(77, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(361, 361, 361)
+                    .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(362, Short.MAX_VALUE)))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 753));
@@ -178,6 +206,12 @@ TableRowSorter trsfiltro;
         Tbinventario.setRowSorter(trsfiltro);
     }//GEN-LAST:event_txtNombreKeyTyped
 
+    private void BtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnmenuMouseClicked
+        JF_Menu m= new JF_Menu();
+        m.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtnmenuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -260,8 +294,12 @@ TableRowSorter trsfiltro;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Btninventario;
+    private javax.swing.JPanel Btnmenu;
     private javax.swing.JTable Tbinventario;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
