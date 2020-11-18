@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 public class Conexion3 {
     private Statement sql;
-    static String bd ="db_sistema";
+    static String bd ="bd_repuestos";
     static String login ="root";
     static String password ="";
     static String url ="jdbc:mysql://localhost/"+bd;

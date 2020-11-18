@@ -13,7 +13,8 @@ public class datosP {
     public Connection conexion(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conectar=DriverManager.getConnection("jdbc:mysql://localhost/bd_repuestos","root","1234");
+            conectar=DriverManager.getConnection("jdbc:mysql://localhost:3307/bd_repuestos"+
+                    "?userTimezone=true&serverTimezone=UTC","root","");
             
             
            

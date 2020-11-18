@@ -5,19 +5,142 @@
  */
 package Factura;
 
+import Conexion.datosP;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author justi
  */
 public class JF_ImprimirFactura extends javax.swing.JFrame {
 
-    /**
-     * Creates new form JF_ImprimirFactura
-     */
+    Conexion.Conexion2 con = new Conexion.Conexion2();
     public JF_ImprimirFactura() {
         initComponents();
     }
+   public void mostrar1() {
 
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        tbCliente1.setModel(modelo);
+
+        try {
+            ps = con.conectar().prepareStatement("SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Id_Cliente,CorreoElectronico"
+                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) where Id_Factura= '" + txtCodigoFac1.getText() + "'");
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsmt = rs.getMetaData();
+            int cantcolum = rsmt.getColumnCount();
+
+            modelo.addColumn("ID Factura");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Cédula");
+            modelo.addColumn("Correo");
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantcolum];
+
+                for (int i = 0; i < cantcolum; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar... " + e);
+        }
+
+    }
+
+    public void mostrar2() {
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        DefaultTableModel modelo2 = new DefaultTableModel();
+        tbCompra1.setModel(modelo2);
+
+        try {
+//            ps = con.conectar().prepareStatement("SELECT id_Factura,Cantidad,Impuesto,Descuento,TotalPagar,Fecha "
+//                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)order by Id_Factura desc limit 1");
+
+            ps = con.conectar().prepareStatement("SELECT DISTINCTROW Fecha,Hora,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) "
+                    + "where Id_Factura = '" + txtCodigoFac1.getText() + "'");
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsmt = rs.getMetaData();
+            int cantcolum = rsmt.getColumnCount();
+
+            modelo2.addColumn("Fecha");
+            modelo2.addColumn("Hora");
+            modelo2.addColumn("Subtotal");
+            modelo2.addColumn("Impuesto");
+            modelo2.addColumn("Descuento");
+            modelo2.addColumn("Total");
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantcolum];
+
+                for (int i = 0; i < cantcolum; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo2.addRow(filas);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar... " + e);
+        }
+
+    }
+
+    public void mostrar3() {
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        DefaultTableModel modelo3 = new DefaultTableModel();
+        tbProducto.setModel(modelo3);
+
+        try {
+//            ps = con.conectar().prepareStatement("SELECT id_Factura,Cantidad,Impuesto,Descuento,TotalPagar,Fecha "
+//                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)order by Id_Factura desc limit 1");
+
+            ps = con.conectar().prepareStatement("SELECT Id_Orden, b.Cantidad, d.Nombre"
+                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
+                    + " INNER Join producto d on (b.Fk_Producto = d.Id_Producto) where Id_Factura ='" + txtCodigoFac1.getText() + "'");
+
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsmt = rs.getMetaData();
+            int cantcolum = rsmt.getColumnCount();
+
+            modelo3.addColumn("ID Orden");
+            modelo3.addColumn("Cantidad");
+            modelo3.addColumn("Producto");
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantcolum];
+
+                for (int i = 0; i < cantcolum; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo3.addRow(filas);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar... " + e);
+        }
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -286,4 +409,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     private javax.swing.JTable tbProducto;
     public javax.swing.JTextField txtCodigoFac1;
     // End of variables declaration//GEN-END:variables
+   datosP cc = new datosP();
+    Connection cn = cc.conexion();
+
 }
