@@ -167,7 +167,7 @@ TableRowSorter trsfiltro;
     
     
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-txtNombre.addKeyListener(new KeyAdapter() {
+        txtNombre.addKeyListener(new KeyAdapter() {
             public void keyReleased(final KeyEvent e) {
                 String cadena = (txtNombre.getText());
                 txtNombre.setText(cadena);
@@ -182,36 +182,36 @@ txtNombre.addKeyListener(new KeyAdapter() {
      * @param args the command line arguments
      */
           private void CargarInventario(){
-              Conexion.Conexion_k con= new Conexion_k();
+              Conexion.Conexion_k con = new Conexion_k();
               PreparedStatement ps = null;
-        ResultSet rs = null;
+              ResultSet rs = null;
 
-        DefaultTableModel modelo = new DefaultTableModel();
-        Tbinventario.setModel(modelo);
+              DefaultTableModel modelo = new DefaultTableModel();
+              Tbinventario.setModel(modelo);
 
-        try {
-            ps = con.conexion().prepareStatement("SELECT inventario.Id_Disponibilidad, producto.Nombre, producto.Presentacion, producto.PrecioUnitario, producto.Cantidad, proveedor.NombreProveedor FROM inventario "
-                    + "INNER JOIN producto ON inventario.Fk_Productos= producto.Id_Producto "
-                    + "INNER JOIN proveedor ON inventario.Fk_Proveedor=proveedor.Id_Proveedor");
-            rs = ps.executeQuery();
+              try {
+                  ps = con.conexion().prepareStatement("SELECT inventario.Id_Disponibilidad, producto.Nombre, producto.Presentacion, producto.PrecioUnitario, producto.Cantidad, proveedor.NombreProveedor FROM inventario "
+                          + "INNER JOIN producto ON inventario.Fk_Productos= producto.Id_Producto "
+                          + "INNER JOIN proveedor ON inventario.Fk_Proveedor=proveedor.Id_Proveedor");
+                  rs = ps.executeQuery();
 
-            ResultSetMetaData rsmt = rs.getMetaData();
-            int cantcolum = rsmt.getColumnCount();
+                  ResultSetMetaData rsmt = rs.getMetaData();
+                  int cantcolum = rsmt.getColumnCount();
 
-            modelo.addColumn("ID Inventario");
-            modelo.addColumn("Nombre Producto");
-            modelo.addColumn("Presentación");
-            modelo.addColumn("Precio");
-            modelo.addColumn("Cantidad");
-            modelo.addColumn("Proveedor");
+                  modelo.addColumn("ID Inventario");
+                  modelo.addColumn("Nombre Producto");
+                  modelo.addColumn("Presentación");
+                  modelo.addColumn("Precio");
+                  modelo.addColumn("Cantidad");
+                  modelo.addColumn("Proveedor");
 
-            while (rs.next()) {
-                Object[] filas = new Object[cantcolum];
+                  while (rs.next()) {
+                      Object[] filas = new Object[cantcolum];
 
-                for (int i = 0; i < cantcolum; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
+                      for (int i = 0; i < cantcolum; i++) {
+                          filas[i] = rs.getObject(i + 1);
+                      }
+                      modelo.addRow(filas);
             }
 
         } catch (Exception e) {
