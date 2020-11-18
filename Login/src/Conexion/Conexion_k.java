@@ -17,7 +17,7 @@ public class Conexion_k {
                     "?userTimezone=true&serverTimezone=UTC","root","");
             
             
-           System.out.print("Conexion exitosa...");
+          // System.out.print("Conexion exitosa...");
         } catch (Exception e) {
            
         }
@@ -27,7 +27,7 @@ public class Conexion_k {
      public void Desconectar(){
         conectar=null;
         if(conectar==null){
-            System.out.println("Conexion terminada...");
+          //  System.out.println("Conexion terminada...");
         }
     }
     

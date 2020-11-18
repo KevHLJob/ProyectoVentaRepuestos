@@ -302,7 +302,8 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
             pst.setString(5, txtPrimerapellido.getText());
             pst.setString(6, txtSegundoapellido.getText());
             pst.setString(7, txtCorreo.getText());
-            pst.setInt(8, cbTipousuario.getSelectedIndex());
+           // Solucionar el error del combo.......
+            pst.setString(8,(String)cbTipousuario.getSelectedItem());
 
             pst.executeUpdate();
 JOptionPane.showMessageDialog(this, "Guardado con éxito");

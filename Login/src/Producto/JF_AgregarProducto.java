@@ -7,17 +7,30 @@ package Producto;
 import Conexion.Conexion_k;
 import Inventario.JF_Inventario;
 import Menu.JF_Menu;
+import javax.swing.JOptionPane;
+import Conexion.Conexion_k;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 /**
  *
  * @author justi
  */
 public class JF_AgregarProducto extends javax.swing.JFrame {
-
+ ResultSet rs;
+        PreparedStatement pst;
+        Conexion_k con= new Conexion_k();
     /**
      * Creates new form JF_AgregarUsuario
      */
     public JF_AgregarProducto() {
         initComponents();
+        
+       
+        
+        
+        
+        
+        
     }
 
     /**
@@ -62,6 +75,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         lblRequeridoNombreP = new javax.swing.JLabel();
         lblRequeridoPrecio = new javax.swing.JLabel();
         lblRequeridoBusqueda = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        cbpresentacion = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -226,6 +241,11 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
 
         btnbuscar.setBackground(new java.awt.Color(204, 204, 255));
         btnbuscar.setText("Buscar");
+        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -244,6 +264,11 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
 
         btneditar.setBackground(new java.awt.Color(204, 204, 255));
         btneditar.setText("Editar");
+        btneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -262,6 +287,11 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
 
         btnagregar.setBackground(new java.awt.Color(204, 204, 255));
         btnagregar.setText("Agregar");
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -280,6 +310,11 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
 
         btneliminar.setBackground(new java.awt.Color(204, 204, 255));
         btneliminar.setText("Eliminar");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -310,6 +345,13 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         lblRequeridoBusqueda.setForeground(new java.awt.Color(255, 51, 51));
         lblRequeridoBusqueda.setText("Requerido");
         jPanel4.add(lblRequeridoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setText("Presentación");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+
+        cbpresentacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unidad", "Galon", "Accesorio" }));
+        jPanel4.add(cbpresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 140, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 730, 360));
 
@@ -473,6 +515,104 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BtnmenuMouseClicked
 
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        
+        try{
+             pst = con.conexion().prepareStatement("INSERT INTO producto (Nombre,Presentacion,PrecioUnitario,Cantidad) "
+                        + "VALUES(?,?,?,?)");
+                pst.setString(1, txtnombre1.getText());
+
+                int seleccion = cbpresentacion.getSelectedIndex();
+                pst.setString(2, cbpresentacion.getItemAt(seleccion));
+
+                pst.setInt(3, Integer.parseInt(txtprecio.getText()));
+                pst.setInt(4, Integer.parseInt(txtCantidad.getText()));
+                pst.execute();
+                //Limpiar();
+                JOptionPane.showMessageDialog(null, "Producto guardado");
+
+                con.Desconectar();
+        }catch(Exception e){
+           
+        }
+        
+    }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
+       
+        try {
+            pst = con.conexion().prepareStatement("SELECT * FROM producto WHERE Nombre= ?");
+                pst.setString(1, txtIdbuscar.getText());
+
+                rs = pst.executeQuery();
+
+                if (rs.next()) {
+                    txtnombre1.setText(rs.getString("Nombre"));
+                    cbpresentacion.setSelectedItem(rs.getString("Presentacion"));
+                    txtprecio.setText(rs.getString("PrecioUnitario"));
+                    txtCantidad.setText(rs.getString("Cantidad"));
+                } else {
+                    JOptionPane.showMessageDialog(null, "No existe un producto con el codigo ingresado...");
+
+                }
+        } catch (Exception e) {
+        }
+        
+        
+    }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
+        
+        
+        try {
+            //CONSULTA PARA LA MODIFICACIÓN
+                pst = con.conexion().prepareStatement("UPDATE producto SET  "
+                        + "Nombre=?,Presentacion=?,PrecioUnitario=?,Cantidad=? ");
+                // 
+                pst.setString(1, txtnombre1.getText());
+                int seleccion = cbpresentacion.getSelectedIndex();
+                pst.setString(2, cbpresentacion.getItemAt(seleccion));
+
+                pst.setInt(3, Integer.parseInt(txtprecio.getText()));
+                pst.setInt(4, Integer.parseInt(txtCantidad.getText()));
+
+                pst.execute();
+
+                JOptionPane.showMessageDialog(null, "Producto Modificado");
+
+                con.Desconectar();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al Modificar producto: ");
+        }
+        
+    }//GEN-LAST:event_btneditarActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+       
+        try {
+             pst = con.conexion().prepareStatement("DELETE FROM producto WHERE Id_Producto=?");
+                pst.setInt(1, Integer.parseInt(txtIdbuscar.getText()));
+
+                pst.execute();
+
+                JOptionPane.showMessageDialog(null, "Producto Eliminado");
+
+                con.Desconectar();
+                Limpiar();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al Eliminar producto: ");
+
+        }
+        
+    }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void Limpiar() {
+        txtnombre1.setText("");
+        txtprecio.setText("");
+        txtIdbuscar.setText("");
+        txtCantidad.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -521,6 +661,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneditar;
     private javax.swing.JButton btneliminar;
+    private javax.swing.JComboBox<String> cbpresentacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -533,6 +674,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
