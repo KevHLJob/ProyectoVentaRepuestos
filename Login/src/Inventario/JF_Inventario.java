@@ -5,17 +5,32 @@
  */
 package Inventario;
 
+import Conexion.Conexion_k;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author Klope
  */
 public class JF_Inventario extends javax.swing.JFrame {
-
+TableRowSorter trsfiltro;
     /**
      * Creates new form Inventario
      */
     public JF_Inventario() {
         initComponents();
+        
+        CargarInventario();
+        
+        
     }
 
     /**
@@ -34,7 +49,7 @@ public class JF_Inventario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tbinventario = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,7 +91,13 @@ public class JF_Inventario extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel1.setText("Nombre de producto");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
+
+        Tbinventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -87,7 +108,7 @@ public class JF_Inventario extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Tbinventario);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -138,9 +159,67 @@ public class JF_Inventario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void filtro() {
+        int columnatb = 1;
+        trsfiltro.setRowFilter(RowFilter.regexFilter(txtNombre.getText(), columnatb));
+
+    }
+    
+    
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+txtNombre.addKeyListener(new KeyAdapter() {
+            public void keyReleased(final KeyEvent e) {
+                String cadena = (txtNombre.getText());
+                txtNombre.setText(cadena);
+                filtro();
+            }
+        });
+        trsfiltro = new TableRowSorter(Tbinventario.getModel());
+        Tbinventario.setRowSorter(trsfiltro);
+    }//GEN-LAST:event_txtNombreKeyTyped
+
     /**
      * @param args the command line arguments
      */
+          private void CargarInventario(){
+              Conexion.Conexion_k con= new Conexion_k();
+              PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        Tbinventario.setModel(modelo);
+
+        try {
+            ps = con.conexion().prepareStatement("SELECT inventario.Id_Disponibilidad, producto.Nombre, producto.Presentacion, producto.PrecioUnitario, producto.Cantidad, proveedor.NombreProveedor FROM inventario "
+                    + "INNER JOIN producto ON inventario.Fk_Productos= producto.Id_Producto "
+                    + "INNER JOIN proveedor ON inventario.Fk_Proveedor=proveedor.Id_Proveedor");
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsmt = rs.getMetaData();
+            int cantcolum = rsmt.getColumnCount();
+
+            modelo.addColumn("ID Inventario");
+            modelo.addColumn("Nombre Producto");
+            modelo.addColumn("Presentación");
+            modelo.addColumn("Precio");
+            modelo.addColumn("Cantidad");
+            modelo.addColumn("Proveedor");
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantcolum];
+
+                for (int i = 0; i < cantcolum; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar... " + e);
+        }
+              
+    
+}
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -167,6 +246,12 @@ public class JF_Inventario extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+        
+    
+
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JF_Inventario().setVisible(true);
@@ -175,6 +260,7 @@ public class JF_Inventario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Tbinventario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -182,7 +268,6 @@ public class JF_Inventario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
