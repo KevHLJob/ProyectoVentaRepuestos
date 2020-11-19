@@ -88,8 +88,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        btnagregarinventario = new javax.swing.JButton();
+        btnAgregarinventario = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
         lblRequeridoProvee = new javax.swing.JLabel();
         lblRequeridoCodigoPro = new javax.swing.JLabel();
         Btnproducto = new javax.swing.JPanel();
@@ -381,7 +381,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TbProducto);
 
-        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 97, 186, 180));
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 97, 240, 180));
 
         txtProducto.setEditable(false);
         jPanel6.add(txtProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 68, 93, -1));
@@ -407,7 +407,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TbProveedor);
 
-        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 362, 186, 150));
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 362, 240, 150));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Proveedor");
@@ -419,25 +419,34 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jLabel11.setText("Código");
         jPanel6.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 336, -1, -1));
 
-        jPanel10.setBackground(new java.awt.Color(255, 204, 51));
+        btnAgregarinventario.setBackground(new java.awt.Color(51, 255, 51));
+        btnAgregarinventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgregarinventarioMouseClicked(evt);
+            }
+        });
 
-        btnagregarinventario.setBackground(new java.awt.Color(255, 255, 102));
-        btnagregarinventario.setText("Agregar Inventario");
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Añadir Inventario");
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(btnagregarinventario, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout btnAgregarinventarioLayout = new javax.swing.GroupLayout(btnAgregarinventario);
+        btnAgregarinventario.setLayout(btnAgregarinventarioLayout);
+        btnAgregarinventarioLayout.setHorizontalGroup(
+            btnAgregarinventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnAgregarinventarioLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnagregarinventario, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+        btnAgregarinventarioLayout.setVerticalGroup(
+            btnAgregarinventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnAgregarinventarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        jPanel6.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 524, -1, -1));
+        jPanel6.add(btnAgregarinventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 210, -1));
 
         lblRequeridoProvee.setForeground(new java.awt.Color(255, 51, 51));
         lblRequeridoProvee.setText("Requerido");
@@ -447,7 +456,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         lblRequeridoCodigoPro.setText("Requerido");
         jPanel6.add(lblRequeridoCodigoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 48, -1, -1));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 110, 210, 570));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 110, 260, 570));
 
         Btnproducto.setBackground(new java.awt.Color(153, 153, 153));
         Btnproducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -672,6 +681,27 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         mostrarProveedor("");
     }//GEN-LAST:event_btneliminarActionPerformed
 
+    private void btnAgregarinventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarinventarioMouseClicked
+       try {
+                //consulta de insercion al inventario
+                pst = con.conexion().prepareStatement("INSERT INTO inventario (Fk_Productos,Fk_Proveedor) "
+                        + "VALUES(?,?)");
+
+                //Parametros que voy a introducir...
+                pst.setInt(1, Integer.parseInt(txtProducto.getText()));
+                pst.setInt(2, Integer.parseInt(txtProveedor.getText()));
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Agregado a Inventario");
+
+                txtProducto.setText("");
+                txtProveedor.setText("");
+
+                con.Desconectar();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al Ingresar en Inventario: " + e);
+            }
+    }//GEN-LAST:event_btnAgregarinventarioMouseClicked
+
     private void Limpiar() {
         txtnombre1.setText("");
         txtprecio.setText("");
@@ -722,8 +752,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JPanel Btnproveedor;
     private javax.swing.JTable TbProducto;
     private javax.swing.JTable TbProveedor;
+    private javax.swing.JPanel btnAgregarinventario;
     private javax.swing.JButton btnagregar;
-    private javax.swing.JButton btnagregarinventario;
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneditar;
     private javax.swing.JButton btneliminar;
@@ -736,6 +766,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -745,7 +776,6 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
