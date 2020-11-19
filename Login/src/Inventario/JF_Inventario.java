@@ -247,8 +247,8 @@ TableRowSorter trsfiltro;
      */
           private void CargarInventario(){
               Conexion.Conexion_k con = new Conexion_k();
-              PreparedStatement ps = null;
-              ResultSet rs = null;
+              PreparedStatement ps;
+              ResultSet rs;
 
               DefaultTableModel modelo = new DefaultTableModel();
               Tbinventario.setModel(modelo);

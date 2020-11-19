@@ -303,13 +303,14 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
             pst.setString(6, txtSegundoapellido.getText());
             pst.setString(7, txtCorreo.getText());
            // Solucionar el error del combo.......
-            pst.setString(8,(String)cbTipousuario.getSelectedItem());
+           
+            pst.setString(8, (String) cbTipousuario.getSelectedItem());
 
             pst.executeUpdate();
 JOptionPane.showMessageDialog(this, "Guardado con éxito");
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Error al guardar usuario: "+e);
+            System.out.println("Error al agregar Usuario: "+e);
         }
 
 //        txtUsuario.setText("");
@@ -331,11 +332,11 @@ JOptionPane.showMessageDialog(this, "Guardado con éxito");
         Conexion_k c = new Conexion_k();
             Connection cn = c.conexion();
         try{
-            pst = cn.prepareStatement("SELECT TipoUsuario FROM tipo_usuario"); 
+            pst = cn.prepareStatement("SELECT Id_tipoUsuario FROM tipo_usuario"); 
            ResultSet result = pst.executeQuery();
            
            while(result.next()){
-               cbTipousuario.addItem(result.getString("TipoUsuario"));
+               cbTipousuario.addItem(result.getString("Id_tipoUsuario"));
            }
    
 
