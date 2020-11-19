@@ -11,6 +11,9 @@ import javax.swing.JOptionPane;
 import Conexion.Conexion_k;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author justi
@@ -26,7 +29,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         initComponents();
         
        
-        
+        mostrarProducto("");
+        mostrarProveedor("");
         
         
         
@@ -479,6 +483,67 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void mostrarProducto(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("ID");
+        modelo.addColumn("Nombre");
+
+        TbProducto.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "SELECT Id_Producto, Nombre FROM producto";
+
+        }
+        String[] datos = new String[6];
+        try {
+            Statement st = con.conexion().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+
+                modelo.addRow(datos);
+            }
+            TbProducto.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            // Logger.getLogger(ingresoproductos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    public void mostrarProveedor(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("ID");
+        modelo.addColumn("Nombre");
+
+        TbProveedor.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "SELECT Id_Proveedor, NombreProveedor FROM proveedor";
+
+        }
+        String[] datos = new String[2];
+        try {
+            Statement st = con.conexion().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+
+                modelo.addRow(datos);
+            }
+            TbProveedor.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            // Logger.getLogger(ingresoproductos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void TbProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TbProductoMouseClicked
         int seleccionar = TbProducto.rowAtPoint(evt.getPoint());
         txtProducto.setText(String.valueOf(TbProducto.getValueAt(seleccionar, 0)));
@@ -535,14 +600,15 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         }catch(Exception e){
            
         }
-        
+         mostrarProducto("");
+        mostrarProveedor("");
     }//GEN-LAST:event_btnagregarActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
        
         try {
-            pst = con.conexion().prepareStatement("SELECT * FROM producto WHERE Nombre= ?");
-                pst.setString(1, txtIdbuscar.getText());
+            pst = con.conexion().prepareStatement("SELECT * FROM producto WHERE Id_Producto=?");
+                pst.setInt(1, Integer.parseInt( txtIdbuscar.getText()));
 
                 rs = pst.executeQuery();
 
@@ -557,7 +623,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
                 }
         } catch (Exception e) {
         }
-        
+         mostrarProducto("");
+        mostrarProveedor("");
         
     }//GEN-LAST:event_btnbuscarActionPerformed
 
@@ -584,7 +651,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al Modificar producto: ");
         }
-        
+         mostrarProducto("");
+        mostrarProveedor("");
     }//GEN-LAST:event_btneditarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
@@ -603,7 +671,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al Eliminar producto: ");
 
         }
-        
+        mostrarProducto("");
+        mostrarProveedor("");
     }//GEN-LAST:event_btneliminarActionPerformed
 
     private void Limpiar() {
