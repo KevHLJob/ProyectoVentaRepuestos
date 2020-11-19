@@ -28,13 +28,9 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     public JF_AgregarProducto() {
         initComponents();
         
-       
-        mostrarProducto("");
+               mostrarProducto("");
         mostrarProveedor("");
-        
-        
-        
-        
+
     }
 
     /**
@@ -512,8 +508,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
             // Logger.getLogger(ingresoproductos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
+
     public void mostrarProveedor(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
@@ -543,7 +538,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
             // Logger.getLogger(ingresoproductos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void TbProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TbProductoMouseClicked
         int seleccionar = TbProducto.rowAtPoint(evt.getPoint());
         txtProducto.setText(String.valueOf(TbProducto.getValueAt(seleccionar, 0)));
@@ -563,112 +558,114 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnproductoMouseClicked
 
     private void BtninventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtninventarioMouseClicked
-        JF_Inventario i= new JF_Inventario();
+        JF_Inventario i = new JF_Inventario();
         i.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtninventarioMouseClicked
 
     private void BtnproveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnproveedorMouseClicked
-       JF_Provedor p= new JF_Provedor();
-       p.setVisible(true);
-       dispose();
+        JF_Provedor p = new JF_Provedor();
+        p.setVisible(true);
+        dispose();
     }//GEN-LAST:event_BtnproveedorMouseClicked
 
     private void BtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnmenuMouseClicked
-        JF_Menu m= new JF_Menu();
+        JF_Menu m = new JF_Menu();
         m.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtnmenuMouseClicked
 
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
-        
-        try{
-             pst = con.conexion().prepareStatement("INSERT INTO producto (Nombre,Presentacion,PrecioUnitario,Cantidad) "
-                        + "VALUES(?,?,?,?)");
-                pst.setString(1, txtnombre1.getText());
 
-                int seleccion = cbpresentacion.getSelectedIndex();
-                pst.setString(2, cbpresentacion.getItemAt(seleccion));
+        try {
+            pst = con.conexion().prepareStatement("INSERT INTO producto (Nombre,Presentacion,PrecioUnitario,Cantidad) "
+                    + "VALUES(?,?,?,?)");
+            pst.setString(1, txtnombre1.getText());
 
-                pst.setInt(3, Integer.parseInt(txtprecio.getText()));
-                pst.setInt(4, Integer.parseInt(txtCantidad.getText()));
-                pst.execute();
-                //Limpiar();
-                JOptionPane.showMessageDialog(null, "Producto guardado");
+            int seleccion = cbpresentacion.getSelectedIndex();
+            pst.setString(2, cbpresentacion.getItemAt(seleccion));
 
-                con.Desconectar();
-        }catch(Exception e){
-           
+            pst.setInt(3, Integer.parseInt(txtprecio.getText()));
+            pst.setInt(4, Integer.parseInt(txtCantidad.getText()));
+            pst.execute();
+            //Limpiar();
+            JOptionPane.showMessageDialog(null, "Producto guardado");
+
+            con.Desconectar();
+        } catch (Exception e) {
+
         }
-         mostrarProducto("");
+        mostrarProducto("");
         mostrarProveedor("");
     }//GEN-LAST:event_btnagregarActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-       
+
         try {
             pst = con.conexion().prepareStatement("SELECT * FROM producto WHERE Id_Producto=?");
-                pst.setInt(1, Integer.parseInt( txtIdbuscar.getText()));
+            pst.setInt(1, Integer.parseInt(txtIdbuscar.getText()));
 
-                rs = pst.executeQuery();
+            rs = pst.executeQuery();
 
-                if (rs.next()) {
-                    txtnombre1.setText(rs.getString("Nombre"));
-                    cbpresentacion.setSelectedItem(rs.getString("Presentacion"));
-                    txtprecio.setText(rs.getString("PrecioUnitario"));
-                    txtCantidad.setText(rs.getString("Cantidad"));
-                } else {
-                    JOptionPane.showMessageDialog(null, "No existe un producto con el codigo ingresado...");
+            if (rs.next()) {
+                txtnombre1.setText(rs.getString("Nombre"));
+                cbpresentacion.setSelectedItem(rs.getString("Presentacion"));
+                txtprecio.setText(rs.getString("PrecioUnitario"));
+                txtCantidad.setText(rs.getString("Cantidad"));
+            } else {
+                JOptionPane.showMessageDialog(null, "No existe un producto con el codigo ingresado...");
 
-                }
+            }
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al Modificar producto: " + e);
         }
-         mostrarProducto("");
+        mostrarProducto("");
         mostrarProveedor("");
-        
+
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
-        
+
         
         try {
             //CONSULTA PARA LA MODIFICACIÓN
-                pst = con.conexion().prepareStatement("UPDATE producto SET  "
-                        + "Nombre=?,Presentacion=?,PrecioUnitario=?,Cantidad=? ");
-                // 
-                pst.setString(1, txtnombre1.getText());
-                int seleccion = cbpresentacion.getSelectedIndex();
-                pst.setString(2, cbpresentacion.getItemAt(seleccion));
+            pst = con.conexion().prepareStatement("UPDATE producto SET Nombre=?,Presentacion=?,PrecioUnitario=?,Cantidad=? WHERE Id_Producto=? ");
+            // 
 
-                pst.setInt(3, Integer.parseInt(txtprecio.getText()));
-                pst.setInt(4, Integer.parseInt(txtCantidad.getText()));
+            pst.setString(1, txtnombre1.getText());
+            int seleccion = cbpresentacion.getSelectedIndex();
+            pst.setString(2, cbpresentacion.getItemAt(seleccion));
 
-                pst.execute();
+            pst.setInt(3, Integer.parseInt(txtprecio.getText()));
+            pst.setInt(4, Integer.parseInt(txtCantidad.getText()));
+            pst.setInt(5, Integer.parseInt(txtIdbuscar.getText()));
+            pst.execute();
 
-                JOptionPane.showMessageDialog(null, "Producto Modificado");
+            JOptionPane.showMessageDialog(null, "Producto Modificado");
 
-                con.Desconectar();
+            con.Desconectar();
+            Limpiar();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al Modificar producto: ");
+            JOptionPane.showMessageDialog(null, "Error al Modificar producto: " + e);
         }
-         mostrarProducto("");
+        mostrarProducto("");
         mostrarProveedor("");
     }//GEN-LAST:event_btneditarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-       
+
         try {
-             pst = con.conexion().prepareStatement("DELETE FROM producto WHERE Id_Producto=?");
-                pst.setInt(1, Integer.parseInt(txtIdbuscar.getText()));
+            pst = con.conexion().prepareStatement("DELETE FROM producto WHERE Id_Producto=?");
+            pst.setInt(1, Integer.parseInt(txtIdbuscar.getText()));
 
-                pst.execute();
+            pst.execute();
 
-                JOptionPane.showMessageDialog(null, "Producto Eliminado");
+            JOptionPane.showMessageDialog(null, "Producto Eliminado");
 
-                con.Desconectar();
-                Limpiar();
+            con.Desconectar();
+            Limpiar();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al Eliminar producto: ");
+            System.err.println("Error al eliminar el producto " + e);
 
         }
         mostrarProducto("");
@@ -681,7 +678,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         txtIdbuscar.setText("");
         txtCantidad.setText("");
     }
-    
+
     /**
      * @param args the command line arguments
      */
