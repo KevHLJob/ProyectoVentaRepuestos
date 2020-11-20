@@ -8,12 +8,16 @@ import Conexion.Conexion_k;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 /**
  *
  * @author Klope
  */
 public class JF_AgregarCliente extends javax.swing.JFrame {
-
+PreparedStatement pst;
+ResultSet rs;
+Conexion_k con= new Conexion_k();
+      Connection c=con.conexion();
     /**
      * Creates new form cliente
      */
@@ -54,6 +58,11 @@ public class JF_AgregarCliente extends javax.swing.JFrame {
         txtapellido2 = new javax.swing.JTextField();
         txtemail = new javax.swing.JTextField();
         btnagregar = new javax.swing.JButton();
+        btneditar = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        txtbusqueda = new javax.swing.JTextField();
+        btnbuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -134,27 +143,48 @@ public class JF_AgregarCliente extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 0, 1130, 50));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setLayout(null);
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel6.setText("Cédula");
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(64, 26, 38, 15);
 
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel7.setText("Nombre");
+        jPanel3.add(jLabel7);
+        jLabel7.setBounds(64, 85, 44, 15);
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel8.setText("Primer apellido");
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(64, 143, 88, 15);
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel9.setText("Segundo apellido");
+        jPanel3.add(jLabel9);
+        jLabel9.setBounds(64, 193, 97, 15);
 
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel10.setText("E-mail");
+        jPanel3.add(jLabel10);
+        jLabel10.setBounds(64, 241, 35, 15);
+        jPanel3.add(txtcedula);
+        txtcedula.setBounds(261, 24, 246, 30);
+        jPanel3.add(txtnombre);
+        txtnombre.setBounds(261, 83, 246, 30);
 
         txtapellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtapellido1ActionPerformed(evt);
             }
         });
+        jPanel3.add(txtapellido1);
+        txtapellido1.setBounds(261, 141, 246, 30);
+        jPanel3.add(txtapellido2);
+        txtapellido2.setBounds(261, 191, 246, 30);
+        jPanel3.add(txtemail);
+        txtemail.setBounds(261, 239, 246, 30);
 
         btnagregar.setText("Agregar");
         btnagregar.addActionListener(new java.awt.event.ActionListener() {
@@ -162,57 +192,41 @@ public class JF_AgregarCliente extends javax.swing.JFrame {
                 btnagregarActionPerformed(evt);
             }
         });
+        jPanel3.add(btnagregar);
+        btnagregar.setBounds(580, 30, 125, 36);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6))
-                .addGap(100, 100, 100)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(txtapellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76)
-                        .addComponent(btnagregar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtapellido2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtapellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnagregar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtapellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
-        );
+        btneditar.setText("Editar");
+        btneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btneditar);
+        btneditar.setBounds(580, 90, 125, 36);
+
+        btneliminar.setText("Eliminar");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btneliminar);
+        btneliminar.setBounds(580, 150, 125, 36);
+
+        jLabel11.setText("ID");
+        jPanel3.add(jLabel11);
+        jLabel11.setBounds(530, 270, 11, 14);
+        jPanel3.add(txtbusqueda);
+        txtbusqueda.setBounds(580, 260, 130, 30);
+
+        btnbuscar.setText("Buscar");
+        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbuscarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnbuscar);
+        btnbuscar.setBounds(580, 210, 125, 36);
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 760, 300));
 
@@ -228,8 +242,6 @@ public class JF_AgregarCliente extends javax.swing.JFrame {
         
         // Sql query para el ingreso de datos a la BD
         
-      Conexion_k con= new Conexion_k();
-      Connection c=con.conexion();
       
       try{
           PreparedStatement pst = c.prepareStatement("INSERT INTO registro_cliente(Cédula,"
@@ -245,21 +257,97 @@ public class JF_AgregarCliente extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(null,"Cliente guardado con éxito");
 
-            txtcedula.setText("");
-            txtnombre.setText("");
-            txtapellido1.setText("");
-            txtapellido2.setText("");
-            txtemail.setText("");
+        
+            
+            con.Desconectar();
       }catch(Exception e){
-          JOptionPane.showMessageDialog(null,"Error al agregar: "+e);
+          JOptionPane.showMessageDialog(null,"Error al agregar el Cliente: "+e);
       }
         
         
     }//GEN-LAST:event_btnagregarActionPerformed
 
+    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
+       
+        try {
+            //CONSULTA PARA LA MODIFICACIÓN
+            pst = con.conexion().prepareStatement("UPDATE registro_cliente SET Cédula=?,Nombre=?,PrimerApellido=?,SegundoApellido=?,CorreoElectronico=? WHERE Id_Cliente=? ");
+            // 
+
+            pst.setString(1, txtcedula.getText());
+            
+            pst.setString(2, txtnombre.getText());
+
+            pst.setString(3, txtapellido1.getText());
+            pst.setString(4, txtapellido2.getText());
+             pst.setString(5, txtemail.getText());
+            pst.setInt(6, Integer.parseInt(txtbusqueda.getText()));
+            pst.execute();
+
+            JOptionPane.showMessageDialog(null, "Cliente Modificado");
+
+            con.Desconectar();
+            Limpiar();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al Modificar cliente: " + e);
+        }
+        
+    }//GEN-LAST:event_btneditarActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        try {
+            pst = con.conexion().prepareStatement("DELETE FROM registro_cliente  WHERE Id_Cliente=?");
+            pst.setInt(1, Integer.parseInt(txtbusqueda.getText()));
+
+            pst.execute();
+
+            JOptionPane.showMessageDialog(null, "Cliente Eliminado");
+
+            con.Desconectar();
+            Limpiar();
+        } catch (Exception e) {
+            System.err.println("Error al eliminar el Cliente " + e);
+
+        }
+    }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
+        
+        try {
+            pst = con.conexion().prepareStatement("SELECT * FROM registro_cliente WHERE Id_Cliente=?");
+            pst.setInt(1, Integer.parseInt(txtbusqueda.getText()));
+
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+                txtcedula.setText(rs.getString("Cédula"));
+                txtnombre.setText(rs.getString("Nombre"));
+                txtapellido1.setText(rs.getString("PrimerApellido"));
+                txtapellido2.setText(rs.getString("SegundoApellido"));
+                txtemail.setText(rs.getString("CorreoElectronico"));
+                
+                con.Desconectar();
+            } else {
+                JOptionPane.showMessageDialog(null, "No existe un cliente con el nombre ingresado...");
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al Buscar Cliente: " + e);
+        }
+        
+    }//GEN-LAST:event_btnbuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
+    private void Limpiar(){
+        txtcedula.setText("");
+            txtnombre.setText("");
+            txtapellido1.setText("");
+            txtapellido2.setText("");
+            txtemail.setText("");
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -301,6 +389,9 @@ public class JF_AgregarCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnagregar;
+    private javax.swing.JButton btnbuscar;
+    private javax.swing.JButton btneditar;
+    private javax.swing.JButton btneliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -308,6 +399,7 @@ public class JF_AgregarCliente extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -321,6 +413,7 @@ public class JF_AgregarCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField txtapellido1;
     private javax.swing.JTextField txtapellido2;
+    private javax.swing.JTextField txtbusqueda;
     private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtemail;
     private javax.swing.JTextField txtnombre;
