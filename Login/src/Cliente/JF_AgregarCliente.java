@@ -44,6 +44,7 @@ Conexion_k con= new Conexion_k();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtUsuarioVentas2 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -115,6 +116,18 @@ Conexion_k con= new Conexion_k();
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/oficina-en-casa.png"))); // NOI18N
         jLabel4.setText("jLabel1");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 129, 42, 43));
+
+        txtUsuarioVentas2.setEditable(false);
+        txtUsuarioVentas2.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuarioVentas2.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtUsuarioVentas2.setText("      ");
+        txtUsuarioVentas2.setBorder(null);
+        txtUsuarioVentas2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioVentas2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUsuarioVentas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 120, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 640));
 
@@ -215,7 +228,7 @@ Conexion_k con= new Conexion_k();
 
         jLabel11.setText("ID");
         jPanel3.add(jLabel11);
-        jLabel11.setBounds(530, 270, 11, 14);
+        jLabel11.setBounds(530, 270, 12, 16);
         jPanel3.add(txtbusqueda);
         txtbusqueda.setBounds(580, 260, 130, 30);
 
@@ -337,6 +350,10 @@ Conexion_k con= new Conexion_k();
         
     }//GEN-LAST:event_btnbuscarActionPerformed
 
+    private void txtUsuarioVentas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioVentas2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -411,6 +428,9 @@ Conexion_k con= new Conexion_k();
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    public javax.swing.JTextField txtUsuarioVentas;
+    public javax.swing.JTextField txtUsuarioVentas1;
+    public javax.swing.JTextField txtUsuarioVentas2;
     private javax.swing.JTextField txtapellido1;
     private javax.swing.JTextField txtapellido2;
     private javax.swing.JTextField txtbusqueda;

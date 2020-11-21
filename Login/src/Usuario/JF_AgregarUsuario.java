@@ -40,6 +40,7 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        txtUsuarioVentas3 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -70,15 +71,32 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
+        txtUsuarioVentas3.setEditable(false);
+        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtUsuarioVentas3.setText("      ");
+        txtUsuarioVentas3.setBorder(null);
+        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioVentas3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 304, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(93, Short.MAX_VALUE)
+                .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(218, 218, 218)
+                .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(495, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, 753));
@@ -326,6 +344,10 @@ JOptionPane.showMessageDialog(this, "Guardado con éxito");
         
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
+
     private void MostarTipoUsuario(){
        PreparedStatement pst;
         
@@ -407,5 +429,6 @@ JOptionPane.showMessageDialog(this, "Guardado con éxito");
     private javax.swing.JTextField txtPrimerapellido;
     private javax.swing.JTextField txtSegundoapellido;
     private javax.swing.JTextField txtUsuario;
+    public javax.swing.JTextField txtUsuarioVentas3;
     // End of variables declaration//GEN-END:variables
 }

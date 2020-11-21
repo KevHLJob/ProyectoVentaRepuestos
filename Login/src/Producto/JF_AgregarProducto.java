@@ -50,6 +50,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         Btnmenu = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
+        txtUsuarioVentas3 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -146,15 +147,28 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jLabel16.setText("Menu");
         Btnmenu.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, 30));
 
+        txtUsuarioVentas3.setEditable(false);
+        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtUsuarioVentas3.setText("      ");
+        txtUsuarioVentas3.setBorder(null);
+        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioVentas3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btnproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btnproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(81, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -165,7 +179,9 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
+                .addContainerGap(117, Short.MAX_VALUE)
+                .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87)
                 .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(172, 172, 172)
                 .addComponent(Btnproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -443,7 +459,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
             .addGroup(btnAgregarinventarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel6.add(btnAgregarinventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 210, -1));
@@ -702,6 +718,10 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnAgregarinventarioMouseClicked
 
+    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
+
     private void Limpiar() {
         txtnombre1.setText("");
         txtprecio.setText("");
@@ -796,6 +816,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdbuscar;
     private javax.swing.JTextField txtProducto;
     private javax.swing.JTextField txtProveedor;
+    public javax.swing.JTextField txtUsuarioVentas3;
     private javax.swing.JTextField txtnombre1;
     private javax.swing.JTextField txtprecio;
     // End of variables declaration//GEN-END:variables

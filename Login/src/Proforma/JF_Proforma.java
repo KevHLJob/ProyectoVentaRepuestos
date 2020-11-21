@@ -38,6 +38,7 @@ public class JF_Proforma extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtUsuarioVentas3 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -110,6 +111,18 @@ public class JF_Proforma extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/oficina-en-casa.png"))); // NOI18N
         jLabel4.setText("jLabel1");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 42, 43));
+
+        txtUsuarioVentas3.setEditable(false);
+        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtUsuarioVentas3.setText("      ");
+        txtUsuarioVentas3.setBorder(null);
+        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioVentas3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 80, 100, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 640));
 
@@ -376,6 +389,10 @@ public class JF_Proforma extends javax.swing.JFrame {
 //        }
     }//GEN-LAST:event_VerProductoActionPerformed
 
+    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -457,5 +474,6 @@ public class JF_Proforma extends javax.swing.JFrame {
     private javax.swing.JTable tbProductos;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtOrdenP;
+    public javax.swing.JTextField txtUsuarioVentas3;
     // End of variables declaration//GEN-END:variables
 }

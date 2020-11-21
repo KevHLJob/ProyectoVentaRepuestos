@@ -257,6 +257,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        txtUsuarioVentas2 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -276,15 +277,32 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
+        txtUsuarioVentas2.setEditable(false);
+        txtUsuarioVentas2.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuarioVentas2.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtUsuarioVentas2.setText("      ");
+        txtUsuarioVentas2.setBorder(null);
+        txtUsuarioVentas2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioVentas2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 304, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(93, Short.MAX_VALUE)
+                .addComponent(txtUsuarioVentas2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(txtUsuarioVentas2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(551, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, 753));
@@ -465,6 +483,10 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void txtUsuarioVentas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioVentas2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -516,6 +538,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
     private javax.swing.JTextField txtCedula;
     private com.toedter.calendar.JDateChooser txtFecha1;
     private com.toedter.calendar.JDateChooser txtFecha3;
+    public javax.swing.JTextField txtUsuarioVentas2;
     // End of variables declaration//GEN-END:variables
  datosP cc = new datosP();
     Connection cn = cc.conexion();

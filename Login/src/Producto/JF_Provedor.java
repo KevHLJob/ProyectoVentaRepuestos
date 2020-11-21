@@ -37,6 +37,7 @@ public class JF_Provedor extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         Btnproducto = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        txtUsuarioVentas3 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -64,6 +65,17 @@ public class JF_Provedor extends javax.swing.JFrame {
         jLabel13.setText("Producto");
         Btnproducto.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, 30));
 
+        txtUsuarioVentas3.setEditable(false);
+        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtUsuarioVentas3.setText("      ");
+        txtUsuarioVentas3.setBorder(null);
+        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioVentas3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -72,11 +84,17 @@ public class JF_Provedor extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addComponent(Btnproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(88, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(409, Short.MAX_VALUE)
+                .addContainerGap(196, Short.MAX_VALUE)
+                .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(173, 173, 173)
                 .addComponent(Btnproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(314, 314, 314))
         );
@@ -186,6 +204,10 @@ public class JF_Provedor extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnagregarproveedorActionPerformed
 
+    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -234,6 +256,7 @@ public class JF_Provedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    public javax.swing.JTextField txtUsuarioVentas3;
     private javax.swing.JTextField txtnombreprovedor;
     // End of variables declaration//GEN-END:variables
 }

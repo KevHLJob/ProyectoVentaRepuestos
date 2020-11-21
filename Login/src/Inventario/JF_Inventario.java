@@ -50,6 +50,7 @@ TableRowSorter trsfiltro;
         jLabel16 = new javax.swing.JLabel();
         Btnmenu = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
+        txtUsuarioVentas3 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -94,13 +95,26 @@ TableRowSorter trsfiltro;
         jLabel17.setText("Menu");
         Btnmenu.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
 
+        txtUsuarioVentas3.setEditable(false);
+        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtUsuarioVentas3.setText("      ");
+        txtUsuarioVentas3.setBorder(null);
+        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioVentas3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(85, Short.MAX_VALUE)
-                .addComponent(BtnProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -111,7 +125,9 @@ TableRowSorter trsfiltro;
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(434, Short.MAX_VALUE)
+                .addGap(182, 182, 182)
+                .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                 .addComponent(BtnProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(289, 289, 289))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,6 +258,10 @@ TableRowSorter trsfiltro;
         dispose();
     }//GEN-LAST:event_BtnmenuMouseClicked
 
+    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -337,5 +357,6 @@ TableRowSorter trsfiltro;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtUsuarioVentas3;
     // End of variables declaration//GEN-END:variables
 }
