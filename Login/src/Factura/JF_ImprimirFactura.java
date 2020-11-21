@@ -228,12 +228,12 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 0, 1070, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 0, 1070, 50));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -430,7 +430,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     private javax.swing.JTable tbCompra1;
     private javax.swing.JTable tbProducto;
     public javax.swing.JTextField txtCodigoFac1;
-    public javax.swing.JTextField txtUsuarioVentas2;
     public javax.swing.JTextField txtUsuarioVentas3;
     // End of variables declaration//GEN-END:variables
    datosP cc = new datosP();
