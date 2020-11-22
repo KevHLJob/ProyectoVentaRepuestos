@@ -1,5 +1,5 @@
 package Factura;
-
+import Conexion.Conexion_k;
 import Conexion.datosP;
 import Factura.JF_ImprimirFactura;
 import Factura.JF_FiltrarFacturas;
@@ -31,6 +31,8 @@ public class JF_Ventas extends javax.swing.JFrame {
     String date;
     String Hora;
     int cont;
+    Conexion_k cc = new Conexion_k();
+            Connection cn = cc.conexion();
 
     public JF_Ventas() {
         initComponents();
@@ -1542,6 +1544,7 @@ public class JF_Ventas extends javax.swing.JFrame {
     public javax.swing.JTextField txtUsuarioVentas;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
-  datosP cc = new datosP();
-    Connection cn = cc.conexion();
+  
+   /* datosP cc = new datosP();
+            Connection cn = cc.conexion();*/
 }
