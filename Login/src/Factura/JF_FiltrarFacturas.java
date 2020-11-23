@@ -28,13 +28,13 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
      public void processCalendar() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         //yyyy-MM-dd
-        date = dateFormat.format(txtFecha1.getDate());
+        date = dateFormat.format(txtFecha.getDate());
 
     }
 
     public void processCalendar2() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        date2 = dateFormat.format(txtFecha3.getDate());
+        date2 = dateFormat.format(txtFecha2.getDate());
 
     }
  public void mostrardatos(String valor) {
@@ -58,8 +58,14 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
             //Cambié Nombre_cliente y Cedula_cliente
 //            sql = "SELECT Id_Factura,Nombre,Cédula,FK_Producto,Cantidad,TotalPagar,Fecha "
 //                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)";
-            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Id_Cliente,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)";
+       
+//  sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Id_Cliente,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+//                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Usuario)";
+  
+   sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)";
+                
+                             
 
         }
 
@@ -114,8 +120,11 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 //                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
 //                    + " AND Fecha='" + date + "'";
 
-            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Id_Cliente,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)" + " AND Fecha='" + date + "'";
+           sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)" + " AND Fecha='" + date + "'";
+                    
+                    
+                 
 
         }
 
@@ -170,9 +179,8 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 //                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
 //                    + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
 
-            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Id_Cliente,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
-                    + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
+            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)"  + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
 
         }
 
@@ -221,9 +229,8 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         if (valor.equals("")) {
 
             //Cambié Nombre_cliente y Cedula_cliente
-            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Id_Cliente,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
-                    + " AND Id_Cliente='" + txtCedula.getText() + "'";
+            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)" + " AND Cédula='" + txtCedula.getText() + "'";
 
         }
 
@@ -268,8 +275,8 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         txtCedula = new javax.swing.JTextField();
         btnFiltrar = new javax.swing.JButton();
         btnFiltrarRango = new javax.swing.JButton();
-        txtFecha1 = new com.toedter.calendar.JDateChooser();
-        txtFecha3 = new com.toedter.calendar.JDateChooser();
+        txtFecha2 = new com.toedter.calendar.JDateChooser();
+        txtFecha = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbDatos = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
@@ -284,7 +291,6 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         txtUsuarioVentas2.setBackground(new java.awt.Color(245, 245, 245));
         txtUsuarioVentas2.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         txtUsuarioVentas2.setText("      ");
-        txtUsuarioVentas2.setBorder(null);
         txtUsuarioVentas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsuarioVentas2ActionPerformed(evt);
@@ -395,7 +401,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                        .addComponent(txtFecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(btnFiltrarCedula)
@@ -403,7 +409,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                         .addComponent(btnFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(80, 80, 80)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFiltrarRango))
                 .addGap(74, 74, 74))
         );
@@ -413,8 +419,8 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtCedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFecha3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFecha2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFiltrarCedula)
@@ -427,13 +433,13 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         tbDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Idfactura", "Nombre", "Cedula", "Descuento", "subtotal", "total"
+
             }
         ));
         jScrollPane1.setViewportView(tbDatos);
@@ -478,8 +484,8 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
        
           try {
 
-            txtFecha3.setEnabled(false);
-            txtFecha3.setDate(null);
+            txtFecha2.setEnabled(false);
+            txtFecha2.setDate(null);
             mostrarFiltroporfecha("");
 
         } catch (Exception i) {
@@ -494,7 +500,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         {
             try {
 
-                txtFecha3.setEnabled(true);
+                txtFecha2.setEnabled(true);
                 mostrarFiltro2Fechas("");
             } catch (Exception i) {
 
@@ -572,8 +578,8 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbDatos;
     private javax.swing.JTextField txtCedula;
-    private com.toedter.calendar.JDateChooser txtFecha1;
-    private com.toedter.calendar.JDateChooser txtFecha3;
+    private com.toedter.calendar.JDateChooser txtFecha;
+    private com.toedter.calendar.JDateChooser txtFecha2;
     public javax.swing.JTextField txtUsuarioVentas2;
     // End of variables declaration//GEN-END:variables
  datosP cc = new datosP();

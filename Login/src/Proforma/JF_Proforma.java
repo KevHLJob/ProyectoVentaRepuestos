@@ -5,16 +5,145 @@
  */
 package Proforma;
 import Conexion.Conexion_k;
+import Conexion.datosP;
+import Factura.JF_ImprimirFactura;
+import Login.JF_Login;
+import Menu.JF_Menu;
+import MenuSimple.JF_MenuSimple;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Klope
  */
 public class JF_Proforma extends javax.swing.JFrame {
 
-    
+      int cont;
+      
+       void acceder(String usuario) {
+        String cap = "";
+        String sql = "SELECT * FROM registro_usuario WHERE Usuario='" + usuario + "'";
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                cap = rs.getString("Fk_TipoUsuario");
+            }
+            if (cap.equals("1")) {
+                JF_Menu m = new JF_Menu();
+                m.setVisible(true);
+                dispose();
+
+                m.txtUsuarioIniciado.setText(txtUsuarioVentas3.getText());
+            } else if (cap.equals("2")) {
+                JF_MenuSimple m = new JF_MenuSimple();
+                m.setVisible(true);
+                dispose();
+
+                m.txtUsuarioIniciado.setText(txtUsuarioVentas3.getText());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(JF_Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    void mostrardatos(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Factura");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Primer A");
+        modelo.addColumn("Cédula");
+        modelo.addColumn("Subtotal");
+        modelo.addColumn("Impuesto");
+        modelo.addColumn("Descuento");
+        modelo.addColumn("Total");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Hora");
+
+        tbDatos.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+
+            sql = "SELECT DISTINCTROW Id_Factura,Nombre,PrimerApellido, Id_Cliente, Subtotal, Impuesto, Descuento, TotalPagar,Fecha, Hora FROM factura a INNER JOIN orden b on (b.Fk_Factura = a.Id_Factura) "
+                    + "INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) where c.Id_Cliente ='" + txtBuscar.getText() + "' and Fk_Estado = 2";
+
+        }
+        String[] datos = new String[10];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                datos[3] = rs.getString(4);
+                datos[4] = rs.getString(5);
+                datos[5] = rs.getString(6);
+                datos[6] = rs.getString(7);
+                datos[7] = rs.getString(8);
+                datos[8] = rs.getString(9);
+                datos[9] = rs.getString(10);
+
+                modelo.addRow(datos);
+            }
+            tbDatos.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            // Logger.getLogger(ingresoproductos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    void mostrardatosProductos(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Id_Orden");
+        modelo.addColumn("Nombre del producto");
+        modelo.addColumn("Presentación");
+        modelo.addColumn("Cantidad");
+
+        tbProductos.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+
+            sql = "SELECT b.Id_Orden, d.Nombre, d.Presentacion, b.Cantidad FROM orden b INNER Join producto d on "
+                    + "(d.Id_Producto = b.Fk_Producto) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) "
+                    + "where Fk_Factura ='" + txtOrdenP.getText() + "' and Fk_Estado = 2";
+
+        }
+        String[] datos = new String[4];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                datos[3] = rs.getString(4);
+
+                modelo.addRow(datos);
+            }
+            tbProductos.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            // Logger.getLogger(ingresoproductos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void pagar() {
+
+    }
+
     public JF_Proforma() {
         initComponents();
     }
@@ -338,55 +467,55 @@ public class JF_Proforma extends javax.swing.JFrame {
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
 
-//        cont = 0;
-//
-//        if (txtOrdenP.getText().equals("")) {
-//            lblRequeridoOrden.setVisible(true);
-//            cont++;
-//        } else {
-//            lblRequeridoOrden.setVisible(false);
-//
-//        }
-//        if (cont == 0) {
-//
-//            try {
-//                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Estado = 1 where Fk_Factura=" + txtOrdenP.getText() + "");
-//                pst.executeUpdate();
-//
-//            } catch (Exception e) {
-//                System.out.print(e.getMessage());
-//            }
-//
-//            JF_Factura m = new JF_Factura();
-//            m.setVisible(true);
-//            dispose();
-//
-//            m.txtCodigoFac.setText(txtOrdenP.getText());
-//
-//            m.mostrar1();
-//            m.mostrar2();
-//            m.mostrar3();
-//
-//            m.txtUsuarioVentas.setText(txtUsuarioVentas.getText());
-//        }
+        cont = 0;
+
+        if (txtOrdenP.getText().equals("")) {
+            lblRequeridoOrden.setVisible(true);
+            cont++;
+        } else {
+            lblRequeridoOrden.setVisible(false);
+
+        }
+        if (cont == 0) {
+
+            try {
+                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Estado = 1 where Fk_Factura=" + txtOrdenP.getText() + "");
+                pst.executeUpdate();
+
+            } catch (Exception e) {
+                System.out.print(e.getMessage());
+            }
+
+            JF_ImprimirFactura m = new JF_ImprimirFactura();
+            m.setVisible(true);
+            dispose();
+
+            m.txtCodigoFac1.setText(txtOrdenP.getText());
+
+            m.mostrar1();
+            m.mostrar2();
+            m.mostrar3();
+
+            m.txtUsuarioVentas3.setText(txtUsuarioVentas3.getText());
+        }
     }//GEN-LAST:event_btnPagarActionPerformed
 
     private void VerProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerProductoActionPerformed
-//
-//        cont = 0;
-//
-//        if (txtOrdenP.getText().equals("")) {
-//            lblRequeridoOrden.setVisible(true);
-//            cont++;
-//        } else {
-//            lblRequeridoOrden.setVisible(false);
-//
-//        }
-//        if (cont == 0) {
-//
-//            mostrardatosProductos("");
-//
-//        }
+
+        cont = 0;
+
+        if (txtOrdenP.getText().equals("")) {
+            lblRequeridoOrden.setVisible(true);
+            cont++;
+        } else {
+            lblRequeridoOrden.setVisible(false);
+
+        }
+        if (cont == 0) {
+
+            mostrardatosProductos("");
+
+        }
     }//GEN-LAST:event_VerProductoActionPerformed
 
     private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
@@ -476,4 +605,8 @@ public class JF_Proforma extends javax.swing.JFrame {
     private javax.swing.JTextField txtOrdenP;
     public javax.swing.JTextField txtUsuarioVentas3;
     // End of variables declaration//GEN-END:variables
+
+  datosP cc = new datosP();
+    Connection cn = cc.conexion();
+
 }

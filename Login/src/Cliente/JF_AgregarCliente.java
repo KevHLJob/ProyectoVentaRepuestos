@@ -428,8 +428,6 @@ Conexion_k con= new Conexion_k();
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    public javax.swing.JTextField txtUsuarioVentas;
-    public javax.swing.JTextField txtUsuarioVentas1;
     public javax.swing.JTextField txtUsuarioVentas2;
     private javax.swing.JTextField txtapellido1;
     private javax.swing.JTextField txtapellido2;

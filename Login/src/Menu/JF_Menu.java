@@ -325,7 +325,7 @@ public class JF_Menu extends javax.swing.JFrame {
         JF_AgregarCliente m = new JF_AgregarCliente();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVentas.setText(txtUsuarioIniciado.getText());
+        m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
     }//GEN-LAST:event_btnRClienteMouseClicked
 
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
