@@ -43,6 +43,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
+        modelo.addColumn("Cantidad");
         modelo.addColumn("Cédula");
         modelo.addColumn("Correo");
         modelo.addColumn("Fecha");
@@ -104,6 +105,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
+        modelo.addColumn("Cantidad");
         modelo.addColumn("Cédula");
         modelo.addColumn("Correo");
         modelo.addColumn("Fecha");
@@ -122,15 +124,15 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 //                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
 //                    + " AND Fecha='" + date + "'";
 
-           sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)" + " AND Fecha='" + date + "'";
+           sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cantidad,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)" + " AND Fecha='" + date + "'";
                     
                     
                  
 
         }
 
-        String[] datos = new String[10];
+        String[] datos = new String[11];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -146,6 +148,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
                 datos[9] = rs.getString(10);
+                datos[10] = rs.getString(11);
 
                 modelo.addRow(datos);
             }
@@ -162,6 +165,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
+        modelo.addColumn("Cantidad");
         modelo.addColumn("Cédula");
         modelo.addColumn("Correo");
         modelo.addColumn("Fecha");
@@ -181,12 +185,12 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 //                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
 //                    + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
 
-            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)"  + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
+            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cantidad,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"  + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
 
         }
 
-        String[] datos = new String[10];
+        String[] datos = new String[11];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -201,6 +205,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
                 datos[9] = rs.getString(10);
+                datos[10] = rs.getString(11);
 
                 modelo.addRow(datos);
             }
@@ -232,7 +237,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
             //Cambié Nombre_cliente y Cedula_cliente
             sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)" + " AND Cédula='" + txtCedula.getText() + "'";
+                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)" + " AND Cédula='" + txtCedula.getText() + "'";
 
         }
 
@@ -458,13 +463,16 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(271, 271, 271))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(344, 344, 344)
+                .addGap(245, 245, 245)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 741, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(285, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
