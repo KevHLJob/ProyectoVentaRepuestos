@@ -208,8 +208,8 @@ public class JF_Recuperación_Credencial extends javax.swing.JFrame {
 
             Session session = Session.getDefaultInstance(props);
 
-            String correoRemitente = "ferreteria648@gmail.com";
-            String passwordRemitente = "ferreteria3bbb";
+          String correoRemitente = "autorepuestoskj@gmail.com";
+            String passwordRemitente = "autoskyj";
             String correoReceptor = txtCorreoEnviar.getText();
             String asunto = "Recuperación de usuario y contraseña";
             String mensaje = "Su Usuario es: " + txtusu.getText() + "  // Su Contraseña es: " + txtpass.getText();
