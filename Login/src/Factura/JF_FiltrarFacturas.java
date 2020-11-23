@@ -55,21 +55,22 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         String sql = "";
         if (valor.equals("")) {
 
-            //Cambié Nombre_cliente y Cedula_cliente
-//            sql = "SELECT Id_Factura,Nombre,Cédula,FK_Producto,Cantidad,TotalPagar,Fecha "
-//                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)";
-       
-//  sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Id_Cliente,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-//                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Usuario)";
-  
-   sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)";
-                
-                             
+//CONSULTA CON SOLO 1 INNER JOIN
+//   sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+//                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)";
 
+//CONSULTA QUE FUNCIONA CON INNERJOIN
+   sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cantidad,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)";
+      
+   
+  
+   
+       
+        
         }
 
-        String[] datos = new String[10];
+        String[] datos = new String[11];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -85,6 +86,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
                 datos[9] = rs.getString(10);
+                datos[10] = rs.getString(11);
 
                 modelo.addRow(datos);
             }
