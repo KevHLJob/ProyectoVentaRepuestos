@@ -61,6 +61,7 @@ TableRowSorter trsfiltro;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
@@ -81,7 +82,7 @@ TableRowSorter trsfiltro;
         jLabel16.setText("Producto");
         BtnProducto.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
 
-        jPanel2.add(BtnProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 434, 137, -1));
+        jPanel2.add(BtnProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 137, -1));
 
         Btnmenu.setBackground(new java.awt.Color(153, 153, 153));
         Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,7 +99,7 @@ TableRowSorter trsfiltro;
         jLabel17.setText("Menu");
         Btnmenu.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
 
-        jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 371, 137, -1));
+        jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 137, -1));
 
         txtUsuarioVentas3.setEditable(false);
         txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
@@ -110,9 +111,9 @@ TableRowSorter trsfiltro;
                 txtUsuarioVentas3ActionPerformed(evt);
             }
         });
-        jPanel2.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 182, 120, 40));
+        jPanel2.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 120, 40));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 890));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
         jPanel3.setBackground(new java.awt.Color(255, 102, 102));
 

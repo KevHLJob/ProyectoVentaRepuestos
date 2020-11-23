@@ -202,30 +202,30 @@ public class JF_Proforma extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton1.setText("INICIO");
         jButton1.setBorder(null);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 129, 166, 37));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 129, 140, 37));
 
         jButton2.setBackground(new java.awt.Color(181, 62, 12));
         jButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton2.setText("FACTURACION");
         jButton2.setBorder(null);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 190, 166, 39));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 190, 140, 39));
 
         jButton3.setBackground(new java.awt.Color(181, 62, 12));
         jButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton3.setText("INVENTARIOS");
         jButton3.setBorder(null);
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 264, 166, 34));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 264, 140, 34));
 
         jButton4.setBackground(new java.awt.Color(181, 62, 12));
         jButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton4.setText("HISTORIAL DE VENTAS");
         jButton4.setBorder(null);
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 335, 166, 35));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 335, 140, 35));
 
         jButton5.setBackground(new java.awt.Color(181, 62, 12));
         jButton5.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton5.setText("SALIR");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 441, 166, 34));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 441, 150, 34));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventory.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -253,7 +253,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 txtUsuarioVentas3ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 80, 100, -1));
+        jPanel1.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 80, 170, -1));
 
         Btnmenu.setBackground(new java.awt.Color(153, 153, 153));
         Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -272,7 +272,7 @@ public class JF_Proforma extends javax.swing.JFrame {
 
         jPanel1.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 890));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 102));
 

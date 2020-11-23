@@ -45,6 +45,7 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         btnRCliente = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         btnInventario = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -53,17 +54,18 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         btnProformas = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btnReporteProductos = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         btnFiltroFacturas = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -95,10 +97,10 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 0, 1610, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 0, 1610, 50));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -106,9 +108,9 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel12.setFont(new java.awt.Font("Calibri Light", 0, 20)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel12.setText("Registrar");
-        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 80, 30));
+        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 100, 30));
 
         btnRUsuario.setBackground(new java.awt.Color(255, 255, 255));
         btnRUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -119,9 +121,11 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         });
         btnRUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel22.setFont(new java.awt.Font("Calibri Light", 0, 20)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel22.setText("Usuario");
-        btnRUsuario.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 80, 30));
+        btnRUsuario.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 80, 30));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/group.png"))); // NOI18N
         btnRUsuario.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 130, 130));
 
         btnRCliente.setBackground(new java.awt.Color(255, 255, 255));
@@ -133,10 +137,14 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         });
         btnRCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel24.setFont(new java.awt.Font("Calibri Light", 0, 20)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel24.setText("Cliente");
-        btnRCliente.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 80, 30));
+        btnRCliente.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 80, 30));
         btnRCliente.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        btnRCliente.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 20, 130, 130));
 
         btnInventario.setBackground(new java.awt.Color(255, 255, 255));
         btnInventario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -147,13 +155,14 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         });
         btnInventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel19.setFont(new java.awt.Font("Calibri Light", 0, 20)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel19.setText("Inventario ");
-        btnInventario.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 90, 30));
+        btnInventario.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, 30));
         btnInventario.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 120, 90));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventario.png"))); // NOI18N
         jLabel5.setText("jLabel5");
-        btnInventario.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        btnInventario.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, 150));
 
         btnVentas.setBackground(new java.awt.Color(255, 255, 255));
         btnVentas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -164,11 +173,15 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         });
         btnVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel15.setFont(new java.awt.Font("Calibri Light", 0, 20)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel15.setText("Ventas");
-        btnVentas.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 80, 30));
+        btnVentas.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 80, 30));
         btnVentas.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 120, 90));
         btnVentas.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventas.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        btnVentas.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 170));
 
         btnProformas.setBackground(new java.awt.Color(255, 255, 255));
         btnProformas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -179,13 +192,14 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         });
         btnProformas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setFont(new java.awt.Font("Calibri Light", 0, 20)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel13.setText("Proformas");
         btnProformas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 100, 30));
         btnProformas.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 120, 90));
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/factura (1).png"))); // NOI18N
         jLabel7.setText("jLabel7");
-        btnProformas.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, -1));
+        btnProformas.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 130, 130));
 
         btnReporteProductos.setBackground(new java.awt.Color(255, 255, 255));
         btnReporteProductos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -196,10 +210,12 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         });
         btnReporteProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel11.setFont(new java.awt.Font("Calibri Light", 0, 20)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel11.setText("Reporte de productos");
-        btnReporteProductos.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 190, 30));
-        btnReporteProductos.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 140, 130));
+        btnReporteProductos.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 210, 30));
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png"))); // NOI18N
+        btnReporteProductos.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, -10, 150, 140));
 
         btnFiltroFacturas.setBackground(new java.awt.Color(255, 255, 255));
         btnFiltroFacturas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -210,11 +226,13 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         });
         btnFiltroFacturas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel17.setFont(new java.awt.Font("Calibri Light", 0, 20)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel17.setText("Reporte de facturas");
         btnFiltroFacturas.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 180, 30));
-        btnFiltroFacturas.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 70, 90));
         btnFiltroFacturas.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte-de-negocios.png"))); // NOI18N
+        btnFiltroFacturas.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 140, 130));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -376,6 +394,7 @@ public class JF_MenuSimple extends javax.swing.JFrame {
     private javax.swing.JPanel btnRUsuario;
     private javax.swing.JPanel btnReporteProductos;
     private javax.swing.JPanel btnVentas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -385,6 +404,7 @@ public class JF_MenuSimple extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
