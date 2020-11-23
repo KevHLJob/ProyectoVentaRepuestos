@@ -67,13 +67,14 @@ public class JF_Recuperación_Credencial extends javax.swing.JFrame {
         tbusu = new javax.swing.JTable();
         txtpass = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        txtCorreoEnviar = new javax.swing.JTextField();
-        BtnEnviarCorreo = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnLogin = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtCorreoEnviar = new javax.swing.JTextField();
+        BtnEnviarCorreo = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,30 +114,6 @@ public class JF_Recuperación_Credencial extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtCorreoEnviar.setBackground(new java.awt.Color(245, 245, 245));
-        txtCorreoEnviar.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtCorreoEnviar.setBorder(null);
-        jPanel1.add(txtCorreoEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 630, 40));
-
-        BtnEnviarCorreo.setBackground(new java.awt.Color(255, 204, 51));
-        BtnEnviarCorreo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnEnviarCorreoMouseClicked(evt);
-            }
-        });
-        BtnEnviarCorreo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setBackground(new java.awt.Color(67, 81, 141));
-        jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 22)); // NOI18N
-        jLabel11.setText("                       Recuperar");
-        BtnEnviarCorreo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 50));
-
-        jPanel1.add(BtnEnviarCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, 370, 50));
-
-        jLabel1.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
-        jLabel1.setText("Por favor ingrese su correo electrónico ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, -1, -1));
-
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         btnLogin.setText("LOGIN");
@@ -160,10 +137,10 @@ public class JF_Recuperación_Credencial extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(239, 239, 239)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(437, Short.MAX_VALUE))
+                .addContainerGap(617, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 710));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
         jPanel3.setBackground(new java.awt.Color(255, 51, 51));
 
@@ -171,24 +148,80 @@ public class JF_Recuperación_Credencial extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1320, Short.MAX_VALUE)
+            .addGap(0, 1610, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 60));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 60));
+
+        jLabel1.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
+        jLabel1.setText("Por favor ingrese su correo electrónico ");
+
+        txtCorreoEnviar.setBackground(new java.awt.Color(245, 245, 245));
+        txtCorreoEnviar.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtCorreoEnviar.setBorder(null);
+
+        BtnEnviarCorreo.setBackground(new java.awt.Color(255, 204, 51));
+        BtnEnviarCorreo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnEnviarCorreoMouseClicked(evt);
+            }
+        });
+        BtnEnviarCorreo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 22)); // NOI18N
+        jLabel11.setText("                       Recuperar");
+        BtnEnviarCorreo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 370, 50));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(147, 147, 147))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtCorreoEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(159, 159, 159)
+                .addComponent(BtnEnviarCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1)
+                .addGap(30, 30, 30)
+                .addComponent(txtCorreoEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(BtnEnviarCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 720, 280));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1605, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 889, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -291,6 +324,7 @@ public class JF_Recuperación_Credencial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

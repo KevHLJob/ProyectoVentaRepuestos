@@ -272,7 +272,7 @@ public class JF_Proforma extends javax.swing.JFrame {
 
         jPanel1.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 640));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 890));
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -280,14 +280,14 @@ public class JF_Proforma extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1180, Short.MAX_VALUE)
+            .addGap(0, 1400, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 0, 1180, 50));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 0, 1400, 50));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -312,12 +312,12 @@ public class JF_Proforma extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbDatos);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 740, 370));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 740, 370));
 
         jLabel14.setBackground(new java.awt.Color(0, 0, 0));
         jLabel14.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 30)); // NOI18N
         jLabel14.setText("Registro de proformas");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, -1, -1));
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 100, -1, -1));
 
         tbProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -333,7 +333,7 @@ public class JF_Proforma extends javax.swing.JFrame {
         tbProductos.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(tbProductos);
 
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 230, 360, 370));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 230, 390, 370));
 
         jPanel5.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -378,7 +378,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 460, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addGap(87, 87, 87))
         );
@@ -398,14 +398,14 @@ public class JF_Proforma extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 1000, 50));
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 1170, 50));
 
         txtOrdenP.setEditable(false);
-        jPanel4.add(txtOrdenP, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 610, 140, 30));
+        jPanel4.add(txtOrdenP, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 610, 140, 30));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel17.setText("Identificador");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, -1, 30));
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 610, -1, 30));
 
         jPanel7.setBackground(new java.awt.Color(255, 102, 102));
         jPanel7.setForeground(new java.awt.Color(255, 0, 0));
@@ -434,7 +434,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 .addComponent(btnPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 610, 130, -1));
+        jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 610, 130, -1));
 
         jPanel8.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -468,9 +468,9 @@ public class JF_Proforma extends javax.swing.JFrame {
 
         lblRequeridoOrden.setForeground(new java.awt.Color(0, 102, 255));
         lblRequeridoOrden.setText("Requerido");
-        jPanel4.add(lblRequeridoOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 650, -1, -1));
+        jPanel4.add(lblRequeridoOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 650, -1, -1));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1380, 730));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1600, 860));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

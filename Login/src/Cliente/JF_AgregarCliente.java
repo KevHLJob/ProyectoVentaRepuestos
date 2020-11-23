@@ -129,7 +129,7 @@ Conexion_k con= new Conexion_k();
         });
         jPanel1.add(txtUsuarioVentas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 120, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 640));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 890));
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -141,7 +141,7 @@ Conexion_k con= new Conexion_k();
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(549, Short.MAX_VALUE)
+                .addContainerGap(819, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(357, 357, 357))
         );
@@ -153,7 +153,7 @@ Conexion_k con= new Conexion_k();
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 0, 1130, 50));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 0, 1400, 50));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setLayout(null);
@@ -241,7 +241,7 @@ Conexion_k con= new Conexion_k();
         jPanel3.add(btnbuscar);
         btnbuscar.setBounds(580, 210, 125, 36);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 760, 300));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 760, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

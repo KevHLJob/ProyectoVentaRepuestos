@@ -51,7 +51,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="-10" y="0" width="-1" height="753"/>
+              <AbsoluteConstraints x="-10" y="0" width="-1" height="890"/>
             </Constraint>
           </Constraints>
 
@@ -77,13 +77,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
                       <Component id="txtUsuarioVenta" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace pref="495" max="32767" attributes="0"/>
+                      <EmptySpace pref="632" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="361" max="-2" attributes="0"/>
                           <Component id="Btnmenu" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="362" max="32767" attributes="0"/>
+                          <EmptySpace pref="499" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -157,17 +157,17 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="283" y="0" width="1070" height="-1"/>
+              <AbsoluteConstraints x="283" y="0" width="1320" height="-1"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="430" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="577" max="32767" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="463" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="566" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -200,7 +200,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="380" y="150" width="760" height="390"/>
+              <AbsoluteConstraints x="560" y="230" width="760" height="390"/>
             </Constraint>
           </Constraints>
 

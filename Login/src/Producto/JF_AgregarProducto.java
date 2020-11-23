@@ -179,7 +179,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
+                .addContainerGap(254, Short.MAX_VALUE)
                 .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87)
                 .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,12 +188,12 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
                 .addGap(277, 277, 277))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(361, Short.MAX_VALUE)
+                    .addContainerGap(430, Short.MAX_VALUE)
                     .addComponent(Btninventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(362, Short.MAX_VALUE)))
+                    .addContainerGap(430, Short.MAX_VALUE)))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, 753));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, 890));
 
         jPanel3.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -207,7 +207,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(430, 430, 430)
                 .addComponent(jLabel4)
-                .addContainerGap(445, Short.MAX_VALUE))
+                .addContainerGap(715, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +217,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 0, 1070, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 0, 1340, -1));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setForeground(new java.awt.Color(0, 102, 255));
@@ -369,7 +369,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         cbpresentacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unidad", "Galon", "Accesorio" }));
         jPanel4.add(cbpresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 140, 30));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 730, 360));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 800, 440));
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setForeground(new java.awt.Color(0, 102, 255));
@@ -397,7 +397,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TbProducto);
 
-        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 97, 240, 180));
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 240, 180));
 
         txtProducto.setEditable(false);
         jPanel6.add(txtProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 68, 93, -1));
@@ -423,7 +423,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TbProveedor);
 
-        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 362, 240, 150));
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 240, 150));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Proveedor");
@@ -462,7 +462,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.add(btnAgregarinventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 210, -1));
+        jPanel6.add(btnAgregarinventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 210, -1));
 
         lblRequeridoProvee.setForeground(new java.awt.Color(255, 51, 51));
         lblRequeridoProvee.setText("Requerido");
@@ -472,7 +472,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         lblRequeridoCodigoPro.setText("Requerido");
         jPanel6.add(lblRequeridoCodigoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 48, -1, -1));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 110, 260, 570));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 150, 340, 570));
 
         Btnproducto.setBackground(new java.awt.Color(153, 153, 153));
         Btnproducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -494,7 +494,9 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1625, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
