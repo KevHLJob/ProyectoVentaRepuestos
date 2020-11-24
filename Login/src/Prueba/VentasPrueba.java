@@ -7,6 +7,7 @@ package Prueba;
 
 import Cliente.JF_AgregarCliente;
 import Conexion.Conexion_k;
+import Conexion.datosP;
 import Login.JF_Login;
 import Menu.JF_Menu;
 import MenuSimple.JF_MenuSimple;
@@ -36,8 +37,8 @@ public class VentasPrueba extends javax.swing.JFrame {
     String date;
     String Hora;
     int cont;
-    Conexion_k cc = new Conexion_k();
-            Connection cn = cc.conexion();
+//    Conexion_k cc = new Conexion_k();
+//            Connection cn = cc.conexion();
             
             
     public VentasPrueba() {
@@ -189,6 +190,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         BtnIRegistrarCliente = new javax.swing.JPanel();
         btnregistrarcliente = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtUsuarioVentas = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -198,6 +200,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         txtCedula = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        lblRequeridoCedula = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbProductosSelec = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
@@ -239,6 +242,8 @@ public class VentasPrueba extends javax.swing.JFrame {
         BtnProf = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         BtnPagar1 = new javax.swing.JButton();
+        lblRequerdioCantidad = new javax.swing.JLabel();
+        lblRequeridoCodigo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -335,6 +340,18 @@ public class VentasPrueba extends javax.swing.JFrame {
         jLabel4.setText("Usuario");
         PanelMenuV.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
+        txtUsuarioVentas.setEditable(false);
+        txtUsuarioVentas.setBackground(new java.awt.Color(245, 245, 245));
+        txtUsuarioVentas.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        txtUsuarioVentas.setText("      ");
+        txtUsuarioVentas.setBorder(null);
+        txtUsuarioVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioVentasActionPerformed(evt);
+            }
+        });
+        PanelMenuV.add(txtUsuarioVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 120, 40));
+
         getContentPane().add(PanelMenuV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, 660));
 
         jLabel15.setBackground(new java.awt.Color(0, 0, 0));
@@ -389,27 +406,35 @@ public class VentasPrueba extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Cédula");
 
+        lblRequeridoCedula.setForeground(new java.awt.Color(255, 255, 255));
+        lblRequeridoCedula.setText("Requerido");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(120, 120, 120)
+                        .addComponent(jLabel11)
+                        .addGap(26, 26, 26)
+                        .addComponent(lblRequeridoCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(100, 100, 100)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(59, 59, 59)
+                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel19)
-                .addGap(127, 127, 127))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(127, 127, 127))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,15 +445,17 @@ public class VentasPrueba extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(lblRequeridoCedula))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 630, 110));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 630, 120));
 
         tbProductosSelec.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -586,7 +613,7 @@ public class VentasPrueba extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BtnAgregar)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -706,6 +733,14 @@ public class VentasPrueba extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 660, 200, -1));
+
+        lblRequerdioCantidad.setForeground(new java.awt.Color(0, 102, 255));
+        lblRequerdioCantidad.setText("Requerido");
+        getContentPane().add(lblRequerdioCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 670, 60, -1));
+
+        lblRequeridoCodigo.setForeground(new java.awt.Color(0, 102, 255));
+        lblRequeridoCodigo.setText("Requerido");
+        getContentPane().add(lblRequeridoCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, 60, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -884,28 +919,28 @@ public class VentasPrueba extends javax.swing.JFrame {
 
         cont = 0;
 
-//        if (txtCedula.getText().equals("")) {
-//            lblRequeridoCedula.setVisible(true);
-//            cont++;
-//        } else {
-//            lblRequeridoCedula.setVisible(false);
-//
-//        }
-//        if (txtCodigo.getText().equals("")) {
-//            lblRequeridoCodigo.setVisible(true);
-//            cont++;
-//        } else {
-//            lblRequeridoCodigo.setVisible(false);
-//
-//        }
-//
-//        if (txtCantidad.getText().equals("")) {
-//            lblRequerdioCantidad.setVisible(true);
-//            cont++;
-//        } else {
-//            lblRequerdioCantidad.setVisible(false);
-//
-//        }
+        if (txtCedula.getText().equals("")) {
+            lblRequeridoCedula.setVisible(true);
+            cont++;
+        } else {
+            lblRequeridoCedula.setVisible(false);
+
+        }
+        if (txtCodigo.getText().equals("")) {
+            lblRequeridoCodigo.setVisible(true);
+            cont++;
+        } else {
+            lblRequeridoCodigo.setVisible(false);
+
+        }
+
+        if (txtCantidad.getText().equals("")) {
+            lblRequerdioCantidad.setVisible(true);
+            cont++;
+        } else {
+            lblRequerdioCantidad.setVisible(false);
+
+        }
 
         if (cont == 0) {
 
@@ -922,11 +957,14 @@ public class VentasPrueba extends javax.swing.JFrame {
             } else if (Cantidad <= Stock) {
 
                 try {
-                    Conexion_k cc = new Conexion_k();
-                    Connection cn = cc.conexion();
+//                    Conexion_k cc = new Conexion_k();
+//                    Connection cn = cc.conexion();
+
+ datosP cc = new datosP();
+            Connection cn = cc.conexion();
 
                     PreparedStatement pst = cn.prepareStatement("INSERT INTO orden(Cantidad,"
-                        + "Fk_Producto,Fk_Cliente, FK_Estado) VALUES (?,?,?,'3')");
+                        + "Fk_Producto,Fk_Cliente, FK_Estado) VALUES (?,?,?,'2')");
 
                     pst.setString(1, txtCantidad.getText());
                     pst.setString(2, txtCodigo.getText());
@@ -980,20 +1018,20 @@ public class VentasPrueba extends javax.swing.JFrame {
 
     private void VerSubtotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerSubtotalActionPerformed
 
-//        cont = 0;
-//
-//        if (txtSubTotal.getText().equals("")) {
-//            lblRequeridoSubtotal.setVisible(true);
-//            cont++;
-//        } else {
-//            lblRequeridoSubtotal.setVisible(false);
-//
-//        }
-//        if (cont == 0) {
-//            int numero;
-//            numero = (int) (Math.random() * 1000000000) + 1;
-//            txtCodigoBarras.setText("" + numero);
-//
+        cont = 0;
+
+        if (txtSubTotal.getText().equals("")) {
+            lblRequeridoSubtotal.setVisible(true);
+            cont++;
+        } else {
+            lblRequeridoSubtotal.setVisible(false);
+
+        }
+        if (cont == 0) {
+            int numero;
+            numero = (int) (Math.random() * 1000000000) + 1;
+            txtCodigoBarras.setText("" + numero);
+
 //            Montos();
 //
 //            btnAplicarDescuento.setEnabled(true);
@@ -1003,7 +1041,7 @@ public class VentasPrueba extends javax.swing.JFrame {
 //
 //            Calendar fa = new GregorianCalendar();
 //            txtHora.setCalendar(fa);
-//        }
+        }
 
     }//GEN-LAST:event_VerSubtotalActionPerformed
 
@@ -1136,6 +1174,10 @@ public class VentasPrueba extends javax.swing.JFrame {
 //        }
     }//GEN-LAST:event_BtnPagar1ActionPerformed
 
+    private void txtUsuarioVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioVentasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1215,6 +1257,9 @@ public class VentasPrueba extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JLabel lblRequerdioCantidad;
+    private javax.swing.JLabel lblRequeridoCedula;
+    private javax.swing.JLabel lblRequeridoCodigo;
     private javax.swing.JLabel lblRequeridoSubtotal;
     private javax.swing.JLabel lblRequeridoTotal;
     private javax.swing.JTable tbCliente;
@@ -1232,6 +1277,10 @@ public class VentasPrueba extends javax.swing.JFrame {
     private javax.swing.JTextField txtStock;
     private javax.swing.JTextField txtSubTotal;
     public javax.swing.JTextField txtTotalPagar;
+    public javax.swing.JTextField txtUsuarioVentas;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
+ datosP cc = new datosP();
+            Connection cn = cc.conexion();
+
 }

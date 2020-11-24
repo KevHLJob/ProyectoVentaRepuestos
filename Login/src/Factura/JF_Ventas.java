@@ -31,8 +31,8 @@ public class JF_Ventas extends javax.swing.JFrame {
     String date;
     String Hora;
     int cont;
-    Conexion_k cc = new Conexion_k();
-            Connection cn = cc.conexion();
+//    Conexion_k cc = new Conexion_k();
+//            Connection cn = cc.conexion();
 
     public JF_Ventas() {
         initComponents();
@@ -586,7 +586,7 @@ public class JF_Ventas extends javax.swing.JFrame {
                 btnAplicarDescuentoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAplicarDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 560, -1, -1));
+        jPanel1.add(btnAplicarDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 560, 60, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -653,7 +653,7 @@ public class JF_Ventas extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tbSubtotal);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 350, 110, 50));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 350, 150, 30));
 
         txtCodigoBarras.setEditable(false);
         jPanel1.add(txtCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 70, 120, -1));
@@ -739,7 +739,7 @@ public class JF_Ventas extends javax.swing.JFrame {
         jLabel4.setText("Usuario");
         PanelMenuV.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
-        jPanel1.add(PanelMenuV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, 660));
+        jPanel1.add(PanelMenuV, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 190, 660));
 
         txtStock.setEditable(false);
         jPanel1.add(txtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, 30, -1));
@@ -790,7 +790,7 @@ public class JF_Ventas extends javax.swing.JFrame {
 
         PanelPermiso.add(BtnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 140, 30));
 
-        jPanel1.add(PanelPermiso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 170, 560));
+        jPanel1.add(PanelPermiso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 170, 100));
 
         jLabel9.setBackground(new java.awt.Color(0, 102, 204));
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -826,7 +826,7 @@ public class JF_Ventas extends javax.swing.JFrame {
 
         jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 100, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 630, 110));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 630, 110));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setText("Código de factura");
@@ -908,7 +908,7 @@ public class JF_Ventas extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BtnAgregar1)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -962,11 +962,17 @@ public class JF_Ventas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -1419,94 +1425,94 @@ public class JF_Ventas extends javax.swing.JFrame {
 
     private void BtnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregar1ActionPerformed
 
-        //        cont = 0;
-        //
-        //        if (txtCedula.getText().equals("")) {
-            //            lblRequeridoCedula.setVisible(true);
-            //            cont++;
-            //        } else {
-            //            lblRequeridoCedula.setVisible(false);
-            //
-            //        }
-        //        if (txtCodigo.getText().equals("")) {
-            //            lblRequeridoCodigo.setVisible(true);
-            //            cont++;
-            //        } else {
-            //            lblRequeridoCodigo.setVisible(false);
-            //
-            //        }
-        //
-        //        if (txtCantidad.getText().equals("")) {
-            //            lblRequerdioCantidad.setVisible(true);
-            //            cont++;
-            //        } else {
-            //            lblRequerdioCantidad.setVisible(false);
-            //
-            //        }
-        //
-        //        if (cont == 0) {
-            //
-            //            int Stock = Integer.parseInt(txtStock.getText());
-            //            int Cantidad = Integer.parseInt(txtCantidad.getText());
-            //            int NuevoStock;
-            //
-            //            NuevoStock = (Stock - Cantidad);
-            //
-            //            if (Stock == 0) {
-                //                JOptionPane.showMessageDialog(this, "No hay Stock");
-                //                txtCantidad.setText("");
-                //
-                //            } else if (Cantidad <= Stock) {
-                //
-                //                try {
-                    //                    datosP cc = new datosP();
-                    //                    Connection cn = cc.conexion();
-                    //
-                    //                    PreparedStatement pst = cn.prepareStatement("INSERT INTO orden(Cantidad,"
-                        //                        + "Fk_Producto,Fk_Cliente, FK_Estado) VALUES (?,?,?,'3')");
-                    //
-                    //                    pst.setString(1, txtCantidad.getText());
-                    //                    pst.setString(2, txtCodigo.getText());
-                    //                    pst.setString(3, txtCedula.getText());
-                    //
-                    //                    pst.executeUpdate();
-                    //
-                    //                } catch (Exception e) {
-                    //                    System.out.print(e);
-                    //                }
-                //
-                //                try {
-                    //                    PreparedStatement pst = cn.prepareStatement("UPDATE producto SET Cantidad=" + NuevoStock + " where Id_Producto = " + txtCodigo.getText() + "");
-                    //                    pst.executeUpdate();
-                    //
-                    //                } catch (Exception e) {
-                    //                    System.out.print(e.getMessage());
-                    //                }
-                //
-                //                txtCantidad.setText("");
-                //                txtCodigo.setText("");
-                //                txtnombre.setText("");
-                //
-                //                txtSubTotal.setText("");
-                //                txtImpuesto.setText("");
-                //                txtDescuento.setText("");
-                //                txtTotalPagar.setText("");
-                //                txtStock.setText("");
-                //
-                //                mostrarProductosSeleccionados("");
-                //
-                //                mostrardatoSubtotal("");
-                //
-                //                mostrarBusquedaProducto("");
-                //
-                //            } else if (Cantidad > Stock) {
-                //
-                //                JOptionPane.showMessageDialog(this, "Superas el Stock");
-                //                txtCantidad.setText("");
-                //
-                //            }
-            //
-            //        }
+                cont = 0;
+        
+                if (txtCedula.getText().equals("")) {
+                        lblRequeridoCedula.setVisible(true);
+                        cont++;
+                    } else {
+                        lblRequeridoCedula.setVisible(false);
+            
+                    }
+                if (txtCodigo.getText().equals("")) {
+                        lblRequeridoCodigo.setVisible(true);
+                        cont++;
+                    } else {
+                        lblRequeridoCodigo.setVisible(false);
+            
+                    }
+        
+                if (txtCantidad.getText().equals("")) {
+                        lblRequerdioCantidad.setVisible(true);
+                        cont++;
+                    } else {
+                        lblRequerdioCantidad.setVisible(false);
+            
+                    }
+        
+                if (cont == 0) {
+            
+                        int Stock = Integer.parseInt(txtStock.getText());
+                        int Cantidad = Integer.parseInt(txtCantidad.getText());
+                        int NuevoStock;
+            
+                        NuevoStock = (Stock - Cantidad);
+            
+                        if (Stock == 0) {
+                                JOptionPane.showMessageDialog(this, "No hay Stock");
+                                txtCantidad.setText("");
+                
+                            } else if (Cantidad <= Stock) {
+                
+                                try {
+                                        datosP cc = new datosP();
+                                        Connection cn = cc.conexion();
+                    
+                                        PreparedStatement pst = cn.prepareStatement("INSERT INTO orden(Cantidad,"
+                                                + "Fk_Producto,Fk_Cliente, FK_Estado) VALUES (?,?,?,'3')");
+                    
+                                        pst.setString(1, txtCantidad.getText());
+                                        pst.setString(2, txtCodigo.getText());
+                                        pst.setString(3, txtCedula.getText());
+                    
+                                        pst.executeUpdate();
+                    
+                                    } catch (Exception e) {
+                                        System.out.print(e);
+                                    }
+                
+                                try {
+                                        PreparedStatement pst = cn.prepareStatement("UPDATE producto SET Cantidad=" + NuevoStock + " where Id_Producto = " + txtCodigo.getText() + "");
+                                        pst.executeUpdate();
+                    
+                                    } catch (Exception e) {
+                                        System.out.print(e.getMessage());
+                                    }
+                
+                                txtCantidad.setText("");
+                                txtCodigo.setText("");
+                                txtnombre.setText("");
+                
+                                txtSubTotal.setText("");
+                                txtImpuesto.setText("");
+                                txtDescuento.setText("");
+                                txtTotalPagar.setText("");
+                                txtStock.setText("");
+                
+                                mostrarProductosSeleccionados("");
+                
+                                mostrardatoSubtotal("");
+                
+                                mostrarBusquedaProducto("");
+                
+                            } else if (Cantidad > Stock) {
+                
+                                JOptionPane.showMessageDialog(this, "Superas el Stock");
+                                txtCantidad.setText("");
+                
+                            }
+            
+                    }
     }//GEN-LAST:event_BtnAgregar1ActionPerformed
 
     /**
@@ -1626,6 +1632,6 @@ public class JF_Ventas extends javax.swing.JFrame {
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
   
-   /* datosP cc = new datosP();
-            Connection cn = cc.conexion();*/
+    datosP cc = new datosP();
+            Connection cn = cc.conexion();
 }

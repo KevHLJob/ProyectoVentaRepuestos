@@ -7,10 +7,12 @@ package Menu;
 
 import Cliente.JF_AgregarCliente;
 import Factura.JF_FiltrarFacturas;
+import Prueba.VentasPrueba;
 import Inventario.JF_Inventario;
 import Proforma.JF_Proforma;
 import Usuario.JF_AgregarUsuario;
 import Login.JF_Login;
+import Prueba.VentasPrueba;
 
 
 /**
@@ -320,13 +322,13 @@ public class JF_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInventarioMouseClicked
 
     private void btnVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVentasMouseClicked
-        //      //  JF_Ventas m = new JF_Ventas();
-        //        m.setVisible(true);
-        //        dispose();
-        //
-        //        m.txtUsuarioVentas.setText(txtUsuarioIniciado.getText());
-        //
-        //        m.mostrardatosProducto("");
+               VentasPrueba m = new VentasPrueba();
+                m.setVisible(true);
+                dispose();
+        
+               m.txtUsuarioVentas.setText(txtUsuarioIniciado.getText());
+        
+                m.mostrardatosProducto("");
 
     }//GEN-LAST:event_btnVentasMouseClicked
 
