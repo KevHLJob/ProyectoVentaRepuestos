@@ -20,6 +20,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -1016,6 +1018,67 @@ public class VentasPrueba extends javax.swing.JFrame {
         txtSubTotal.setText(String.valueOf(tbSubtotal.getValueAt(seleccionar, 0)));
     }//GEN-LAST:event_tbSubtotalMouseClicked
 
+    
+    public void Montos() {
+
+        int Subtotal = Integer.parseInt(txtSubTotal.getText());
+        Double Descuento = 0.0;
+        Double Impuesto;
+        Double TotalPagar;
+
+        if (Subtotal < 250000) {
+
+            Descuento = 0.0;
+
+            Impuesto = (Subtotal * 0.13);
+
+            TotalPagar = (Subtotal + Impuesto) - Descuento;
+
+            txtImpuesto.setText("" + Impuesto);
+            txtDescuento.setText("" + Descuento);
+            txtTotalPagar.setText("" + TotalPagar);
+
+        } else if (Subtotal >= 250000 && Subtotal < 500000) {
+
+            Impuesto = (Subtotal * 0.13);
+
+            Descuento = ((Subtotal + Impuesto) * 0.10);
+
+            TotalPagar = (Subtotal + Impuesto) - Descuento;
+
+            txtImpuesto.setText("" + Impuesto);
+            txtDescuento.setText("" + Descuento);
+            txtTotalPagar.setText("" + TotalPagar);
+
+        } else if (Subtotal >= 500000 && Subtotal < 1000000) {
+
+            Impuesto = (Subtotal * 0.13);
+
+            Descuento = ((Subtotal + Impuesto) * 0.15);
+
+            TotalPagar = (Subtotal + Impuesto) - Descuento;
+
+            txtImpuesto.setText("" + Impuesto);
+            txtDescuento.setText("" + Descuento);
+            txtTotalPagar.setText("" + TotalPagar);
+
+        } else if (Subtotal >= 1000000) {
+
+            Impuesto = (Subtotal * 0.13);
+
+            Descuento = ((Subtotal + Impuesto) * 0.20);
+
+            TotalPagar = (Subtotal + Impuesto) - Descuento;
+
+            txtImpuesto.setText("" + Impuesto);
+            txtDescuento.setText("" + Descuento);
+            txtTotalPagar.setText("" + TotalPagar);
+
+        }
+
+    }
+
+    
     private void VerSubtotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerSubtotalActionPerformed
 
         cont = 0;
@@ -1032,133 +1095,133 @@ public class VentasPrueba extends javax.swing.JFrame {
             numero = (int) (Math.random() * 1000000000) + 1;
             txtCodigoBarras.setText("" + numero);
 
-//            Montos();
-//
-//            btnAplicarDescuento.setEnabled(true);
-//
-//            Calendar c2 = new GregorianCalendar();
-//            txtFechaFact.setCalendar(c2);
-//
-//            Calendar fa = new GregorianCalendar();
-//            txtHora.setCalendar(fa);
+            Montos();
+
+           // btnAplicarDescuento.setEnabled(true);
+
+            Calendar c2 = new GregorianCalendar();
+            txtFechaFact.setCalendar(c2);
+
+            Calendar fa = new GregorianCalendar();
+            txtHora.setCalendar(fa);
         }
 
     }//GEN-LAST:event_VerSubtotalActionPerformed
 
     private void BtnProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProfActionPerformed
-//
-//        cont = 0;
-//
-//        if (txtTotalPagar.getText().equals("")) {
-//            lblRequeridoTotal.setVisible(true);
-//            cont++;
-//        } else {
-//            lblRequeridoTotal.setVisible(false);
-//
-//        }
-//
-//        if (cont == 0) {
-//            try {
-//                datosP cc = new datosP();
-//                Connection cn = cc.conexion();
-//                processCalendar();
-//                processHora();
-//
-//                PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(Id_Factura, Fecha, Subtotal, Impuesto, "
-//                    + "Descuento, TotalPagar, Fk_Usuario, Hora) VALUES (?,?,?,?,?,?,?,?)");
-//
-//                pst.setString(1, txtCodigoBarras.getText());
-//                pst.setString(2, date);
-//                pst.setString(3, txtSubTotal.getText());
-//                pst.setString(4, txtImpuesto.getText());
-//                pst.setString(5, txtDescuento.getText());
-//                pst.setString(6, txtTotalPagar.getText());
-//                pst.setString(7, txtUsuarioVentas.getText());
-//                pst.setString(8, Hora);
-//
-//                pst.executeUpdate();
-//
-//            } catch (Exception e) {
-//                System.out.print(e);
-//            }
-//
-//            try {
-//                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado = 2 where Fk_Estado = 3");
-//                pst.executeUpdate();
-//
-//            } catch (Exception e) {
-//                System.out.print(e.getMessage());
-//            }
-//
-//            txtSubTotal.setText("");
-//            txtImpuesto.setText("");
-//            txtDescuento.setText("");
-//            txtTotalPagar.setText("");
-//            txtCodigoBarras.setText("");
-//
-//            txtFechaFact.setCalendar(null);
-//            txtHora.setCalendar(null);
-//
-//            DefaultTableModel tb = (DefaultTableModel) tbProductosSelec.getModel();
-//            int a = tbProductosSelec.getRowCount() - 1;
-//            for (int i = a; i >= 0; i--) {
-//                tb.removeRow(tb.getRowCount() - 1);
-//            }
-//
-//            DefaultTableModel tb2 = (DefaultTableModel) tbSubtotal.getModel();
-//            int b = tbSubtotal.getRowCount() - 1;
-//            for (int i = b; i >= 0; i--) {
-//                tb2.removeRow(tb2.getRowCount() - 1);
-//            }
-//        }
+
+        cont = 0;
+
+        if (txtTotalPagar.getText().equals("")) {
+            lblRequeridoTotal.setVisible(true);
+            cont++;
+        } else {
+            lblRequeridoTotal.setVisible(false);
+
+        }
+
+        if (cont == 0) {
+            try {
+                datosP cc = new datosP();
+                Connection cn = cc.conexion();
+                processCalendar();
+                processHora();
+
+                PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(Id_Factura, Fecha, Subtotal, Impuesto, "
+                    + "Descuento, TotalPagar, Fk_Usuario, Hora) VALUES (?,?,?,?,?,?,?,?)");
+
+                pst.setString(1, txtCodigoBarras.getText());
+                pst.setString(2, date);
+                pst.setString(3, txtSubTotal.getText());
+                pst.setString(4, txtImpuesto.getText());
+                pst.setString(5, txtDescuento.getText());
+                pst.setString(6, txtTotalPagar.getText());
+                pst.setString(7, txtUsuarioVentas.getText());
+                pst.setString(8, Hora);
+
+                pst.executeUpdate();
+
+            } catch (Exception e) {
+                System.out.print(e);
+            }
+
+            try {
+                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado = 2 where Fk_Estado = 3");
+                pst.executeUpdate();
+
+            } catch (Exception e) {
+                System.out.print(e.getMessage());
+            }
+
+            txtSubTotal.setText("");
+            txtImpuesto.setText("");
+            txtDescuento.setText("");
+            txtTotalPagar.setText("");
+            txtCodigoBarras.setText("");
+
+            txtFechaFact.setCalendar(null);
+            txtHora.setCalendar(null);
+
+            DefaultTableModel tb = (DefaultTableModel) tbProductosSelec.getModel();
+            int a = tbProductosSelec.getRowCount() - 1;
+            for (int i = a; i >= 0; i--) {
+                tb.removeRow(tb.getRowCount() - 1);
+            }
+
+            DefaultTableModel tb2 = (DefaultTableModel) tbSubtotal.getModel();
+            int b = tbSubtotal.getRowCount() - 1;
+            for (int i = b; i >= 0; i--) {
+                tb2.removeRow(tb2.getRowCount() - 1);
+            }
+        }
     }//GEN-LAST:event_BtnProfActionPerformed
 
     private void BtnPagar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPagar1ActionPerformed
 
-//        cont = 0;
-//
-//        if (txtTotalPagar.getText().equals("")) {
-//            lblRequeridoTotal.setVisible(true);
-//            cont++;
-//        } else {
-//            lblRequeridoTotal.setVisible(false);
-//
-//        }
-//
-//        if (cont == 0) {
-//
-//            try {
-//                datosP cc = new datosP();
-//                Connection cn = cc.conexion();
-//                processCalendar();
-//                processHora();
-//
-//                PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(Id_Factura, Fecha, Subtotal, Impuesto, "
-//                    + "Descuento, TotalPagar, Fk_Usuario, Hora) VALUES (?,?,?,?,?,?,?,?)");
-//
-//                pst.setString(1, txtCodigoBarras.getText());
-//                pst.setString(2, date);
-//                pst.setString(3, txtSubTotal.getText());
-//                pst.setString(4, txtImpuesto.getText());
-//                pst.setString(5, txtDescuento.getText());
-//                pst.setString(6, txtTotalPagar.getText());
-//                pst.setString(7, txtUsuarioVentas.getText());
-//                pst.setString(8, Hora);
-//
-//                pst.executeUpdate();
-//
-//            } catch (Exception e) {
-//                System.out.print(e);
-//            }
-//
-//            try {
-//                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado = 1 where Fk_Estado = 3");
-//                pst.executeUpdate();
-//
-//            } catch (Exception e) {
-//                System.out.print(e.getMessage());
-//            }
-//
+        cont = 0;
+
+        if (txtTotalPagar.getText().equals("")) {
+            lblRequeridoTotal.setVisible(true);
+            cont++;
+        } else {
+            lblRequeridoTotal.setVisible(false);
+
+        }
+
+        if (cont == 0) {
+
+            try {
+                datosP cc = new datosP();
+                Connection cn = cc.conexion();
+                processCalendar();
+                processHora();
+
+                PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(Id_Factura, Fecha, Subtotal, Impuesto, "
+                    + "Descuento, TotalPagar, Fk_Usuario, Hora) VALUES (?,?,?,?,?,?,?,?)");
+
+                pst.setString(1, txtCodigoBarras.getText());
+                pst.setString(2, date);
+                pst.setString(3, txtSubTotal.getText());
+                pst.setString(4, txtImpuesto.getText());
+                pst.setString(5, txtDescuento.getText());
+                pst.setString(6, txtTotalPagar.getText());
+                pst.setString(7, txtUsuarioVentas.getText());
+                pst.setString(8, Hora);
+
+                pst.executeUpdate();
+
+            } catch (Exception e) {
+                System.out.print(e);
+            }
+
+            try {
+                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado = 1 where Fk_Estado = 3");
+                pst.executeUpdate();
+
+            } catch (Exception e) {
+                System.out.print(e.getMessage());
+            }
+
 //            JF_ImprimirFactura m = new JF_ImprimirFactura();
 //            m.setVisible(true);
 //            dispose();
@@ -1168,10 +1231,10 @@ public class VentasPrueba extends javax.swing.JFrame {
 //            m.mostrar1();
 //            m.mostrar2();
 //            m.mostrar3();
-//
-//            //m.txtUsuarioVentas.setText(txtUsuarioVentas.getText());
-//
-//        }
+
+            //m.txtUsuarioVentas.setText(txtUsuarioVentas.getText());
+
+        }
     }//GEN-LAST:event_BtnPagar1ActionPerformed
 
     private void txtUsuarioVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentasActionPerformed
