@@ -6,7 +6,7 @@
 package Producto;
 
 import Inventario.*;
-import Conexion.Conexion_k;
+import Conexion.datosP;
 import Menu.JF_Menu;
 
 import java.sql.Connection;
@@ -41,6 +41,9 @@ public class JF_Provedor extends javax.swing.JFrame {
         txtUsuarioVentas3 = new javax.swing.JTextField();
         Btnmenu = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -70,7 +73,7 @@ public class JF_Provedor extends javax.swing.JFrame {
         jLabel13.setText("Producto");
         Btnproducto.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 80, 30));
 
-        jPanel2.add(Btnproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 409, 188, -1));
+        jPanel2.add(Btnproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 188, -1));
 
         txtUsuarioVentas3.setEditable(false);
         txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
@@ -100,6 +103,15 @@ public class JF_Provedor extends javax.swing.JFrame {
         Btnmenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 110, 30));
 
         jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 361, 184, -1));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/oficina-en-casa.png"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 90, 30));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 90, 30));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/producto.png"))); // NOI18N
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, 90, 60));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 890));
 
@@ -188,7 +200,7 @@ public class JF_Provedor extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnproductoMouseClicked
 
     private void btnagregarproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarproveedorActionPerformed
-        Conexion_k con= new Conexion_k();
+        datosP con= new datosP();
         Connection c=con.conexion();
         
         try{
@@ -261,6 +273,9 @@ public class JF_Provedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

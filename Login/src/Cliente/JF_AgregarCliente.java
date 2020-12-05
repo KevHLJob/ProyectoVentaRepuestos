@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Cliente;
-import Conexion.Conexion_k;
+import Conexion.datosP;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 public class JF_AgregarCliente extends javax.swing.JFrame {
 PreparedStatement pst;
 ResultSet rs;
-Conexion_k con= new Conexion_k();
+datosP con= new datosP();
       Connection c=con.conexion();
     /**
      * Creates new form cliente
@@ -77,46 +77,46 @@ Conexion_k con= new Conexion_k();
         jButton1.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton1.setText("INICIO");
         jButton1.setBorder(null);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 129, 166, 37));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 166, 37));
 
         jButton2.setBackground(new java.awt.Color(181, 62, 12));
         jButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton2.setText("FACTURACION");
         jButton2.setBorder(null);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 190, 166, 39));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 166, 39));
 
         jButton3.setBackground(new java.awt.Color(181, 62, 12));
         jButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton3.setText("INVENTARIOS");
         jButton3.setBorder(null);
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 264, 166, 34));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 166, 34));
 
         jButton4.setBackground(new java.awt.Color(181, 62, 12));
         jButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton4.setText("HISTORIAL DE VENTAS");
         jButton4.setBorder(null);
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 335, 166, 35));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 166, 35));
 
         jButton5.setBackground(new java.awt.Color(181, 62, 12));
         jButton5.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
         jButton5.setText("SALIR");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 441, 166, 34));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 166, 34));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventory.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 256, 31, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 31, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/factura.png"))); // NOI18N
         jLabel2.setText("jLabel1");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 325, 42, 54));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 42, 54));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprar.png"))); // NOI18N
         jLabel3.setText("jLabel1");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 190, 42, 48));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 42, 48));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/oficina-en-casa.png"))); // NOI18N
         jLabel4.setText("jLabel1");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 129, 42, 43));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 42, 43));
 
         txtUsuarioVentas2.setEditable(false);
         txtUsuarioVentas2.setBackground(new java.awt.Color(245, 245, 245));
@@ -135,16 +135,17 @@ Conexion_k con= new Conexion_k();
         jPanel2.setBackground(new java.awt.Color(255, 102, 102));
 
         jLabel5.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Agregar Cliente");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(681, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(471, 471, 471)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(495, 495, 495))
+                .addContainerGap(705, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,6 +158,7 @@ Conexion_k con= new Conexion_k();
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 0, 1400, 50));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(null);
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setLayout(null);
@@ -231,7 +233,7 @@ Conexion_k con= new Conexion_k();
 
         jLabel11.setText("ID");
         jPanel3.add(jLabel11);
-        jLabel11.setBounds(530, 270, 12, 16);
+        jLabel11.setBounds(530, 270, 30, 14);
         jPanel3.add(txtbusqueda);
         txtbusqueda.setBounds(580, 260, 130, 30);
 
@@ -244,22 +246,8 @@ Conexion_k con= new Conexion_k();
         jPanel3.add(btnbuscar);
         btnbuscar.setBounds(580, 210, 125, 36);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(353, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(247, 247, 247))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(241, 241, 241)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
-        );
+        jPanel4.add(jPanel3);
+        jPanel3.setBounds(160, 230, 760, 300);
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 1360, 840));
 

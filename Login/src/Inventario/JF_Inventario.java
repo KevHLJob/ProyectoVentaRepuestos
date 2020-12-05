@@ -5,7 +5,7 @@
  */
 package Inventario;
 
-import Conexion.Conexion_k;
+import Conexion.datosP;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
@@ -51,6 +51,8 @@ TableRowSorter trsfiltro;
         Btnmenu = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         txtUsuarioVentas3 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -82,7 +84,7 @@ TableRowSorter trsfiltro;
         jLabel16.setText("Producto");
         BtnProducto.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
 
-        jPanel2.add(BtnProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 137, -1));
+        jPanel2.add(BtnProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 137, -1));
 
         Btnmenu.setBackground(new java.awt.Color(153, 153, 153));
         Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,6 +114,15 @@ TableRowSorter trsfiltro;
             }
         });
         jPanel2.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 120, 40));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/oficina-en-casa.png"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 60, 40));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/producto.png"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 80, 60));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
@@ -240,7 +251,7 @@ TableRowSorter trsfiltro;
      * @param args the command line arguments
      */
           private void CargarInventario(){
-              Conexion.Conexion_k con = new Conexion_k();
+              datosP con = new datosP();
               PreparedStatement ps;
               ResultSet rs;
 
@@ -325,6 +336,8 @@ TableRowSorter trsfiltro;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
