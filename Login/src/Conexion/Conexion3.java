@@ -19,7 +19,7 @@ public class Conexion3 {
     static String bd ="bd_repuestos";
     static String login ="root";
     static String password ="";
-    static String url ="jdbc:mysql://localhost/"+bd;
+    static String url ="jdbc:mysql://localhost:3307/"+bd;
     static Connection conn=null;
 
     public static Connection getConn() {

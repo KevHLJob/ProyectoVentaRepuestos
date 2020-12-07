@@ -154,10 +154,11 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         txtUsuarioVentas3 = new javax.swing.JTextField();
-        Btnmenu = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
+        btnMenu = new javax.swing.JButton();
+        btnFacturación = new javax.swing.JButton();
+        btnProformas = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbCompra1 = new javax.swing.JTable();
@@ -177,9 +178,11 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tbProducto = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
@@ -195,35 +198,32 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
                 txtUsuarioVentas3ActionPerformed(evt);
             }
         });
-        jPanel2.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 200, -1));
+        jPanel2.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 200, 40));
 
-        Btnmenu.setBackground(new java.awt.Color(153, 153, 153));
-        Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnmenuMouseClicked(evt);
-            }
-        });
-        Btnmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
+        btnMenu.setText("jButton1");
+        jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 170, 90));
 
-        jLabel18.setBackground(new java.awt.Color(67, 81, 141));
-        jLabel18.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("Menu");
-        Btnmenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 110, 30));
+        btnFacturación.setBackground(new java.awt.Color(0, 0, 0));
+        btnFacturación.setForeground(new java.awt.Color(255, 255, 255));
+        btnFacturación.setText("FACTURACIÓN");
+        jPanel2.add(btnFacturación, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 315, 150, 40));
 
-        jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 184, -1));
+        btnProformas.setBackground(new java.awt.Color(0, 0, 0));
+        btnProformas.setForeground(new java.awt.Color(255, 255, 255));
+        btnProformas.setText("PROFORMAS");
+        jPanel2.add(btnProformas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 150, 40));
+
+        btnSalir.setBackground(new java.awt.Color(0, 0, 0));
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("SALIR");
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 150, 40));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 250, 890));
 
-        jPanel3.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(255, 153, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel4.setText("Factura");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 0, 1370, 50));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 1370, 80));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -243,7 +243,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbCompra1);
 
-        jPanel6.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 308, 760, 51));
+        jPanel6.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 308, 860, 51));
 
         tbCliente1.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         tbCliente1.setModel(new javax.swing.table.DefaultTableModel(
@@ -259,13 +259,13 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tbCliente1);
 
-        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 760, 60));
+        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 860, 60));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("--------Ultima linea---------");
         jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, 197, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 180, 147));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -332,9 +332,13 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(tbProducto);
 
-        jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 399, 760, 110));
+        jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 399, 860, 110));
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 960, 640));
+
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel4.setText("Factura");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -357,12 +361,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
-
-    private void BtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnmenuMouseClicked
-        JF_Menu men=new JF_Menu();
-        men.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_BtnmenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -400,7 +398,10 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Btnmenu;
+    private javax.swing.JButton btnFacturación;
+    private javax.swing.JButton btnMenu;
+    private javax.swing.JButton btnProformas;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -409,7 +410,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
