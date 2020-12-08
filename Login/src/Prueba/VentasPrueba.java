@@ -8,6 +8,7 @@ package Prueba;
 import Cliente.JF_AgregarCliente;
 import Conexion.Conexion_k;
 import Conexion.datosP;
+import Factura.JF_ImprimirFactura;
 import Login.JF_Login;
 import Menu.JF_Menu;
 import MenuSimple.JF_MenuSimple;
@@ -136,7 +137,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         tbCliente.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT Nombre, PrimerApellido, SegundoApellido FROM registro_cliente WHERE Cédula = '" + txtCedula.getText() + "'";
+            sql = "SELECT Nombre, PrimerApellido, SegundoApellido FROM registro_cliente WHERE id_Cliente= '" + txtCedula.getText() + "'";
 
         }
         String[] datos = new String[3];
@@ -201,7 +202,6 @@ public class VentasPrueba extends javax.swing.JFrame {
         tbProductosSelec = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbProductoInventario = new javax.swing.JTable();
-        lblRequerdioCantidad = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         lblRequeridoCodigo = new javax.swing.JLabel();
@@ -223,8 +223,6 @@ public class VentasPrueba extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         BtnProf = new javax.swing.JButton();
         BtnPagar1 = new javax.swing.JButton();
-        txtCodigoBarras = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         BtnAgregar = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -234,10 +232,13 @@ public class VentasPrueba extends javax.swing.JFrame {
         txtStock = new javax.swing.JTextField();
         txtCantidad = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        lblRequerdioCantidad = new javax.swing.JLabel();
         VerSubtotal = new javax.swing.JButton();
         txtnombre = new javax.swing.JTextField();
         txtUsuarioVentas = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        txtCodigoBarras = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -408,22 +409,18 @@ public class VentasPrueba extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tbProductoInventario);
 
-        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 710, 500));
-
-        lblRequerdioCantidad.setForeground(new java.awt.Color(0, 102, 255));
-        lblRequerdioCantidad.setText("Requerido");
-        jPanel6.add(lblRequerdioCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 60, -1));
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 710, 470));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("Código");
-        jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, 70, -1));
+        jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 70, -1));
 
         txtCodigo.setEditable(false);
-        jPanel6.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 110, -1));
+        jPanel6.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 110, -1));
 
         lblRequeridoCodigo.setForeground(new java.awt.Color(0, 102, 255));
         lblRequeridoCodigo.setText("Requerido");
-        jPanel6.add(lblRequeridoCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 60, -1));
+        jPanel6.add(lblRequeridoCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 60, -1));
 
         jPanel7.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -497,7 +494,7 @@ public class VentasPrueba extends javax.swing.JFrame {
                 BtnProfActionPerformed(evt);
             }
         });
-        jPanel4.add(BtnProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 230, 40));
+        jPanel4.add(BtnProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 80, 40));
 
         BtnPagar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
         BtnPagar1.setText("PAGAR");
@@ -507,14 +504,7 @@ public class VentasPrueba extends javax.swing.JFrame {
                 BtnPagar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(BtnPagar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 178, 30));
-
-        txtCodigoBarras.setEditable(false);
-        jPanel4.add(txtCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 120, -1));
-
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel22.setText("Código de factura");
-        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 327, 120, 20));
+        jPanel4.add(BtnPagar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 60, 30));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -522,7 +512,7 @@ public class VentasPrueba extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 842, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -533,7 +523,7 @@ public class VentasPrueba extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 390, 690, 400));
+        jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 360, 410, 400));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -584,12 +574,12 @@ public class VentasPrueba extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tbSubtotal);
 
-        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 340, 150, 30));
+        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 420, 230, 80));
 
         jLabel14.setBackground(new java.awt.Color(0, 0, 0));
         jLabel14.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel14.setText("Monto general");
-        jPanel6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 340, -1, -1));
+        jPanel6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 380, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -600,6 +590,9 @@ public class VentasPrueba extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel16.setText("Cantidad");
+
+        lblRequerdioCantidad.setForeground(new java.awt.Color(0, 102, 255));
+        lblRequerdioCantidad.setText("Requerido");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -613,11 +606,17 @@ public class VentasPrueba extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblRequerdioCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblRequerdioCantidad)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtCantidad)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -626,8 +625,9 @@ public class VentasPrueba extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel6.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, 80));
+        jPanel6.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, 90));
 
+        VerSubtotal.setBackground(new java.awt.Color(0, 0, 0));
         VerSubtotal.setText("Ver total");
         VerSubtotal.setContentAreaFilled(false);
         VerSubtotal.addActionListener(new java.awt.event.ActionListener() {
@@ -635,7 +635,7 @@ public class VentasPrueba extends javax.swing.JFrame {
                 VerSubtotalActionPerformed(evt);
             }
         });
-        jPanel6.add(VerSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 340, 130, 30));
+        jPanel6.add(VerSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 520, 130, 30));
 
         txtnombre.setText("BUSCAR PRODUCTO");
         txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -660,6 +660,13 @@ public class VentasPrueba extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jButton1.setText("jButton1");
         jPanel6.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 170, 50));
+
+        txtCodigoBarras.setEditable(false);
+        jPanel6.add(txtCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 600, 120, -1));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel22.setText("Código de factura");
+        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 640, 120, 20));
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 1520, 830));
 
@@ -861,17 +868,25 @@ public class VentasPrueba extends javax.swing.JFrame {
  datosP cc = new datosP();
             Connection cn = cc.conexion();
 
-                    PreparedStatement pst = cn.prepareStatement("INSERT INTO orden(Cantidad,"
-                        + "Fk_Producto,Fk_Cliente, FK_Estado) VALUES (?,?,?,'2')");
+//                    PreparedStatement pst = cn.prepareStatement("INSERT INTO orden(Cantidad,"
+//                        + "Fk_Producto,Fk_Cliente, FK_Estado) VALUES (?,?,?,'3')");
+
+
+                      PreparedStatement pst = cn.prepareStatement("INSERT INTO orden(Cantidad,Fk_Producto,Fk_Cliente, FK_Estado) VALUES (?,?,?,'3')");
+
+
 
                     pst.setString(1, txtCantidad.getText());
                     pst.setString(2, txtCodigo.getText());
                     pst.setString(3, txtCedula.getText());
 
                     pst.executeUpdate();
+                    
+                    JOptionPane.showMessageDialog(null,"Se agregó al carrito de compras");
 
                 } catch (Exception e) {
-                    System.out.print(e);
+                       JOptionPane.showMessageDialog(null,e);
+                   // System.out.print(e);
                 }
 
                 try {
@@ -1042,7 +1057,7 @@ public class VentasPrueba extends javax.swing.JFrame {
             }
 
             try {
-                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado = 2 where Fk_Estado = 3");
+                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado  = 3");
                 pst.executeUpdate();
 
             } catch (Exception e) {
@@ -1118,17 +1133,17 @@ public class VentasPrueba extends javax.swing.JFrame {
                 System.out.print(e.getMessage());
             }
 
-//            JF_ImprimirFactura m = new JF_ImprimirFactura();
-//            m.setVisible(true);
-//            dispose();
-//
-//            m.txtCodigoFac1.setText(txtCodigoBarras.getText());
-//
-//            m.mostrar1();
-//            m.mostrar2();
-//            m.mostrar3();
+            JF_ImprimirFactura m = new JF_ImprimirFactura();
+            m.setVisible(true);
+            dispose();
 
-            //m.txtUsuarioVentas.setText(txtUsuarioVentas.getText());
+            m.txtCodigoFac1.setText(txtCodigoBarras.getText());
+
+            m.mostrar1();
+            m.mostrar2();
+            m.mostrar3();
+
+            m.txtUsuarioVentas3.setText(txtUsuarioVentas.getText());
 
         }
     }//GEN-LAST:event_BtnPagar1ActionPerformed
