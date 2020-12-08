@@ -1057,7 +1057,7 @@ public class VentasPrueba extends javax.swing.JFrame {
             }
 
             try {
-                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado  = 3");
+                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado  = 1");
                 pst.executeUpdate();
 
             } catch (Exception e) {
