@@ -47,10 +47,10 @@ TableRowSorter trsfiltro;
         Btnmenu = new javax.swing.JPanel();
         txtUsuarioVentas3 = new javax.swing.JTextField();
         btnMenu = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnproveedor = new javax.swing.JButton();
+        btncliente = new javax.swing.JButton();
+        btnsalir = new javax.swing.JButton();
+        btnProductos = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -92,29 +92,26 @@ TableRowSorter trsfiltro;
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 150, 100));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("PROVEEDOR");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 160, 30));
+        btnproveedor.setBackground(new java.awt.Color(0, 0, 0));
+        btnproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnproveedor.setText("PROVEEDOR");
+        jPanel2.add(btnproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 160, 30));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("CLIENTE");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 160, 30));
+        btncliente.setBackground(new java.awt.Color(0, 0, 0));
+        btncliente.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btncliente.setText("CLIENTE");
+        jPanel2.add(btncliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 160, 30));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 0, 0));
-        jButton3.setText("SALIR");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 180, -1));
+        btnsalir.setBackground(new java.awt.Color(0, 0, 0));
+        btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnsalir.setForeground(new java.awt.Color(255, 0, 0));
+        btnsalir.setText("SALIR");
+        jPanel2.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 180, -1));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("PRODUCTOS");
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 160, 30));
+        btnProductos.setBackground(new java.awt.Color(0, 0, 0));
+        btnProductos.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnProductos.setText("PRODUCTOS");
+        jPanel2.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 160, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
@@ -325,10 +322,10 @@ TableRowSorter trsfiltro;
     private javax.swing.JPanel Btnmenu;
     private javax.swing.JTable Tbinventario;
     private javax.swing.JButton btnMenu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnProductos;
+    private javax.swing.JButton btncliente;
+    private javax.swing.JButton btnproveedor;
+    private javax.swing.JButton btnsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

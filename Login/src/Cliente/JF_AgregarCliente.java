@@ -36,9 +36,9 @@ datosP con= new datosP();
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnfactura = new javax.swing.JButton();
+        btninventario = new javax.swing.JButton();
+        btnventashistorial = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         txtUsuarioVentas2 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -80,26 +80,23 @@ datosP con= new datosP();
         jButton1.setBorder(null);
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 180, 80));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("FACTURACION");
-        jButton2.setBorder(null);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 140, 30));
+        btnfactura.setBackground(new java.awt.Color(0, 0, 0));
+        btnfactura.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnfactura.setText("FACTURACIÓN");
+        btnfactura.setBorder(null);
+        jPanel1.add(btnfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 140, 30));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("INVENTARIOS");
-        jButton3.setBorder(null);
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 140, 30));
+        btninventario.setBackground(new java.awt.Color(0, 0, 0));
+        btninventario.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btninventario.setText("INVENTARIOS");
+        btninventario.setBorder(null);
+        jPanel1.add(btninventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 140, 30));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("HISTORIAL DE VENTAS");
-        jButton4.setBorder(null);
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 140, 30));
+        btnventashistorial.setBackground(new java.awt.Color(0, 0, 0));
+        btnventashistorial.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnventashistorial.setText("HISTORIAL DE VENTAS");
+        btnventashistorial.setBorder(null);
+        jPanel1.add(btnventashistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 140, 30));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
@@ -155,6 +152,7 @@ datosP con= new datosP();
 
         jLabel11.setText("ID");
 
+        btnbuscar.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
         btnbuscar.setText("Buscar");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -518,10 +516,10 @@ datosP con= new datosP();
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneditar;
     private javax.swing.JButton btneliminar;
+    private javax.swing.JButton btnfactura;
+    private javax.swing.JButton btninventario;
+    private javax.swing.JButton btnventashistorial;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

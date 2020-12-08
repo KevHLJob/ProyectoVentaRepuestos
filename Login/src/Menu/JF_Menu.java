@@ -369,13 +369,13 @@ public class JF_Menu extends javax.swing.JFrame {
 
     private void btnReporteProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReporteProductosMouseClicked
 
-        //       JF_ReporteProducto m = new JF_ReporteProducto();
-        //        m.setVisible(true);
-        //        dispose();
-        //        m.txtUsuarioVentas.setText(txtUsuarioIniciado.getText());
-        //
-        //        m.mostrarProductos("");
-        //        m.mostrarProductosMonto("");
+//               JF_ReporteProducto m = new JF_ReporteProducto();
+//                m.setVisible(true);
+//                dispose();
+//                m.txtUsuarioVentas.setText(txtUsuarioIniciado.getText());
+//        
+//                m.mostrarProductos("");
+//                m.mostrarProductosMonto("");
     }//GEN-LAST:event_btnReporteProductosMouseClicked
 
     private void btnFiltroFacturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFiltroFacturasMouseClicked

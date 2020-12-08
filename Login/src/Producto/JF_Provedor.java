@@ -36,13 +36,12 @@ public class JF_Provedor extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        Btnproducto = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
         txtUsuarioVentas3 = new javax.swing.JTextField();
         Btnmenu = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnmenu = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btnproducto = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -57,22 +56,6 @@ public class JF_Provedor extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Btnproducto.setBackground(new java.awt.Color(0, 0, 0));
-        Btnproducto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnproductoMouseClicked(evt);
-            }
-        });
-        Btnproducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel13.setBackground(new java.awt.Color(67, 81, 141));
-        jLabel13.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Producto");
-        Btnproducto.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 80, 30));
-
-        jPanel2.add(Btnproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 190, -1));
 
         txtUsuarioVentas3.setEditable(false);
         txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
@@ -103,13 +86,28 @@ public class JF_Provedor extends javax.swing.JFrame {
         Btnmenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 190, 70));
 
         jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 184, 60));
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 90, 30));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("CLIENTE");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 190, 30));
+        btnmenu.setBackground(new java.awt.Color(0, 0, 0));
+        btnmenu.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnmenu.setText("Menu");
+        btnmenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 190, 30));
+
+        jLabel3.setText("jLabel3");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 30));
+
+        btnproducto.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnproducto.setText("Producto");
+        btnproducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnproductoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 190, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 890));
 
@@ -197,14 +195,6 @@ public class JF_Provedor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnproductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnproductoMouseClicked
-        JF_AgregarProducto p = new JF_AgregarProducto();
-        p.setVisible(true);
-        dispose();
-
-       // p.txtUsuarioProducto.setText(txtUsuarioProveedor.getText());
-    }//GEN-LAST:event_BtnproductoMouseClicked
-
     private void btnagregarproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarproveedorActionPerformed
         datosP con= new datosP();
         Connection c=con.conexion();
@@ -232,6 +222,18 @@ public class JF_Provedor extends javax.swing.JFrame {
         men.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtnmenuMouseClicked
+
+    private void btnproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproductoActionPerformed
+       JF_AgregarProducto pro=new JF_AgregarProducto();
+       pro.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btnproductoActionPerformed
+
+    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
+       JF_Menu m= new JF_Menu();
+       m.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btnmenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,14 +275,13 @@ public class JF_Provedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Btnmenu;
-    private javax.swing.JPanel Btnproducto;
     private javax.swing.JButton btnagregarproveedor;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnmenu;
+    private javax.swing.JButton btnproducto;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
