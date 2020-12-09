@@ -1151,6 +1151,19 @@ public class VentasPrueba extends javax.swing.JFrame {
             m.mostrar3();
 
             m.txtUsuarioVentas3.setText(txtUsuarioVentas.getText());
+            
+            // a la hora de pagar que se limpie el table...
+            DefaultTableModel tb = (DefaultTableModel) tbProductosSelec.getModel();
+            int a = tbProductosSelec.getRowCount() - 1;
+            for (int i = a; i >= 0; i--) {
+                tb.removeRow(tb.getRowCount() - 1);
+            }
+
+            DefaultTableModel tb2 = (DefaultTableModel) tbSubtotal.getModel();
+            int b = tbSubtotal.getRowCount() - 1;
+            for (int i = b; i >= 0; i--) {
+                tb2.removeRow(tb2.getRowCount() - 1);
+            }
 
         }
     }//GEN-LAST:event_BtnPagar1ActionPerformed
