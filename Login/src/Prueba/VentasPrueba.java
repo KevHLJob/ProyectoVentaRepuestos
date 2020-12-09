@@ -1107,8 +1107,13 @@ public class VentasPrueba extends javax.swing.JFrame {
                 processCalendar();
                 processHora();
 
+//                PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(Id_Factura, Fecha, Subtotal, Impuesto, "
+//                    + "Descuento, TotalPagar, Fk_Usuario, Hora) VALUES (?,?,?,?,?,?,?,?)");
+
                 PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(Id_Factura, Fecha, Subtotal, Impuesto, "
-                    + "Descuento, TotalPagar, Fk_Usuario, Hora) VALUES (?,?,?,?,?,?,?,?)");
+                    + "Descuento, TotalPagar, Fk_Usuario,Fk_orden) VALUES (?,?,?,?,?,?,?,1)");
+
+
 
                 pst.setString(1, txtCodigoBarras.getText());
                 pst.setString(2, date);
@@ -1116,13 +1121,15 @@ public class VentasPrueba extends javax.swing.JFrame {
                 pst.setString(4, txtImpuesto.getText());
                 pst.setString(5, txtDescuento.getText());
                 pst.setString(6, txtTotalPagar.getText());
-                pst.setString(7, txtUsuarioVentas.getText());
-                pst.setString(8, Hora);
+                pst.setString(7, txtCedula.getText());
+//cambie  txtusuarioventas por txtcedula
+                //pst.setString(8, Hora); elimine hora porque en la tabla de la bd no esta
 
                 pst.executeUpdate();
 
             } catch (Exception e) {
-                System.out.print(e);
+               // System.out.print(e);
+                JOptionPane.showMessageDialog(null, e);
             }
 
             try {
