@@ -37,13 +37,12 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         date2 = dateFormat.format(txtFecha2.getDate());
 
     }
- public void mostrardatos(String valor) {
+  public void mostrardatos(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
-        modelo.addColumn("Cantidad");
         modelo.addColumn("Cédula");
         modelo.addColumn("Correo");
         modelo.addColumn("Fecha");
@@ -56,22 +55,15 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         String sql = "";
         if (valor.equals("")) {
 
-//CONSULTA CON SOLO 1 INNER JOIN
-//   sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-//                    + " FROM factura a  INNER Join registro_cliente c on (c.Id_Cliente = a.Fk_Usuario)";
+            //Cambié Nombre_cliente y Cedula_cliente
+//            sql = "SELECT Id_Factura,Nombre,Cédula,FK_Producto,Cantidad,TotalPagar,Fecha "
+//                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)";
+            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)";
 
-//CONSULTA QUE FUNCIONA CON INNERJOIN
-   sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cantidad,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)";
-      
-   
-  
-   
-       
-        
         }
 
-        String[] datos = new String[11];
+        String[] datos = new String[10];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -87,7 +79,6 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
                 datos[9] = rs.getString(10);
-                datos[10] = rs.getString(11);
 
                 modelo.addRow(datos);
             }
@@ -102,10 +93,9 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         DefaultTableModel modelo = new DefaultTableModel();
 
-        modelo.addColumn("ID");
+       modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
-        modelo.addColumn("Cantidad");
         modelo.addColumn("Cédula");
         modelo.addColumn("Correo");
         modelo.addColumn("Fecha");
@@ -124,15 +114,16 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 //                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
 //                    + " AND Fecha='" + date + "'";
 
-           sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cantidad,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)" + " AND Fecha='" + date + "'";
+//           sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cantidad,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+//                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)" + " AND Fecha='" + date + "'";
                     
-                    
+           sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"+ " AND Fecha='" + date + "'";          
                  
 
         }
 
-        String[] datos = new String[11];
+        String[] datos = new String[10];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -148,7 +139,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
                 datos[9] = rs.getString(10);
-                datos[10] = rs.getString(11);
+                
 
                 modelo.addRow(datos);
             }
@@ -165,7 +156,6 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
-        modelo.addColumn("Cantidad");
         modelo.addColumn("Cédula");
         modelo.addColumn("Correo");
         modelo.addColumn("Fecha");
@@ -185,12 +175,13 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 //                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
 //                    + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
 
-            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cantidad,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"  + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
-
+//            sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cantidad,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+//                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"  + " AND Fecha between'" + date + "' and '" + date2 + "'  ";
+                 sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
+                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"+ " AND Fecha between'" + date + "' and '" + date2 + "'  ";  
         }
 
-        String[] datos = new String[11];
+        String[] datos = new String[10];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -205,7 +196,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
                 datos[9] = rs.getString(10);
-                datos[10] = rs.getString(11);
+               
 
                 modelo.addRow(datos);
             }
@@ -220,7 +211,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         DefaultTableModel modelo = new DefaultTableModel();
 
-        modelo.addColumn("ID");
+         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
         modelo.addColumn("Cédula");
@@ -230,15 +221,17 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         modelo.addColumn("Impuesto");
         modelo.addColumn("Descuento");
         modelo.addColumn("Total");
-
         tbDatos.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
 
             //Cambié Nombre_cliente y Cedula_cliente
             sql = "SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico,Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)" + " AND Cédula='" + txtCedula.getText() + "'";
+                      + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"+ " AND Cédula='" + txtCedula.getText() + "'";
 
+            
+            
+          
         }
 
         String[] datos = new String[10];

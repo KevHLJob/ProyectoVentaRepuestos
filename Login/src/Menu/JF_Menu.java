@@ -237,6 +237,11 @@ public class JF_Menu extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
         jLabel13.setText("Proformas");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
         btnProformas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 100, 30));
         btnProformas.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 120, 90));
 
@@ -395,6 +400,10 @@ public class JF_Menu extends javax.swing.JFrame {
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
        System.exit(0);
     }//GEN-LAST:event_btnSalirMouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel13MouseClicked
 
     /**
      * @param args the command line arguments

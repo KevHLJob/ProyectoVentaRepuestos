@@ -7,9 +7,11 @@ package Proforma;
 import Conexion.Conexion_k;
 import Conexion.datosP;
 import Factura.JF_ImprimirFactura;
+import Inventario.JF_Inventario;
 import Login.JF_Login;
 import Menu.JF_Menu;
 import MenuSimple.JF_MenuSimple;
+import Prueba.VentasPrueba;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -67,17 +69,17 @@ public class JF_Proforma extends javax.swing.JFrame {
         modelo.addColumn("Descuento");
         modelo.addColumn("Total");
         modelo.addColumn("Fecha");
-        modelo.addColumn("Hora");
+      
 
         tbDatos.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
 
-            sql = "SELECT DISTINCTROW Id_Factura,Nombre,PrimerApellido, Id_Cliente, Subtotal, Impuesto, Descuento, TotalPagar,Fecha, Hora FROM factura a INNER JOIN orden b on (b.Fk_Factura = a.Id_Factura) "
+            sql = "SELECT DISTINCTROW Id_Factura,Nombre,PrimerApellido, Id_Cliente, Subtotal, Impuesto, Descuento, TotalPagar,Fecha FROM factura a INNER JOIN orden b on (b.Fk_Factura = a.Id_Factura) "
                     + "INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) where c.Id_Cliente ='" + txtBuscar.getText() + "' and Fk_Estado = 2";
 
         }
-        String[] datos = new String[10];
+        String[] datos = new String[9];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -92,7 +94,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 datos[6] = rs.getString(7);
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
-                datos[9] = rs.getString(10);
+            
 
                 modelo.addRow(datos);
             }
@@ -204,6 +206,11 @@ public class JF_Proforma extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("FACTURACION");
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 170, 39));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
@@ -435,7 +442,7 @@ public class JF_Proforma extends javax.swing.JFrame {
     }//GEN-LAST:event_tbDatosMouseClicked
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-//        mostrardatos("");
+      mostrardatos("");
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
@@ -494,6 +501,12 @@ public class JF_Proforma extends javax.swing.JFrame {
     private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       VentasPrueba m = new VentasPrueba();
+        m.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
