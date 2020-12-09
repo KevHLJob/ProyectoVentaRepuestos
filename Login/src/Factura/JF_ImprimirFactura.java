@@ -24,7 +24,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     public JF_ImprimirFactura() {
         initComponents();
     }
-   public void mostrar1() {
+  public void mostrar1() {
 
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -32,9 +32,10 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         tbCliente1.setModel(modelo);
 
+        
         try {
-            ps = con.conectar().prepareStatement("SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Cédula,CorreoElectronico"
-                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) where Id_Factura= '" + txtCodigoFac1.getText() + "'");
+            ps = con.conectar().prepareStatement("SELECT DISTINCTROW id_Factura,Nombre,PrimerApellido,Id_Cliente,CorreoElectronico"
+                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) where Id_Factura= '" + txtCodigoFac1.getText() + "'");
             rs = ps.executeQuery();
 
             ResultSetMetaData rsmt = rs.getMetaData();
@@ -74,7 +75,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
 //                    + "FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)order by Id_Factura desc limit 1");
 
             ps = con.conectar().prepareStatement("SELECT DISTINCTROW Fecha,Subtotal,Impuesto,Descuento, TotalPagar"
-                    + " FROM factura a INNER JOIN orden b on (b.Id_Orden = a.Fk_orden) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente)"
+                    + " FROM factura a INNER JOIN orden b on (a.Id_Factura = b.Fk_Factura) INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) "
                     + "where Id_Factura = '" + txtCodigoFac1.getText() + "'");
             rs = ps.executeQuery();
 
@@ -82,7 +83,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
             int cantcolum = rsmt.getColumnCount();
 
             modelo2.addColumn("Fecha");
-        
+          
             modelo2.addColumn("Subtotal");
             modelo2.addColumn("Impuesto");
             modelo2.addColumn("Descuento");
