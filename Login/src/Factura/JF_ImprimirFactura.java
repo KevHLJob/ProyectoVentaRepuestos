@@ -13,7 +13,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import Prueba.VentasPrueba;
+import Proforma.JF_Proforma;
 /**
  *
  * @author justi
@@ -206,18 +207,33 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 170, 90));
 
         btnFacturación.setBackground(new java.awt.Color(0, 0, 0));
-        btnFacturación.setForeground(new java.awt.Color(255, 255, 255));
+        btnFacturación.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnFacturación.setText("FACTURACIÓN");
+        btnFacturación.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturaciónActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnFacturación, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 315, 150, 40));
 
         btnProformas.setBackground(new java.awt.Color(0, 0, 0));
-        btnProformas.setForeground(new java.awt.Color(255, 255, 255));
+        btnProformas.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnProformas.setText("PROFORMAS");
+        btnProformas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProformasActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnProformas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 150, 40));
 
         btnSalir.setBackground(new java.awt.Color(0, 0, 0));
-        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnSalir.setText("SALIR");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 150, 40));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 250, 890));
@@ -362,6 +378,22 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
+
+    private void btnFacturaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaciónActionPerformed
+       VentasPrueba v= new VentasPrueba();
+       v.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btnFacturaciónActionPerformed
+
+    private void btnProformasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProformasActionPerformed
+       JF_Proforma p= new JF_Proforma();
+       p.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btnProformasActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments

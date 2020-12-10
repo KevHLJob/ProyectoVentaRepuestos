@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import javax.swing.table.DefaultTableModel;
+import Prueba.VentasPrueba;
+import Proforma.JF_Proforma;
 
 /**
  *
@@ -314,23 +316,35 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         btnFacturacion.setBackground(new java.awt.Color(0, 0, 0));
         btnFacturacion.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnFacturacion.setForeground(new java.awt.Color(255, 255, 255));
         btnFacturacion.setText("FACTURACIÓN");
+        btnFacturacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturacionActionPerformed(evt);
+            }
+        });
 
         btnregistros.setBackground(new java.awt.Color(0, 0, 0));
         btnregistros.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnregistros.setForeground(new java.awt.Color(255, 255, 255));
         btnregistros.setText("REGISTROS");
 
         btnProformas.setBackground(new java.awt.Color(0, 0, 0));
         btnProformas.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnProformas.setForeground(new java.awt.Color(255, 255, 255));
         btnProformas.setText("PROFORMAS");
+        btnProformas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProformasActionPerformed(evt);
+            }
+        });
 
         btnsalir.setBackground(new java.awt.Color(0, 0, 0));
         btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnsalir.setForeground(new java.awt.Color(255, 102, 102));
         btnsalir.setText("SALIR");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -616,6 +630,22 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnFacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturacionActionPerformed
+        VentasPrueba v= new VentasPrueba();
+        v.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnFacturacionActionPerformed
+
+    private void btnProformasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProformasActionPerformed
+        JF_Proforma p= new JF_Proforma();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnProformasActionPerformed
+
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnsalirActionPerformed
 
     /**
      * @param args the command line arguments

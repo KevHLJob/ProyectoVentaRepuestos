@@ -203,7 +203,7 @@ public class JF_Proforma extends javax.swing.JFrame {
 
         btnfacturacion.setBackground(new java.awt.Color(0, 0, 0));
         btnfacturacion.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnfacturacion.setText("FACTURACION");
+        btnfacturacion.setText("FACTURACIÓN");
         btnfacturacion.setBorder(null);
         btnfacturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
