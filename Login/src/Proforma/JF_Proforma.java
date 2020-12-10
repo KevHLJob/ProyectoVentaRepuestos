@@ -43,7 +43,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 m.setVisible(true);
                 dispose();
 
-                m.txtUsuarioIniciado.setText(txtUsuarioVentas3.getText());
+               // m.txtUsuarioIniciado.setText(txtUsuarioVentas3.getText());
             } else if (cap.equals("2")) {
                 JF_MenuSimple m = new JF_MenuSimple();
                 m.setVisible(true);
@@ -166,6 +166,10 @@ public class JF_Proforma extends javax.swing.JFrame {
         btnhistorial = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
         txtUsuarioVentas3 = new javax.swing.JTextField();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbDatos = new javax.swing.JTable();
@@ -199,10 +203,16 @@ public class JF_Proforma extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jButton1.setText("INICIO");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 147, 170, 60));
 
         btnfacturacion.setBackground(new java.awt.Color(0, 0, 0));
         btnfacturacion.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnfacturacion.setForeground(new java.awt.Color(255, 255, 255));
         btnfacturacion.setText("FACTURACIÓN");
         btnfacturacion.setBorder(null);
         btnfacturacion.addActionListener(new java.awt.event.ActionListener() {
@@ -210,10 +220,11 @@ public class JF_Proforma extends javax.swing.JFrame {
                 btnfacturacionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnfacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 170, 39));
+        jPanel1.add(btnfacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 170, 30));
 
         btninventarios.setBackground(new java.awt.Color(0, 0, 0));
         btninventarios.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btninventarios.setForeground(new java.awt.Color(255, 255, 255));
         btninventarios.setText("INVENTARIOS");
         btninventarios.setBorder(null);
         btninventarios.addActionListener(new java.awt.event.ActionListener() {
@@ -221,10 +232,11 @@ public class JF_Proforma extends javax.swing.JFrame {
                 btninventariosActionPerformed(evt);
             }
         });
-        jPanel1.add(btninventarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 170, 34));
+        jPanel1.add(btninventarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 170, 30));
 
         btnhistorial.setBackground(new java.awt.Color(0, 0, 0));
         btnhistorial.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnhistorial.setForeground(new java.awt.Color(255, 255, 255));
         btnhistorial.setText("HISTORIAL");
         btnhistorial.setBorder(null);
         btnhistorial.addActionListener(new java.awt.event.ActionListener() {
@@ -232,7 +244,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 btnhistorialActionPerformed(evt);
             }
         });
-        jPanel1.add(btnhistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 170, 35));
+        jPanel1.add(btnhistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 170, 30));
 
         btnsalir.setBackground(new java.awt.Color(0, 0, 0));
         btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -243,7 +255,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 btnsalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 180, 34));
+        jPanel1.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 170, -1));
 
         txtUsuarioVentas3.setEditable(false);
         txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
@@ -256,6 +268,66 @@ public class JF_Proforma extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 63, 170, 40));
+
+        jPanel15.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 30));
+
+        jPanel16.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, 30));
+
+        jPanel18.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+
+        jPanel17.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
@@ -535,6 +607,12 @@ public class JF_Proforma extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnsalirActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       JF_Menu m= new JF_Menu();
+       m.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -599,6 +677,10 @@ public class JF_Proforma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;

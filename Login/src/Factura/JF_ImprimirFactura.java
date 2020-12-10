@@ -160,6 +160,9 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         btnFacturación = new javax.swing.JButton();
         btnProformas = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -204,37 +207,90 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
 
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         btnMenu.setText("jButton1");
+        btnMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMenuMouseClicked(evt);
+            }
+        });
         jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 170, 90));
 
         btnFacturación.setBackground(new java.awt.Color(0, 0, 0));
         btnFacturación.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnFacturación.setForeground(new java.awt.Color(255, 255, 255));
         btnFacturación.setText("FACTURACIÓN");
         btnFacturación.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFacturaciónActionPerformed(evt);
             }
         });
-        jPanel2.add(btnFacturación, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 315, 150, 40));
+        jPanel2.add(btnFacturación, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 150, 30));
 
         btnProformas.setBackground(new java.awt.Color(0, 0, 0));
         btnProformas.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnProformas.setForeground(new java.awt.Color(255, 255, 255));
         btnProformas.setText("PROFORMAS");
         btnProformas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProformasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnProformas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 150, 40));
+        jPanel2.add(btnProformas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 409, 150, -1));
 
         btnSalir.setBackground(new java.awt.Color(0, 0, 0));
         btnSalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 153, 153));
         btnSalir.setText("SALIR");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 150, 40));
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 150, 30));
+
+        jPanel12.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+
+        jPanel14.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, -1));
+
+        jPanel13.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 250, 890));
 
@@ -300,7 +356,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("Correo Electronico:autorepuestosk&j@repuestosk&j.com");
+        jLabel12.setText("Correo Electronico:autorepuestosk&j@gmail.com");
         jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 114, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(255, 255, 255));
@@ -395,6 +451,12 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
        System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseClicked
+         JF_Menu me = new JF_Menu();
+      me.setVisible(true);
+      dispose();
+    }//GEN-LAST:event_btnMenuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -447,6 +509,9 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;

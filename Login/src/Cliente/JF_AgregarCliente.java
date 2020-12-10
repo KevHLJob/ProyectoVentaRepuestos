@@ -5,6 +5,10 @@
  */
 package Cliente;
 import Conexion.datosP;
+import Factura.JF_ImprimirFactura;
+import Inventario.JF_Inventario;
+import Menu.JF_Menu;
+import Prueba.VentasPrueba;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
@@ -41,6 +45,10 @@ datosP con= new datosP();
         btnventashistorial = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         txtUsuarioVentas2 = new javax.swing.JTextField();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -78,31 +86,54 @@ datosP con= new datosP();
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jButton1.setText("INICIO");
         jButton1.setBorder(null);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 180, 80));
 
         btnfactura.setBackground(new java.awt.Color(0, 0, 0));
         btnfactura.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnfactura.setForeground(new java.awt.Color(255, 255, 255));
         btnfactura.setText("FACTURACIÓN");
         btnfactura.setBorder(null);
-        jPanel1.add(btnfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 140, 30));
+        btnfactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnfacturaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 180, 30));
 
         btninventario.setBackground(new java.awt.Color(0, 0, 0));
         btninventario.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btninventario.setForeground(new java.awt.Color(255, 255, 255));
         btninventario.setText("INVENTARIOS");
         btninventario.setBorder(null);
-        jPanel1.add(btninventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 140, 30));
+        btninventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninventarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btninventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 180, 30));
 
         btnventashistorial.setBackground(new java.awt.Color(0, 0, 0));
         btnventashistorial.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnventashistorial.setForeground(new java.awt.Color(255, 255, 255));
         btnventashistorial.setText("HISTORIAL DE VENTAS");
         btnventashistorial.setBorder(null);
-        jPanel1.add(btnventashistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 170, 30));
+        btnventashistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnventashistorialActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnventashistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 180, 30));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 102, 102));
         jButton5.setText("SALIR");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 150, 34));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 180, 30));
 
         txtUsuarioVentas2.setEditable(false);
         txtUsuarioVentas2.setBackground(new java.awt.Color(245, 245, 245));
@@ -115,6 +146,66 @@ datosP con= new datosP();
             }
         });
         jPanel1.add(txtUsuarioVentas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 170, 30));
+
+        jPanel12.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+
+        jPanel11.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+
+        jPanel10.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 30));
+
+        jPanel13.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 890));
 
@@ -461,6 +552,30 @@ datosP con= new datosP();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioVentas2ActionPerformed
 
+    private void btnfacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfacturaActionPerformed
+         VentasPrueba vp = new VentasPrueba();
+        vp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnfacturaActionPerformed
+
+    private void btninventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninventarioActionPerformed
+         JF_Inventario i = new JF_Inventario();
+        i.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btninventarioActionPerformed
+
+    private void btnventashistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnventashistorialActionPerformed
+         JF_ImprimirFactura im = new JF_ImprimirFactura();
+        im.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnventashistorialActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+      JF_Menu me = new JF_Menu();
+      me.setVisible(true);
+      dispose();
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -529,6 +644,10 @@ datosP con= new datosP();
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

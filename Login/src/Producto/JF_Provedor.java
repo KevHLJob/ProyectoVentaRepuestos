@@ -39,14 +39,14 @@ public class JF_Provedor extends javax.swing.JFrame {
         txtUsuarioVentas3 = new javax.swing.JTextField();
         Btnmenu = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
-        btnmenu = new javax.swing.JButton();
         btnproducto = new javax.swing.JButton();
+        jPanel15 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtnombreprovedor = new javax.swing.JTextField();
         btnagregarproveedor = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,22 +82,12 @@ public class JF_Provedor extends javax.swing.JFrame {
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jLabel18.setText("Menu");
-        Btnmenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 190, 70));
+        Btnmenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 170, 70));
 
         jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 184, 60));
 
-        btnmenu.setBackground(new java.awt.Color(0, 0, 0));
-        btnmenu.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnmenu.setText("Menu");
-        btnmenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmenuActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 190, 30));
-
         btnproducto.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnproducto.setText("Producto");
+        btnproducto.setText("PRODUCTO");
         btnproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnproductoActionPerformed(evt);
@@ -105,19 +95,43 @@ public class JF_Provedor extends javax.swing.JFrame {
         });
         jPanel2.add(btnproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 190, 30));
 
+        jPanel15.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 30));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 890));
 
         jPanel3.setBackground(new java.awt.Color(255, 153, 153));
+
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel2.setText("Agregar Proveedor");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1370, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(618, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(572, 572, 572))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel2)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 1370, 100));
@@ -172,10 +186,6 @@ public class JF_Provedor extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 910, 160));
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel2.setText("Agregar Proveedor");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 180, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -224,12 +234,6 @@ public class JF_Provedor extends javax.swing.JFrame {
        dispose();
     }//GEN-LAST:event_btnproductoActionPerformed
 
-    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
-       JF_Menu m= new JF_Menu();
-       m.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_btnmenuActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -271,12 +275,12 @@ public class JF_Provedor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Btnmenu;
     private javax.swing.JButton btnagregarproveedor;
-    private javax.swing.JButton btnmenu;
     private javax.swing.JButton btnproducto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

@@ -40,7 +40,6 @@ public class JF_Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txtUsuarioIniciado = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -83,18 +82,6 @@ public class JF_Menu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtUsuarioIniciado.setEditable(false);
-        txtUsuarioIniciado.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioIniciado.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioIniciado.setText("      ");
-        txtUsuarioIniciado.setBorder(null);
-        txtUsuarioIniciado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioIniciadoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtUsuarioIniciado, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 298, 120, 40));
-
         jPanel4.setBackground(new java.awt.Color(255, 102, 102));
 
         btnSalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -112,7 +99,8 @@ public class JF_Menu extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,14 +325,14 @@ public class JF_Menu extends javax.swing.JFrame {
         JF_AgregarUsuario m = new JF_AgregarUsuario();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVenta.setText(txtUsuarioIniciado.getText());
+       // m.txtUsuarioVenta.setText(txtUsuarioIniciado.getText());
     }//GEN-LAST:event_btnRUsuarioMouseClicked
 
     private void btnRClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRClienteMouseClicked
         JF_AgregarCliente m = new JF_AgregarCliente();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
+//        m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
     }//GEN-LAST:event_btnRClienteMouseClicked
 
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
@@ -359,7 +347,7 @@ public class JF_Menu extends javax.swing.JFrame {
                 m.setVisible(true);
                 dispose();
         
-               m.txtUsuarioVentas.setText(txtUsuarioIniciado.getText());
+           //    m.txtUsuarioVentas.setText(txtUsuarioIniciado.getText());
         
                 m.mostrardatosProducto("");
 
@@ -369,7 +357,7 @@ public class JF_Menu extends javax.swing.JFrame {
         JF_Proforma m = new JF_Proforma();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVentas3.setText(txtUsuarioIniciado.getText());
+      //  m.txtUsuarioVentas3.setText(txtUsuarioIniciado.getText());
     }//GEN-LAST:event_btnProformasMouseClicked
 
     private void btnproveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnproveedorMouseClicked
@@ -385,14 +373,10 @@ dispose();
         JF_FiltrarFacturas m = new JF_FiltrarFacturas();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
+        //m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
 
         m.mostrardatos("");
     }//GEN-LAST:event_btnFiltroFacturasMouseClicked
-
-    private void txtUsuarioIniciadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioIniciadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioIniciadoActionPerformed
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
        System.exit(0);
@@ -474,6 +458,5 @@ dispose();
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    public javax.swing.JTextField txtUsuarioIniciado;
     // End of variables declaration//GEN-END:variables
 }
