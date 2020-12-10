@@ -24,6 +24,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     Conexion.Conexion2 con = new Conexion.Conexion2();
     public JF_ImprimirFactura() {
         initComponents();
+        setLocationRelativeTo(null);
     }
   public void mostrar1() {
 
@@ -155,7 +156,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtUsuarioVentas3 = new javax.swing.JTextField();
         btnMenu = new javax.swing.JButton();
         btnFacturación = new javax.swing.JButton();
         btnProformas = new javax.swing.JButton();
@@ -193,18 +193,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtUsuarioVentas3.setEditable(false);
-        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioVentas3.setText("      ");
-        txtUsuarioVentas3.setBorder(null);
-        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioVentas3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 200, 40));
-
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         btnMenu.setText("jButton1");
         btnMenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -212,7 +200,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
                 btnMenuMouseClicked(evt);
             }
         });
-        jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 170, 90));
+        jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 170, 90));
 
         btnFacturación.setBackground(new java.awt.Color(0, 0, 0));
         btnFacturación.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -431,10 +419,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoFac1ActionPerformed
 
-    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
-
     private void btnFacturaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaciónActionPerformed
        VentasPrueba v= new VentasPrueba();
        v.setVisible(true);
@@ -523,7 +507,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     private javax.swing.JTable tbCompra1;
     private javax.swing.JTable tbProducto;
     public javax.swing.JTextField txtCodigoFac1;
-    public javax.swing.JTextField txtUsuarioVentas3;
     // End of variables declaration//GEN-END:variables
    datosP cc = new datosP();
     Connection cn = cc.conexion();

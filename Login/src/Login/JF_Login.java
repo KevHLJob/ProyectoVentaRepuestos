@@ -25,6 +25,7 @@ public class JF_Login extends javax.swing.JFrame {
     int timer;
     public JF_Login() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
     void acceder(String usuario, String clave) {

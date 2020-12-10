@@ -49,7 +49,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 m.setVisible(true);
                 dispose();
 
-                m.txtUsuarioIniciado.setText(txtUsuarioVentas3.getText());
+             //   m.txtUsuarioIniciado.setText(txtUsuarioVentas3.getText());
             }
         } catch (SQLException ex) {
             Logger.getLogger(JF_Login.class.getName()).log(Level.SEVERE, null, ex);
@@ -148,6 +148,7 @@ public class JF_Proforma extends javax.swing.JFrame {
 
     public JF_Proforma() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -165,7 +166,6 @@ public class JF_Proforma extends javax.swing.JFrame {
         btninventarios = new javax.swing.JButton();
         btnhistorial = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
-        txtUsuarioVentas3 = new javax.swing.JTextField();
         jPanel15 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
@@ -208,7 +208,7 @@ public class JF_Proforma extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 147, 170, 60));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 170, 60));
 
         btnfacturacion.setBackground(new java.awt.Color(0, 0, 0));
         btnfacturacion.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -256,18 +256,6 @@ public class JF_Proforma extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 170, -1));
-
-        txtUsuarioVentas3.setEditable(false);
-        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioVentas3.setText("      ");
-        txtUsuarioVentas3.setBorder(null);
-        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioVentas3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 63, 170, 40));
 
         jPanel15.setBackground(new java.awt.Color(255, 153, 153));
 
@@ -335,6 +323,9 @@ public class JF_Proforma extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tbDatos.setBackground(new java.awt.Color(0, 0, 0));
+        tbDatos.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        tbDatos.setForeground(new java.awt.Color(255, 255, 255));
         tbDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -347,6 +338,7 @@ public class JF_Proforma extends javax.swing.JFrame {
             }
         ));
         tbDatos.setGridColor(new java.awt.Color(255, 255, 255));
+        tbDatos.setSelectionBackground(new java.awt.Color(255, 153, 153));
         tbDatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbDatosMouseClicked(evt);
@@ -560,7 +552,7 @@ public class JF_Proforma extends javax.swing.JFrame {
             m.mostrar2();
             m.mostrar3();
 
-            m.txtUsuarioVentas3.setText(txtUsuarioVentas3.getText());
+            //m.txtUsuarioVentas3.setText(txtUsuarioVentas3.getText());
         }
     }//GEN-LAST:event_btnPagarActionPerformed
 
@@ -581,10 +573,6 @@ public class JF_Proforma extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_VerProductoActionPerformed
-
-    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
 
     private void btnfacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfacturacionActionPerformed
        VentasPrueba m = new VentasPrueba();
@@ -693,7 +681,6 @@ public class JF_Proforma extends javax.swing.JFrame {
     private javax.swing.JTable tbProductos;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtOrdenP;
-    public javax.swing.JTextField txtUsuarioVentas3;
     // End of variables declaration//GEN-END:variables
 
   datosP cc = new datosP();

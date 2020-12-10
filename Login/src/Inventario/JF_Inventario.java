@@ -29,7 +29,7 @@ TableRowSorter trsfiltro;
    
     public JF_Inventario() {
         initComponents();
-        
+        setLocationRelativeTo(null);
         CargarInventario();
         
         
@@ -47,7 +47,6 @@ TableRowSorter trsfiltro;
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Btnmenu = new javax.swing.JPanel();
-        txtUsuarioVentas3 = new javax.swing.JTextField();
         btnMenu = new javax.swing.JButton();
         btnproveedor = new javax.swing.JButton();
         btncliente = new javax.swing.JButton();
@@ -87,25 +86,13 @@ TableRowSorter trsfiltro;
         Btnmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 137, -1));
 
-        txtUsuarioVentas3.setEditable(false);
-        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioVentas3.setText("      ");
-        txtUsuarioVentas3.setBorder(null);
-        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioVentas3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 160, 30));
-
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuActionPerformed(evt);
             }
         });
-        jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 150, 100));
+        jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, 100));
 
         btnproveedor.setBackground(new java.awt.Color(0, 0, 0));
         btnproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -414,10 +401,6 @@ TableRowSorter trsfiltro;
         Tbinventario.setRowSorter(trsfiltro);
     }//GEN-LAST:event_txtNombreKeyTyped
 
-    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
-
     private void BtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnmenuMouseClicked
         JF_Menu men=new JF_Menu();
         men.setVisible(true);
@@ -546,10 +529,7 @@ TableRowSorter trsfiltro;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
@@ -559,6 +539,5 @@ TableRowSorter trsfiltro;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtNombre;
-    public javax.swing.JTextField txtUsuarioVentas3;
     // End of variables declaration//GEN-END:variables
 }

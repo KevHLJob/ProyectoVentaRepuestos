@@ -26,6 +26,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
     String date2;
     public JF_FiltrarFacturas() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
      public void processCalendar() {
@@ -268,7 +269,6 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtUsuarioVentas2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         btnFacturacion = new javax.swing.JButton();
         btnregistros = new javax.swing.JButton();
@@ -299,16 +299,6 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-
-        txtUsuarioVentas2.setEditable(false);
-        txtUsuarioVentas2.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioVentas2.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioVentas2.setText("      ");
-        txtUsuarioVentas2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioVentas2ActionPerformed(evt);
-            }
-        });
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
@@ -423,7 +413,6 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtUsuarioVentas2)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(btnFacturacion, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                         .addComponent(btnregistros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -433,12 +422,10 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(120, 120, 120)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtUsuarioVentas2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(97, 97, 97)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -496,7 +483,10 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
+        tbDatos.setBackground(new java.awt.Color(0, 0, 0));
         tbDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbDatos.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        tbDatos.setForeground(new java.awt.Color(255, 255, 255));
         tbDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -508,6 +498,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
             }
         ));
+        tbDatos.setSelectionBackground(new java.awt.Color(255, 153, 153));
         jScrollPane1.setViewportView(tbDatos);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -698,10 +689,6 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void txtUsuarioVentas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioVentas2ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JF_Menu me = new JF_Menu();
         me.setVisible(true);
@@ -793,7 +780,6 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
     private javax.swing.JTextField txtCedula;
     private com.toedter.calendar.JDateChooser txtFecha;
     private com.toedter.calendar.JDateChooser txtFecha2;
-    public javax.swing.JTextField txtUsuarioVentas2;
     // End of variables declaration//GEN-END:variables
  datosP cc = new datosP();
     Connection cn = cc.conexion();

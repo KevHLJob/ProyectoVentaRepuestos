@@ -23,6 +23,7 @@ public class JF_Provedor extends javax.swing.JFrame {
      */
     public JF_Provedor() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -36,7 +37,6 @@ public class JF_Provedor extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtUsuarioVentas3 = new javax.swing.JTextField();
         Btnmenu = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         btnproducto = new javax.swing.JButton();
@@ -55,18 +55,6 @@ public class JF_Provedor extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtUsuarioVentas3.setEditable(false);
-        txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioVentas3.setText("      ");
-        txtUsuarioVentas3.setBorder(null);
-        txtUsuarioVentas3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioVentas3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtUsuarioVentas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 200, 40));
 
         Btnmenu.setBackground(new java.awt.Color(0, 0, 0));
         Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -218,10 +206,6 @@ public class JF_Provedor extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnagregarproveedorActionPerformed
 
-    private void txtUsuarioVentas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
-
     private void BtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnmenuMouseClicked
         JF_Menu men=new JF_Menu();
         men.setVisible(true);
@@ -284,7 +268,6 @@ public class JF_Provedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    public javax.swing.JTextField txtUsuarioVentas3;
     private javax.swing.JTextField txtnombreprovedor;
     // End of variables declaration//GEN-END:variables
 }

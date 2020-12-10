@@ -27,6 +27,7 @@ datosP con= new datosP();
      */
     public JF_AgregarCliente() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -44,7 +45,6 @@ datosP con= new datosP();
         btninventario = new javax.swing.JButton();
         btnventashistorial = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        txtUsuarioVentas2 = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -91,7 +91,7 @@ datosP con= new datosP();
                 jButton1MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 180, 80));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 180, 80));
 
         btnfactura.setBackground(new java.awt.Color(0, 0, 0));
         btnfactura.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -134,18 +134,6 @@ datosP con= new datosP();
         jButton5.setForeground(new java.awt.Color(255, 102, 102));
         jButton5.setText("SALIR");
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 180, 30));
-
-        txtUsuarioVentas2.setEditable(false);
-        txtUsuarioVentas2.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioVentas2.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioVentas2.setText("      ");
-        txtUsuarioVentas2.setBorder(null);
-        txtUsuarioVentas2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioVentas2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtUsuarioVentas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 170, 30));
 
         jPanel12.setBackground(new java.awt.Color(255, 153, 153));
 
@@ -267,7 +255,7 @@ datosP con= new datosP();
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(txtbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,7 +415,7 @@ datosP con= new datosP();
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
@@ -548,10 +536,6 @@ datosP con= new datosP();
         
     }//GEN-LAST:event_btnbuscarActionPerformed
 
-    private void txtUsuarioVentas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentas2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioVentas2ActionPerformed
-
     private void btnfacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfacturaActionPerformed
          VentasPrueba vp = new VentasPrueba();
         vp.setVisible(true);
@@ -655,7 +639,6 @@ datosP con= new datosP();
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    public javax.swing.JTextField txtUsuarioVentas2;
     private javax.swing.JTextField txtapellido1;
     private javax.swing.JTextField txtapellido2;
     private javax.swing.JTextField txtbusqueda;

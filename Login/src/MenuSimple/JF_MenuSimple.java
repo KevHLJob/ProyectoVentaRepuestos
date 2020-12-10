@@ -22,6 +22,7 @@ public class JF_MenuSimple extends javax.swing.JFrame {
      */
     public JF_MenuSimple() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -34,7 +35,6 @@ public class JF_MenuSimple extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txtUsuarioIniciado = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -72,19 +72,6 @@ public class JF_MenuSimple extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtUsuarioIniciado.setEditable(false);
-        txtUsuarioIniciado.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioIniciado.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioIniciado.setText("      ");
-        txtUsuarioIniciado.setBorder(null);
-        txtUsuarioIniciado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioIniciadoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtUsuarioIniciado, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 298, 120, 40));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 153));
@@ -290,14 +277,14 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         JF_AgregarUsuario m = new JF_AgregarUsuario();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVenta.setText(txtUsuarioIniciado.getText());
+       // m.txtUsuarioVenta.setText(txtUsuarioIniciado.getText());
     }//GEN-LAST:event_btnRUsuarioMouseClicked
 
     private void btnRClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRClienteMouseClicked
         JF_AgregarCliente m = new JF_AgregarCliente();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
+     //   m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
     }//GEN-LAST:event_btnRClienteMouseClicked
 
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
@@ -322,7 +309,7 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         JF_Proforma m = new JF_Proforma();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVentas3.setText(txtUsuarioIniciado.getText());
+       // m.txtUsuarioVentas3.setText(txtUsuarioIniciado.getText());
     }//GEN-LAST:event_btnProformasMouseClicked
 
     private void btnReporteProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReporteProductosMouseClicked
@@ -341,14 +328,10 @@ public class JF_MenuSimple extends javax.swing.JFrame {
         JF_FiltrarFacturas m = new JF_FiltrarFacturas();
         m.setVisible(true);
         dispose();
-        m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
+       // m.txtUsuarioVentas2.setText(txtUsuarioIniciado.getText());
 
         m.mostrardatos("");
     }//GEN-LAST:event_btnFiltroFacturasMouseClicked
-
-    private void txtUsuarioIniciadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioIniciadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioIniciadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -419,6 +402,5 @@ public class JF_MenuSimple extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
-    public javax.swing.JTextField txtUsuarioIniciado;
     // End of variables declaration//GEN-END:variables
 }

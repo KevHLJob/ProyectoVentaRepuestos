@@ -27,6 +27,7 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
      */
     public JF_AgregarUsuario() {
         initComponents();
+        setLocationRelativeTo(null);
         
        MostarTipoUsuario();
     }
@@ -42,13 +43,12 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtUsuarioVenta = new javax.swing.JTextField();
         Btnmenu = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
         btnsalir = new javax.swing.JButton();
         btnProductos = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -81,17 +81,6 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        txtUsuarioVenta.setEditable(false);
-        txtUsuarioVenta.setBackground(new java.awt.Color(245, 245, 245));
-        txtUsuarioVenta.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        txtUsuarioVenta.setText("      ");
-        txtUsuarioVenta.setBorder(null);
-        txtUsuarioVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioVentaActionPerformed(evt);
-            }
-        });
-
         Btnmenu.setBackground(new java.awt.Color(0, 0, 0));
         Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -99,15 +88,6 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
             }
         });
         Btnmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel18.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel18.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
-        jLabel18.setText("Menu");
-        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Btnmenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 180, 80));
 
         btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnsalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,20 +134,24 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
             .addGap(0, 33, Short.MAX_VALUE)
         );
 
+        jLabel18.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel18.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
+        jLabel18.setText("Menu");
+        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Btnmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(txtUsuarioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 24, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(Btnmenu, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,10 +166,13 @@ public class JF_AgregarUsuario extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(txtUsuarioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -498,10 +485,6 @@ JOptionPane.showMessageDialog(this, "Guardado con éxito");
         
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void txtUsuarioVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioVentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioVentaActionPerformed
-
     private void BtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnmenuMouseClicked
         JF_Menu men=new JF_Menu();
         men.setVisible(true);
@@ -606,6 +589,5 @@ JOptionPane.showMessageDialog(this, "Guardado con éxito");
     private javax.swing.JTextField txtPrimerapellido;
     private javax.swing.JTextField txtSegundoapellido;
     private javax.swing.JTextField txtUsuario;
-    public javax.swing.JTextField txtUsuarioVenta;
     // End of variables declaration//GEN-END:variables
 }

@@ -187,6 +187,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         BtnSalir = new javax.swing.JLabel();
         BtnMinimizar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnSubMenu = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -238,11 +239,12 @@ public class VentasPrueba extends javax.swing.JFrame {
         BtnProf = new javax.swing.JButton();
         lblRequeridoSubtotal = new javax.swing.JLabel();
         BtnPagar1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
 
         BtnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -260,14 +262,23 @@ public class VentasPrueba extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("FACTURACIÓN");
 
+        btnSubMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_information-data-facts-knowledge-intelligence-click_3790091.png"))); // NOI18N
+        btnSubMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSubMenuMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(691, 691, 691)
+                .addGap(347, 347, 347)
+                .addComponent(btnSubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(293, 293, 293)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 640, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 637, Short.MAX_VALUE)
                 .addComponent(BtnMinimizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnSalir))
@@ -278,13 +289,14 @@ public class VentasPrueba extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(BtnSalir)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+            .addComponent(btnSubMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, 50));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, 70));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -468,7 +480,10 @@ public class VentasPrueba extends javax.swing.JFrame {
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
 
+        tbProductoInventario.setBackground(new java.awt.Color(0, 0, 0));
         tbProductoInventario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbProductoInventario.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        tbProductoInventario.setForeground(new java.awt.Color(255, 255, 255));
         tbProductoInventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -481,6 +496,8 @@ public class VentasPrueba extends javax.swing.JFrame {
             }
         ));
         tbProductoInventario.setGridColor(new java.awt.Color(255, 255, 255));
+        tbProductoInventario.setSelectionBackground(new java.awt.Color(255, 153, 153));
+        tbProductoInventario.setSelectionForeground(new java.awt.Color(0, 0, 0));
         tbProductoInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbProductoInventarioMouseClicked(evt);
@@ -607,7 +624,7 @@ public class VentasPrueba extends javax.swing.JFrame {
 
         PanelMenuV.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 710, 130));
 
-        jPanel6.add(PanelMenuV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 800));
+        jPanel6.add(PanelMenuV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 750, 780));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -691,6 +708,9 @@ public class VentasPrueba extends javax.swing.JFrame {
         jPanel4.add(BtnPagar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 150, 130));
 
         jPanel6.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 450, 670, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j.png"))); // NOI18N
+        jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1500, 800));
 
@@ -906,7 +926,13 @@ public class VentasPrueba extends javax.swing.JFrame {
 
                     pst.executeUpdate();
                     
-                    JOptionPane.showMessageDialog(null,"Se agregó al carrito de compras");
+                   // JOptionPane.showMessageDialog(null,"Se agregó al carrito de compras");
+                     int posicion = PanelMenuV.getX();
+        if (posicion > -1) {
+            Animacion.Animacion.mover_izquierda(0, -864, 2, 2, PanelMenuV);
+        } else {
+            Animacion.Animacion.mover_derecha(-864, 0, 2, 2, PanelMenuV);
+        }
 
                 } catch (Exception e) {
                        JOptionPane.showMessageDialog(null,e);
@@ -1219,6 +1245,25 @@ public class VentasPrueba extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnHistorialActionPerformed
 
+    private void btnSubMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubMenuMouseClicked
+        int posicion = PanelMenuV.getX();
+        if (posicion > -1) {
+            Animacion.Animacion.mover_izquierda(0, -864, 2, 2, PanelMenuV);
+        } else {
+            Animacion.Animacion.mover_derecha(-864, 0, 2, 2, PanelMenuV);
+        }
+
+//        lblComprobacion.setVisible(false);
+//        lblusuario.setVisible(false);
+//        lblcontraseña.setVisible(false);
+//        BtnIngresar.setVisible(false);
+//        lblPorcentaje.setVisible(false);
+//        BtnPorcentaje.setVisible(false);
+//        txtUsuario.setVisible(false);
+//        txtContraseña.setVisible(false);
+//        PanelPermiso.setVisible(false);
+    }//GEN-LAST:event_btnSubMenuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1265,6 +1310,7 @@ public class VentasPrueba extends javax.swing.JFrame {
     private javax.swing.JButton VerSubtotal;
     private javax.swing.JButton btnHistorial;
     private javax.swing.JButton btnProforma;
+    private javax.swing.JLabel btnSubMenu;
     private javax.swing.JButton btnregistroCliente;
     private javax.swing.JButton btnsalir;
     private javax.swing.JButton jButton1;
@@ -1272,6 +1318,7 @@ public class VentasPrueba extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
