@@ -46,7 +46,6 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         Btnproveedor = new javax.swing.JPanel();
         Btninventario = new javax.swing.JPanel();
-        Btnmenu = new javax.swing.JPanel();
         txtUsuarioVentas3 = new javax.swing.JTextField();
         btnsalir = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -121,14 +120,6 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         });
         Btninventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Btnmenu.setBackground(new java.awt.Color(153, 153, 153));
-        Btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnmenuMouseClicked(evt);
-            }
-        });
-        Btnmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         txtUsuarioVentas3.setEditable(false);
         txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
         txtUsuarioVentas3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
@@ -140,8 +131,13 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
             }
         });
 
-        btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnsalir.setText("SALIR");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
 
         jLabel16.setBackground(new java.awt.Color(67, 81, 141));
         jLabel16.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
@@ -150,13 +146,13 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jLabel16.setText("Menu");
 
-        btnproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnproveedor.setText("Proveedor");
 
-        btninventario.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btninventario.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btninventario.setText("Inventario");
 
-        btnmenu.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnmenu.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnmenu.setText("Menu");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -177,10 +173,6 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
                             .addComponent(Btninventario, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Btnproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnmenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -194,13 +186,8 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(txtUsuarioVentas3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -270,6 +257,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(204, 204, 255));
 
         btnbuscar.setBackground(new java.awt.Color(204, 204, 255));
+        btnbuscar.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnbuscar.setText("Buscar");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,6 +281,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(204, 204, 255));
 
         btneditar.setBackground(new java.awt.Color(204, 204, 255));
+        btneditar.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btneditar.setText("Editar");
         btneditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,7 +297,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btneditar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(btneditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 150, 30));
@@ -316,6 +305,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
 
         btnagregar.setBackground(new java.awt.Color(204, 204, 255));
+        btnagregar.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnagregar.setText("Agregar");
         btnagregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,7 +321,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnagregar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(btnagregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 150, 30));
@@ -339,6 +329,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(204, 204, 255));
 
         btneliminar.setBackground(new java.awt.Color(204, 204, 255));
+        btneliminar.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btneliminar.setText("Eliminar");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -354,7 +345,7 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btneliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(btneliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 150, 30));
@@ -613,12 +604,6 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BtnproveedorMouseClicked
 
-    private void BtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnmenuMouseClicked
-        JF_Menu m = new JF_Menu();
-        m.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_BtnmenuMouseClicked
-
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
 
         try {
@@ -741,6 +726,10 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
 
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_btnsalirActionPerformed
+
     private void Limpiar() {
         txtnombre1.setText("");
         txtprecio.setText("");
@@ -786,7 +775,6 @@ public class JF_AgregarProducto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Btninventario;
-    private javax.swing.JPanel Btnmenu;
     private javax.swing.JPanel Btnproducto;
     private javax.swing.JPanel Btnproveedor;
     private javax.swing.JTable TbProducto;

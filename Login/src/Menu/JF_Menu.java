@@ -13,7 +13,7 @@ import Proforma.JF_Proforma;
 import Usuario.JF_AgregarUsuario;
 import Login.JF_Login;
 import Prueba.VentasPrueba;
-
+import Producto.JF_Provedor;
 
 /**
  *
@@ -68,7 +68,7 @@ public class JF_Menu extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        btnReporteProductos = new javax.swing.JPanel();
+        btnproveedor = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btnFiltroFacturas = new javax.swing.JPanel();
@@ -97,7 +97,7 @@ public class JF_Menu extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 102, 102));
 
-        btnSalir.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
+        btnSalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnSalir.setText("Salir");
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,7 +119,7 @@ public class JF_Menu extends javax.swing.JFrame {
             .addComponent(btnSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 640, 150, 40));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 150, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
@@ -249,21 +249,21 @@ public class JF_Menu extends javax.swing.JFrame {
         jLabel7.setText("jLabel7");
         btnProformas.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, -1));
 
-        btnReporteProductos.setBackground(new java.awt.Color(255, 255, 255));
-        btnReporteProductos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnReporteProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnproveedor.setBackground(new java.awt.Color(255, 255, 255));
+        btnproveedor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnproveedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnReporteProductosMouseClicked(evt);
+                btnproveedorMouseClicked(evt);
             }
         });
-        btnReporteProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnproveedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
-        jLabel11.setText("Reporte de productos");
-        btnReporteProductos.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 200, 30));
+        jLabel11.setText("Agregar Proveedor");
+        btnproveedor.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 200, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png"))); // NOI18N
-        btnReporteProductos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
+        btnproveedor.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
 
         btnFiltroFacturas.setBackground(new java.awt.Color(255, 255, 255));
         btnFiltroFacturas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -304,7 +304,7 @@ public class JF_Menu extends javax.swing.JFrame {
                         .addGap(54, 54, 54)
                         .addComponent(btnProformas, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnFiltroFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReporteProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(241, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -324,7 +324,7 @@ public class JF_Menu extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(btnFiltroFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnReporteProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(200, Short.MAX_VALUE))
         );
 
@@ -372,16 +372,13 @@ public class JF_Menu extends javax.swing.JFrame {
         m.txtUsuarioVentas3.setText(txtUsuarioIniciado.getText());
     }//GEN-LAST:event_btnProformasMouseClicked
 
-    private void btnReporteProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReporteProductosMouseClicked
+    private void btnproveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnproveedorMouseClicked
+JF_Provedor p= new JF_Provedor();
+p.setVisible(true);
+dispose();
+        
 
-//               JF_ReporteProducto m = new JF_ReporteProducto();
-//                m.setVisible(true);
-//                dispose();
-//                m.txtUsuarioVentas.setText(txtUsuarioIniciado.getText());
-//        
-//                m.mostrarProductos("");
-//                m.mostrarProductosMonto("");
-    }//GEN-LAST:event_btnReporteProductosMouseClicked
+    }//GEN-LAST:event_btnproveedorMouseClicked
 
     private void btnFiltroFacturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFiltroFacturasMouseClicked
 
@@ -446,9 +443,9 @@ public class JF_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel btnProformas;
     private javax.swing.JPanel btnRCliente;
     private javax.swing.JPanel btnRUsuario;
-    private javax.swing.JPanel btnReporteProductos;
     private javax.swing.JLabel btnSalir;
     private javax.swing.JPanel btnVentas;
+    private javax.swing.JPanel btnproveedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

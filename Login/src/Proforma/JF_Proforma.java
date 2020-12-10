@@ -161,10 +161,10 @@ public class JF_Proforma extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnfacturacion = new javax.swing.JButton();
+        btninventarios = new javax.swing.JButton();
+        btnhistorial = new javax.swing.JButton();
+        btnsalir = new javax.swing.JButton();
         txtUsuarioVentas3 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -201,37 +201,49 @@ public class JF_Proforma extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 147, 170, 60));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("FACTURACION");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnfacturacion.setBackground(new java.awt.Color(0, 0, 0));
+        btnfacturacion.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnfacturacion.setText("FACTURACION");
+        btnfacturacion.setBorder(null);
+        btnfacturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnfacturacionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 170, 39));
+        jPanel1.add(btnfacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 170, 39));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("INVENTARIOS");
-        jButton3.setBorder(null);
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 170, 34));
+        btninventarios.setBackground(new java.awt.Color(0, 0, 0));
+        btninventarios.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btninventarios.setText("INVENTARIOS");
+        btninventarios.setBorder(null);
+        btninventarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninventariosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btninventarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 170, 34));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("HISTORIAL");
-        jButton4.setBorder(null);
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 170, 35));
+        btnhistorial.setBackground(new java.awt.Color(0, 0, 0));
+        btnhistorial.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnhistorial.setText("HISTORIAL");
+        btnhistorial.setBorder(null);
+        btnhistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhistorialActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnhistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 170, 35));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("SALIR");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 180, 34));
+        btnsalir.setBackground(new java.awt.Color(0, 0, 0));
+        btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnsalir.setForeground(new java.awt.Color(255, 51, 51));
+        btnsalir.setText("SALIR");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 180, 34));
 
         txtUsuarioVentas3.setEditable(false);
         txtUsuarioVentas3.setBackground(new java.awt.Color(245, 245, 245));
@@ -502,11 +514,26 @@ public class JF_Proforma extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioVentas3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnfacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfacturacionActionPerformed
        VentasPrueba m = new VentasPrueba();
         m.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnfacturacionActionPerformed
+
+    private void btninventariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninventariosActionPerformed
+        JF_Inventario i= new JF_Inventario();
+        i.setVisible(true);
+        dispose();
+                
+    }//GEN-LAST:event_btninventariosActionPerformed
+
+    private void btnhistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhistorialActionPerformed
+       
+    }//GEN-LAST:event_btnhistorialActionPerformed
+
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnsalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -562,11 +589,11 @@ public class JF_Proforma extends javax.swing.JFrame {
     private javax.swing.JButton VerProducto;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnPagar;
+    private javax.swing.JButton btnfacturacion;
+    private javax.swing.JButton btnhistorial;
+    private javax.swing.JButton btninventarios;
+    private javax.swing.JButton btnsalir;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

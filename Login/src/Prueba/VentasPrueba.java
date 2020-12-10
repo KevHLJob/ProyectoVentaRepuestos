@@ -29,7 +29,7 @@ import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-
+import Inventario.JF_Inventario;
 /**
  *
  * @author Klope
@@ -186,9 +186,9 @@ public class VentasPrueba extends javax.swing.JFrame {
         BtnSalir = new javax.swing.JLabel();
         BtnMinimizar = new javax.swing.JLabel();
         PanelMenuV = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btninventario = new javax.swing.JButton();
         btnregistro = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnsalir = new javax.swing.JButton();
         btnProforma = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -281,20 +281,40 @@ public class VentasPrueba extends javax.swing.JFrame {
         PanelMenuV.setForeground(new java.awt.Color(255, 255, 255));
         PanelMenuV.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventory.png"))); // NOI18N
-        PanelMenuV.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 60, 60));
+        btninventario.setBackground(new java.awt.Color(0, 0, 0));
+        btninventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventory.png"))); // NOI18N
+        btninventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btninventarioMouseClicked(evt);
+            }
+        });
+        PanelMenuV.add(btninventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 60, 60));
 
         btnregistro.setBackground(new java.awt.Color(0, 0, 0));
         btnregistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
+        btnregistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnregistroMouseClicked(evt);
+            }
+        });
         PanelMenuV.add(btnregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 60, 60));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/evacuacion.png"))); // NOI18N
-        PanelMenuV.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 60, 60));
+        btnsalir.setBackground(new java.awt.Color(0, 0, 0));
+        btnsalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/evacuacion.png"))); // NOI18N
+        btnsalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnsalirMouseClicked(evt);
+            }
+        });
+        PanelMenuV.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 60, 60));
 
         btnProforma.setBackground(new java.awt.Color(0, 0, 0));
         btnProforma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/factura.png"))); // NOI18N
+        btnProforma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProformaMouseClicked(evt);
+            }
+        });
         PanelMenuV.add(btnProforma, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 60, 60));
 
         jButton6.setText("jButton2");
@@ -494,7 +514,7 @@ public class VentasPrueba extends javax.swing.JFrame {
                 BtnProfActionPerformed(evt);
             }
         });
-        jPanel4.add(BtnProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 80, 40));
+        jPanel4.add(BtnProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 120, 50));
 
         BtnPagar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
         BtnPagar1.setText("PAGAR");
@@ -504,7 +524,7 @@ public class VentasPrueba extends javax.swing.JFrame {
                 BtnPagar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(BtnPagar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 60, 30));
+        jPanel4.add(BtnPagar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 120, 30));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -627,8 +647,9 @@ public class VentasPrueba extends javax.swing.JFrame {
 
         jPanel6.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, 90));
 
-        VerSubtotal.setBackground(new java.awt.Color(0, 0, 0));
+        VerSubtotal.setBackground(new java.awt.Color(51, 51, 51));
         VerSubtotal.setText("Ver total");
+        VerSubtotal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         VerSubtotal.setContentAreaFilled(false);
         VerSubtotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -662,11 +683,11 @@ public class VentasPrueba extends javax.swing.JFrame {
         jPanel6.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 170, 50));
 
         txtCodigoBarras.setEditable(false);
-        jPanel6.add(txtCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 600, 120, -1));
+        jPanel6.add(txtCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 590, 120, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setText("Código de factura");
-        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 640, 120, 20));
+        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 640, 120, 20));
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 1520, 830));
 
@@ -1169,6 +1190,28 @@ public class VentasPrueba extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioVentasActionPerformed
 
+    private void btnProformaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProformaMouseClicked
+        JF_Proforma p= new JF_Proforma();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnProformaMouseClicked
+
+    private void btnregistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnregistroMouseClicked
+       JF_AgregarCliente c= new JF_AgregarCliente();
+       c.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btnregistroMouseClicked
+
+    private void btninventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btninventarioMouseClicked
+        JF_Inventario i= new JF_Inventario();
+        i.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btninventarioMouseClicked
+
+    private void btnsalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsalirMouseClicked
+       System.exit(0);
+    }//GEN-LAST:event_btnsalirMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1214,10 +1257,10 @@ public class VentasPrueba extends javax.swing.JFrame {
     private javax.swing.JPanel PanelMenuV;
     private javax.swing.JButton VerSubtotal;
     private javax.swing.JButton btnProforma;
+    private javax.swing.JButton btninventario;
     private javax.swing.JButton btnregistro;
+    private javax.swing.JButton btnsalir;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;

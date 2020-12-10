@@ -5,6 +5,7 @@
  */
 package Inventario;
 
+import Cliente.JF_AgregarCliente;
 import Conexion.datosP;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -17,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import Menu.JF_Menu;
 import Producto.JF_AgregarProducto;
+import Producto.JF_Provedor;
 
 /**
  *
@@ -93,24 +95,44 @@ TableRowSorter trsfiltro;
         jPanel2.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 150, 100));
 
         btnproveedor.setBackground(new java.awt.Color(0, 0, 0));
-        btnproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnproveedor.setText("PROVEEDOR");
+        btnproveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnproveedorActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 160, 30));
 
         btncliente.setBackground(new java.awt.Color(0, 0, 0));
-        btncliente.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btncliente.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btncliente.setText("CLIENTE");
+        btncliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnclienteActionPerformed(evt);
+            }
+        });
         jPanel2.add(btncliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 160, 30));
 
         btnsalir.setBackground(new java.awt.Color(0, 0, 0));
-        btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnsalir.setForeground(new java.awt.Color(255, 0, 0));
         btnsalir.setText("SALIR");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 180, -1));
 
         btnProductos.setBackground(new java.awt.Color(0, 0, 0));
-        btnProductos.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnProductos.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnProductos.setText("PRODUCTOS");
+        btnProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProductosActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 160, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
@@ -236,6 +258,28 @@ TableRowSorter trsfiltro;
         men.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtnmenuMouseClicked
+
+    private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
+        JF_AgregarProducto p= new JF_AgregarProducto();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnProductosActionPerformed
+
+    private void btnproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproveedorActionPerformed
+       JF_Provedor pr= new JF_Provedor();
+       pr.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btnproveedorActionPerformed
+
+    private void btnclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclienteActionPerformed
+      JF_AgregarCliente c= new JF_AgregarCliente();
+      c.setVisible(true);
+      dispose();
+    }//GEN-LAST:event_btnclienteActionPerformed
+
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnsalirActionPerformed
 
     /**
      * @param args the command line arguments

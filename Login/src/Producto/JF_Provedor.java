@@ -40,7 +40,6 @@ public class JF_Provedor extends javax.swing.JFrame {
         Btnmenu = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         btnmenu = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         btnproducto = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -88,7 +87,7 @@ public class JF_Provedor extends javax.swing.JFrame {
         jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 184, 60));
 
         btnmenu.setBackground(new java.awt.Color(0, 0, 0));
-        btnmenu.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnmenu.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnmenu.setText("Menu");
         btnmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,10 +96,7 @@ public class JF_Provedor extends javax.swing.JFrame {
         });
         jPanel2.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 190, 30));
 
-        jLabel3.setText("jLabel3");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 30));
-
-        btnproducto.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnproducto.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnproducto.setText("Producto");
         btnproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +132,6 @@ public class JF_Provedor extends javax.swing.JFrame {
 
         btnagregarproveedor.setBackground(new java.awt.Color(0, 0, 0));
         btnagregarproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnagregarproveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnagregarproveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario2.png"))); // NOI18N
         btnagregarproveedor.setText("Agregar ");
         btnagregarproveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -281,7 +276,6 @@ public class JF_Provedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

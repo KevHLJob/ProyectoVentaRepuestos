@@ -75,7 +75,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="640" width="150" height="40"/>
+              <AbsoluteConstraints x="40" y="630" width="150" height="40"/>
             </Constraint>
           </Constraints>
 
@@ -98,7 +98,7 @@
             <Component class="javax.swing.JLabel" name="btnSalir">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri Light" size="20" style="1"/>
+                  <Font name="Yu Gothic" size="14" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Salir"/>
@@ -189,7 +189,7 @@
                           <Component id="btnProformas" min="-2" pref="160" max="-2" attributes="0"/>
                       </Group>
                       <Component id="btnFiltroFacturas" min="-2" pref="690" max="-2" attributes="0"/>
-                      <Component id="btnReporteProductos" min="-2" pref="690" max="-2" attributes="0"/>
+                      <Component id="btnproveedor" min="-2" pref="690" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="241" max="32767" attributes="0"/>
               </Group>
@@ -215,7 +215,7 @@
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="btnFiltroFacturas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnReporteProductos" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnproveedor" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="200" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -521,7 +521,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="btnReporteProductos">
+        <Container class="javax.swing.JPanel" name="btnproveedor">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -533,7 +533,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnReporteProductosMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnproveedorMouseClicked"/>
           </Events>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -545,7 +545,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Calibri Light" size="20" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Reporte de productos"/>
+                <Property name="text" type="java.lang.String" value="Agregar Proveedor"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

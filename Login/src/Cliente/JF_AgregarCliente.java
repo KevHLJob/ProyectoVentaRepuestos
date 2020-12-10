@@ -81,25 +81,25 @@ datosP con= new datosP();
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 180, 80));
 
         btnfactura.setBackground(new java.awt.Color(0, 0, 0));
-        btnfactura.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnfactura.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnfactura.setText("FACTURACIÓN");
         btnfactura.setBorder(null);
         jPanel1.add(btnfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 140, 30));
 
         btninventario.setBackground(new java.awt.Color(0, 0, 0));
-        btninventario.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btninventario.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btninventario.setText("INVENTARIOS");
         btninventario.setBorder(null);
         jPanel1.add(btninventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 140, 30));
 
         btnventashistorial.setBackground(new java.awt.Color(0, 0, 0));
-        btnventashistorial.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        btnventashistorial.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnventashistorial.setText("HISTORIAL DE VENTAS");
         btnventashistorial.setBorder(null);
-        jPanel1.add(btnventashistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 140, 30));
+        jPanel1.add(btnventashistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 170, 30));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 12)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 102, 102));
         jButton5.setText("SALIR");
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 150, 34));
