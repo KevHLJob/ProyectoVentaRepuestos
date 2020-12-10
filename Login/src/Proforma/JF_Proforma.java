@@ -75,8 +75,8 @@ public class JF_Proforma extends javax.swing.JFrame {
         String sql = "";
         if (valor.equals("")) {
 
-            sql = "SELECT DISTINCTROW Id_Factura,Nombre,PrimerApellido, Id_Cliente, Subtotal, Impuesto, Descuento, TotalPagar,Fecha FROM factura a INNER JOIN orden b on (b.Fk_Factura = a.Id_Factura) "
-                    + "INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) where c.Id_Cliente ='" + txtBuscar.getText() + "' and Fk_Estado = 2";
+            sql = "SELECT DISTINCTROW Id_Factura,Nombre,PrimerApellido, Cédula, Subtotal, Impuesto, Descuento, TotalPagar,Fecha FROM factura a INNER JOIN orden b on (b.Fk_Factura = a.Id_Factura) "
+                    + "INNER Join registro_cliente c on (c.Id_Cliente = b.Fk_Cliente) where c.Cédula ='" + txtBuscar.getText() + "' and Fk_Estado = 2";
 
         }
         String[] datos = new String[9];

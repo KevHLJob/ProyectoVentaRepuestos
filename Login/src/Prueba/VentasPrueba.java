@@ -1060,7 +1060,7 @@ public class VentasPrueba extends javax.swing.JFrame {
                 processHora();
 
                 PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(Id_Factura, Fecha, Subtotal, Impuesto, "
-                    + "Descuento, TotalPagar, Fk_Usuario, Hora) VALUES (?,?,?,?,?,?,?,?)");
+                    + "Descuento, TotalPagar) VALUES (?,?,?,?,?,?)");
 
                 pst.setString(1, txtCodigoBarras.getText());
                 pst.setString(2, date);
@@ -1068,8 +1068,10 @@ public class VentasPrueba extends javax.swing.JFrame {
                 pst.setString(4, txtImpuesto.getText());
                 pst.setString(5, txtDescuento.getText());
                 pst.setString(6, txtTotalPagar.getText());
-                pst.setString(7, txtUsuarioVentas.getText());
-                pst.setString(8, Hora);
+                
+                
+//                pst.setString(7, txtUsuarioVentas.getText());
+//                pst.setString(8, Hora);
 
                 pst.executeUpdate();
 
@@ -1077,8 +1079,8 @@ public class VentasPrueba extends javax.swing.JFrame {
                 System.out.print(e);
             }
 
-            try {
-                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado  = 1");
+              try {
+                PreparedStatement pst = cn.prepareStatement("UPDATE orden SET Fk_Factura=" + txtCodigoBarras.getText() + ", Fk_Estado = 2 where Fk_Estado = 3");
                 pst.executeUpdate();
 
             } catch (Exception e) {
