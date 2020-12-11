@@ -188,6 +188,8 @@ public class VentasPrueba extends javax.swing.JFrame {
         BtnMinimizar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnSubMenu = new javax.swing.JLabel();
+        BtnSalir1 = new javax.swing.JLabel();
+        BtnMinimizar1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -206,7 +208,6 @@ public class VentasPrueba extends javax.swing.JFrame {
         PanelMenuV = new javax.swing.JPanel();
         btnHistorial = new javax.swing.JButton();
         btnregistroCliente = new javax.swing.JButton();
-        btnsalir = new javax.swing.JButton();
         btnProforma = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbProductoInventario = new javax.swing.JTable();
@@ -263,9 +264,26 @@ public class VentasPrueba extends javax.swing.JFrame {
         jLabel1.setText("FACTURACIÓN");
 
         btnSubMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_information-data-facts-knowledge-intelligence-click_3790091.png"))); // NOI18N
+        btnSubMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSubMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSubMenuMouseClicked(evt);
+            }
+        });
+
+        BtnSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerca.png"))); // NOI18N
+        BtnSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnSalir1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnSalir1MouseClicked(evt);
+            }
+        });
+
+        BtnMinimizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_minus_1540160.png"))); // NOI18N
+        BtnMinimizar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnMinimizar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnMinimizar1MouseClicked(evt);
             }
         });
 
@@ -276,9 +294,13 @@ public class VentasPrueba extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(347, 347, 347)
                 .addComponent(btnSubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(293, 293, 293)
+                .addGap(295, 295, 295)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 637, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 559, Short.MAX_VALUE)
+                .addComponent(BtnMinimizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnSalir1)
+                .addGap(0, 0, 0)
                 .addComponent(BtnMinimizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnSalir))
@@ -286,14 +308,18 @@ public class VentasPrueba extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(BtnMinimizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(BtnSalir)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(btnSubMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnSalir)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(BtnSalir1)
+                                .addComponent(BtnMinimizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, 70));
@@ -411,6 +437,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         VerSubtotal.setText("Ver total");
         VerSubtotal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         VerSubtotal.setContentAreaFilled(false);
+        VerSubtotal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VerSubtotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VerSubtotalActionPerformed(evt);
@@ -433,6 +460,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         btnHistorial.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnHistorial.setForeground(new java.awt.Color(255, 255, 255));
         btnHistorial.setText("HISTORIAL");
+        btnHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnHistorialMouseClicked(evt);
@@ -449,6 +477,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         btnregistroCliente.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnregistroCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnregistroCliente.setText("+ CLIENTE");
+        btnregistroCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnregistroCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnregistroClienteMouseClicked(evt);
@@ -456,21 +485,11 @@ public class VentasPrueba extends javax.swing.JFrame {
         });
         PanelMenuV.add(btnregistroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 120, 50));
 
-        btnsalir.setBackground(new java.awt.Color(0, 0, 0));
-        btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnsalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnsalir.setText("SALIR");
-        btnsalir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnsalirMouseClicked(evt);
-            }
-        });
-        PanelMenuV.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 120, 50));
-
         btnProforma.setBackground(new java.awt.Color(0, 0, 0));
         btnProforma.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnProforma.setForeground(new java.awt.Color(255, 255, 255));
         btnProforma.setText("PROFORMAS");
+        btnProforma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnProforma.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnProformaMouseClicked(evt);
@@ -509,6 +528,7 @@ public class VentasPrueba extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jButton1.setText("jButton1");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PanelMenuV.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 170, 60));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -574,6 +594,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         BtnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_plus_1282963.png"))); // NOI18N
         BtnAgregar.setBorder(null);
         BtnAgregar.setContentAreaFilled(false);
+        BtnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAgregarActionPerformed(evt);
@@ -686,6 +707,7 @@ public class VentasPrueba extends javax.swing.JFrame {
 
         BtnProf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_Asset_93_3298612 (1).png"))); // NOI18N
         BtnProf.setContentAreaFilled(false);
+        BtnProf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnProfActionPerformed(evt);
@@ -700,6 +722,7 @@ public class VentasPrueba extends javax.swing.JFrame {
 
         BtnPagar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_5_3319635.png"))); // NOI18N
         BtnPagar1.setContentAreaFilled(false);
+        BtnPagar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnPagar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPagar1ActionPerformed(evt);
@@ -1235,10 +1258,6 @@ public class VentasPrueba extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnHistorialMouseClicked
 
-    private void btnsalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsalirMouseClicked
-       System.exit(0);
-    }//GEN-LAST:event_btnsalirMouseClicked
-
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
        JF_FiltrarFacturas f = new JF_FiltrarFacturas();
        f.setVisible(true);
@@ -1263,6 +1282,16 @@ public class VentasPrueba extends javax.swing.JFrame {
 //        txtContraseña.setVisible(false);
 //        PanelPermiso.setVisible(false);
     }//GEN-LAST:event_btnSubMenuMouseClicked
+
+    private void BtnSalir1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnSalir1MouseClicked
+      
+        System.exit(0);
+    }//GEN-LAST:event_BtnSalir1MouseClicked
+
+    private void BtnMinimizar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMinimizar1MouseClicked
+         this.setExtendedState(ICONIFIED);
+        
+    }//GEN-LAST:event_BtnMinimizar1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1302,9 +1331,11 @@ public class VentasPrueba extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregar;
     private javax.swing.JLabel BtnMinimizar;
+    private javax.swing.JLabel BtnMinimizar1;
     private javax.swing.JButton BtnPagar1;
     private javax.swing.JButton BtnProf;
     private javax.swing.JLabel BtnSalir;
+    private javax.swing.JLabel BtnSalir1;
     private javax.swing.JButton BtnVerificar;
     private javax.swing.JPanel PanelMenuV;
     private javax.swing.JButton VerSubtotal;
@@ -1312,7 +1343,6 @@ public class VentasPrueba extends javax.swing.JFrame {
     private javax.swing.JButton btnProforma;
     private javax.swing.JLabel btnSubMenu;
     private javax.swing.JButton btnregistroCliente;
-    private javax.swing.JButton btnsalir;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

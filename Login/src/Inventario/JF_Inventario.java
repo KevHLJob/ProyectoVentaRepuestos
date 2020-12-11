@@ -50,7 +50,6 @@ TableRowSorter trsfiltro;
         btnMenu = new javax.swing.JButton();
         btnproveedor = new javax.swing.JButton();
         btncliente = new javax.swing.JButton();
-        btnsalir = new javax.swing.JButton();
         btnProductos = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
@@ -59,7 +58,6 @@ TableRowSorter trsfiltro;
         jPanel23 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
-        jPanel24 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         txtNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -68,6 +66,8 @@ TableRowSorter trsfiltro;
         jScrollPane1 = new javax.swing.JScrollPane();
         Tbinventario = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        BtnSalir = new javax.swing.JLabel();
+        BtnMinimizar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,17 +115,6 @@ TableRowSorter trsfiltro;
             }
         });
         jPanel2.add(btncliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 160, 30));
-
-        btnsalir.setBackground(new java.awt.Color(0, 0, 0));
-        btnsalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnsalir.setForeground(new java.awt.Color(255, 0, 0));
-        btnsalir.setText("SALIR");
-        btnsalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsalirActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 160, -1));
 
         btnProductos.setBackground(new java.awt.Color(0, 0, 0));
         btnProductos.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -275,21 +264,6 @@ TableRowSorter trsfiltro;
 
         jPanel2.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
-        jPanel24.setBackground(new java.awt.Color(255, 153, 153));
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 30));
-
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 890));
 
         jPanel3.setBackground(new java.awt.Color(255, 153, 153));
@@ -371,6 +345,22 @@ TableRowSorter trsfiltro;
         jLabel2.setText("Inventario");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
 
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerca.png"))); // NOI18N
+        BtnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnSalirMouseClicked(evt);
+            }
+        });
+        jPanel1.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 10, -1, -1));
+
+        BtnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_minus_1540160.png"))); // NOI18N
+        BtnMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnMinimizarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(BtnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 20, 40, 20));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -428,13 +418,19 @@ TableRowSorter trsfiltro;
       dispose();
     }//GEN-LAST:event_btnclienteActionPerformed
 
-    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnsalirActionPerformed
-
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
       //
     }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void BtnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnSalirMouseClicked
+
+        System.exit(0);
+    }//GEN-LAST:event_BtnSalirMouseClicked
+
+    private void BtnMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMinimizarMouseClicked
+     this.setExtendedState(ICONIFIED);
+        
+    }//GEN-LAST:event_BtnMinimizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -518,13 +514,14 @@ TableRowSorter trsfiltro;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BtnMinimizar;
+    private javax.swing.JLabel BtnSalir;
     private javax.swing.JPanel Btnmenu;
     private javax.swing.JTable Tbinventario;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnProductos;
     private javax.swing.JButton btncliente;
     private javax.swing.JButton btnproveedor;
-    private javax.swing.JButton btnsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -536,7 +533,6 @@ TableRowSorter trsfiltro;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

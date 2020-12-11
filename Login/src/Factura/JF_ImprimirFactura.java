@@ -159,9 +159,7 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         btnMenu = new javax.swing.JButton();
         btnFacturación = new javax.swing.JButton();
         btnProformas = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -184,6 +182,8 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         tbProducto = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
+        BtnMinimizar = new javax.swing.JLabel();
+        BtnSalir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -224,17 +224,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         });
         jPanel2.add(btnProformas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 409, 150, -1));
 
-        btnSalir.setBackground(new java.awt.Color(0, 0, 0));
-        btnSalir.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        btnSalir.setForeground(new java.awt.Color(255, 153, 153));
-        btnSalir.setText("SALIR");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 150, 30));
-
         jPanel12.setBackground(new java.awt.Color(255, 153, 153));
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -249,21 +238,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         );
 
         jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
-
-        jPanel14.setBackground(new java.awt.Color(255, 153, 153));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, -1));
 
         jPanel13.setBackground(new java.awt.Color(255, 153, 153));
 
@@ -401,6 +375,22 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
         jLabel4.setText("Factura");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
 
+        BtnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_minus_1540160.png"))); // NOI18N
+        BtnMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnMinimizarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(BtnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1520, 20, 40, 20));
+
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerca.png"))); // NOI18N
+        BtnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnSalirMouseClicked(evt);
+            }
+        });
+        jPanel1.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 10, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -431,15 +421,21 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
        dispose();
     }//GEN-LAST:event_btnProformasActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-       System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
-
     private void btnMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseClicked
          JF_Menu me = new JF_Menu();
       me.setVisible(true);
       dispose();
     }//GEN-LAST:event_btnMenuMouseClicked
+
+    private void BtnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnSalirMouseClicked
+       
+        System.exit(0);
+    }//GEN-LAST:event_BtnSalirMouseClicked
+
+    private void BtnMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMinimizarMouseClicked
+         this.setExtendedState(ICONIFIED);
+        
+    }//GEN-LAST:event_BtnMinimizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -477,10 +473,11 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BtnMinimizar;
+    private javax.swing.JLabel BtnSalir;
     private javax.swing.JButton btnFacturación;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnProformas;
-    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -495,7 +492,6 @@ public class JF_ImprimirFactura extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;

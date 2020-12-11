@@ -47,6 +47,8 @@ public class JF_Provedor extends javax.swing.JFrame {
         txtnombreprovedor = new javax.swing.JTextField();
         btnagregarproveedor = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        BtnSalir = new javax.swing.JLabel();
+        BtnMinimizar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,12 +72,14 @@ public class JF_Provedor extends javax.swing.JFrame {
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Auto repuestos k&j2.jpg"))); // NOI18N
         jLabel18.setText("Menu");
+        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btnmenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 170, 70));
 
         jPanel2.add(Btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 184, 60));
 
         btnproducto.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnproducto.setText("PRODUCTO");
+        btnproducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnproductoActionPerformed(evt);
@@ -106,14 +110,14 @@ public class JF_Provedor extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1370, Short.MAX_VALUE)
+            .addGap(0, 1390, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 1370, 100));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 1390, 100));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -128,6 +132,7 @@ public class JF_Provedor extends javax.swing.JFrame {
         btnagregarproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         btnagregarproveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario2.png"))); // NOI18N
         btnagregarproveedor.setText("Agregar ");
+        btnagregarproveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnagregarproveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnagregarproveedorActionPerformed(evt);
@@ -172,11 +177,19 @@ public class JF_Provedor extends javax.swing.JFrame {
         jLabel2.setText("Agregar Proveedor");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, 230, -1));
 
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerca.png"))); // NOI18N
+        BtnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1600, 20, -1, -1));
+
+        BtnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder_minus_1540160.png"))); // NOI18N
+        BtnMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(BtnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1550, 20, 40, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,6 +268,8 @@ public class JF_Provedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BtnMinimizar;
+    private javax.swing.JLabel BtnSalir;
     private javax.swing.JPanel Btnmenu;
     private javax.swing.JButton btnagregarproveedor;
     private javax.swing.JButton btnproducto;
