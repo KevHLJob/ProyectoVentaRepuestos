@@ -96,6 +96,7 @@ TableRowSorter trsfiltro;
 
         btnproveedor.setBackground(new java.awt.Color(0, 0, 0));
         btnproveedor.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnproveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnproveedor.setText("PROVEEDOR");
         btnproveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +107,7 @@ TableRowSorter trsfiltro;
 
         btncliente.setBackground(new java.awt.Color(0, 0, 0));
         btncliente.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btncliente.setForeground(new java.awt.Color(255, 255, 255));
         btncliente.setText("CLIENTE");
         btncliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +129,7 @@ TableRowSorter trsfiltro;
 
         btnProductos.setBackground(new java.awt.Color(0, 0, 0));
         btnProductos.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnProductos.setText("PRODUCTOS");
         btnProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

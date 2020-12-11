@@ -311,6 +311,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         btnFacturacion.setBackground(new java.awt.Color(0, 0, 0));
         btnFacturacion.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnFacturacion.setForeground(new java.awt.Color(255, 255, 255));
         btnFacturacion.setText("FACTURACIÓN");
         btnFacturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,6 +321,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         btnregistros.setBackground(new java.awt.Color(0, 0, 0));
         btnregistros.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnregistros.setForeground(new java.awt.Color(255, 255, 255));
         btnregistros.setText("REGISTROS");
         btnregistros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -329,6 +331,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
 
         btnProformas.setBackground(new java.awt.Color(0, 0, 0));
         btnProformas.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        btnProformas.setForeground(new java.awt.Color(255, 255, 255));
         btnProformas.setText("PROFORMAS");
         btnProformas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -536,10 +539,10 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 1380, 730));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 1380, 710));
 
         jPanel4.setBackground(new java.awt.Color(255, 153, 153));
 
@@ -600,14 +603,14 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(218, 218, 218)
+                        .addGap(180, 180, 180)
                         .addComponent(btnFiltrarRango)
                         .addGap(172, 172, 172))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                     .addComponent(txtFecha2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -625,7 +628,7 @@ public class JF_FiltrarFacturas extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 1380, 110));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 1380, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

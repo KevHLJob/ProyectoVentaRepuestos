@@ -630,7 +630,7 @@ public class VentasPrueba extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setText("Hora");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         lblRequeridoTotal.setForeground(new java.awt.Color(255, 255, 255));
         lblRequeridoTotal.setText("Requerido");
@@ -640,17 +640,17 @@ public class VentasPrueba extends javax.swing.JFrame {
         txtFechaFact.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtFechaFact.setEnabled(false);
         txtFechaFact.setFocusCycleRoot(true);
-        jPanel4.add(txtFechaFact, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 150, 40));
+        jPanel4.add(txtFechaFact, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 150, 30));
 
         txtHora.setBackground(new java.awt.Color(255, 255, 255));
         txtHora.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtHora.setDateFormatString("hh:mm:ss");
         txtHora.setEnabled(false);
         txtHora.setFocusCycleRoot(true);
-        jPanel4.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 150, 40));
+        jPanel4.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 150, 30));
 
         jLabel8.setText("Fecha");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
         txtTotalPagar.setEditable(false);
         txtTotalPagar.setBackground(new java.awt.Color(255, 255, 255));
